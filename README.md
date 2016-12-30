@@ -1,4 +1,19 @@
-This is a check
+<script  type="text/javascript">
+alert("hello");
+</script>
+<style>
+.container {
+width:100%;
+background-color:red;
+}
+</style>
+<div style="width:100%">
+code
+====
+
+<a href="/othercode">Click here </a>
+<div>
+
 <div id="disqus_thread"></div>
 <script type="text/javascript">
 
@@ -20,4 +35,3 @@ s.setAttribute('data-timestamp', +new Date());
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                                 
-
