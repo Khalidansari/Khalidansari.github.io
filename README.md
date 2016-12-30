@@ -1,17 +1,14 @@
-<script  type="text/javascript">
-alert("hello");
-</script>
 <style>
 .container {
 width:100%;
-background-color:red;
+background-color:grey;
 }
 </style>
 <div style="width:100%">
 code
 ====
 
-<a href="/othercode">Click here </a>
+<a href="/othercode">Click here... </a>
 <div>
 
 <div id="disqus_thread"></div>
