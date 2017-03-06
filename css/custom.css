@@ -40,11 +40,22 @@ h1 {
 	top: 70px;
 	position:relative;
 	height: calc(100% - 70px);
+	overflow-y:hidden;
+}
+
+#topicPage {
+	
+	height:100%;
+}
+
+.gecko #topicPage {
+	
+	height:calc(100%);
 }
 
 .panel-docs {
 	
-	height: calc(100% - 70px);
+	overflow-y:hidden;
 }
 
 .sidebar {
