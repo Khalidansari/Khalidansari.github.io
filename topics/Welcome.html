@@ -43,9 +43,14 @@ p {
 	font-size:12px;
 	font-family: "Open Sans";
 }
+
+.bodyClass {
+
+	background-color:#fcfcfc;
+}
   </style>
   </head>
-<body class="markdown github">
+<body class="markdown github bodyClass">
 <h1 id="options"><a name="options" href="#options"></a>OPTIONS</h1><p>following is the section break</p><hr class="section"><table>
 <thead>
 <tr>
@@ -152,7 +157,7 @@ p {
 	
 	#showhidecomments {
 	
-		background-color: #ffffff;
+		background-color: #fcfcfc;
 		display:block;
 		width:100%;    
 		padding: 5px 35px 5px 14px;
@@ -171,8 +176,7 @@ p {
     </style>
     
 <button id="showhidecomments" onclick="showhidecomments();">Show / Hide Comments</button>
-    
-
+  
 <script>
 
 	var show = false;
@@ -184,7 +188,7 @@ p {
 			document.getElementById("showhidecomments").style.backgroundColor = "#eaeaea";
 		} else {
 			document.getElementById("disqus_thread").style.display = "none";
-			document.getElementById("showhidecomments").style.backgroundColor = "#ffffff";
+			document.getElementById("showhidecomments").style.backgroundColor = "#fcfcfc";
 		}
 		show = !show;
 	}

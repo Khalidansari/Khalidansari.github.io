@@ -8,7 +8,7 @@ body {
 .topHeader  {
 	
 	background-color:black;
-	height:70px;
+	height:50px;
 	position: fixed;
 	width: 100%;
 	font-family:"Open Sans";
@@ -20,8 +20,8 @@ h1 {
 	
 	color:white;
 	font-weight:300;
-	font-size:1.7em;
-	margin-top: 13px;
+	font-size:1.4em;
+	margin-top: 6px;
 }
 
 .col-lg-3 {
@@ -30,16 +30,16 @@ h1 {
 	float: left;
 	height:100%;
 	position: fixed;
-	top: 70px;
+	top: 50px;
 }
 
 .col-lg-9 {
 	
 	width: calc(75% - 80px);
 	float: right;
-	top: 70px;
+	top: 50px;
 	position:relative;
-	height: calc(100% - 70px);
+	height: calc(100% - 50px);
 	overflow-y:hidden;
 }
 
