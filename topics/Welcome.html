@@ -147,7 +147,7 @@ p {
     border-radius: 4px;
     color: #fff;
     font-size: 13px;    cursor: pointer;
-    -webkit-appearance: button;" >Show/Hide Comments</button>
+    -webkit-appearance: button;" >Show / Hide Comments</button>
 <script>
 
 	var show = false;
@@ -160,6 +160,11 @@ p {
 			document.getElementById("disqus_thread").style.display = "none";
 		}
 		show = !show;
+	}
+	
+	window.load = function() {
+	
+		document.getElementById("disqus_thread").style.display = "none";
 	}
 </script>
 <div id="disqus_thread"></div>
