@@ -124,3 +124,8 @@ span {
 	color: #666666;
 	font-weight:200;
 }
+
+p {
+	font-size:12px;
+	font-family: "Open Sans";
+}
