@@ -35,7 +35,7 @@ h1 {
 
 .col-lg-9 {
 	
-	width: 67%;
+	width: calc(75% - 80px);
 	float: right;
 	top: 70px;
 	position:relative;
