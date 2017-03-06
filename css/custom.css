@@ -37,9 +37,9 @@ h1 {
 	
 	width: 67%;
 	float: right;
-	top: 100px;
+	top: 70px;
 	position:relative;
-	margin-right:45px;
+	height: calc(100% - 70px);
 }
 
 .sidebar {
