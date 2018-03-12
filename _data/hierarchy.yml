@@ -2,7 +2,7 @@ toc:
   - title: Group 1
     subfolderitems:
       - page: Thing 1
-        url: /thing1.html
+        url: /documentation/Salesforce/about.html
       - page: Thing 2
         url: /thing2.html
       - page: Thing 3
