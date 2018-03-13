@@ -26,7 +26,7 @@ _handleOnClick: function(component, event, helper){
 				console.log("none");
 		}
 	},
-    ```
+```
     
 Hydeout makes heavy use of Flexbox in its CSS. If Flexbox is not available,
 the CSS degrades into a single column layout.
