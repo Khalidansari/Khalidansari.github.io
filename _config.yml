@@ -25,6 +25,7 @@ plugins:
   - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
+  - jekyll-remote-theme
 
 # Custom vars
 version:            3.5.3
