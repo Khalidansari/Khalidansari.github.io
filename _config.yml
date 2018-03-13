@@ -26,7 +26,6 @@ plugins:
   - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
-  - jekyll-remote-theme
 
 # Custom vars
 version:            3.5.3
@@ -40,8 +39,5 @@ github:
 
 disqus:
     shortname: https-khalidansari-github-io
-    
-    
-remote_theme: fongandrew/hydeout
 
 theme: jekyll-theme-minimal
