@@ -12,7 +12,7 @@ This post lives in the future and is dated {{ page.date | date: "%c" }}. It shou
 ```bash
 jekyll build --future
 ```
-```javascript
+```js
 _handleOnClick: function(component, event, helper){
 		event.stopPropagation();
 
