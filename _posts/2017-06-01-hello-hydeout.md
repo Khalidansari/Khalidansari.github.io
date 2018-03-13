@@ -14,6 +14,20 @@ design lightweight and plugin-free. JavaScript is currently limited only
 to Disqus and Google Analytics (and is only loaded if you provide configuration
 variables).
 
+```js
+_handleOnClick: function(component, event, helper){
+		event.stopPropagation();
+
+		switch(event.getParam("CompId")){
+			case "Delete" :
+				helper.processSelection(component, event, helper);
+				// break;
+			default :
+				console.log("none");
+		}
+	},
+    ```
+    
 Hydeout makes heavy use of Flexbox in its CSS. If Flexbox is not available,
 the CSS degrades into a single column layout.
 
