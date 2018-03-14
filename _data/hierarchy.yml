@@ -1,13 +1,13 @@
 toc:
-  - title: Group 1
+  - title: Salesforce Documentation
     subfolderitems:
-      - page: Thing 1
+      - page: Hello World in Salesforce
         url: /documentation/Salesforce/about.html
-      - page: Thing 2
+      - page: Configuration
         url: /thing2.html
       - page: Thing 3
         url: /thing3.html
-  - title: Group 2
+  - title: Java Related Topics
     subfolderitems:
       - page: Piece 1
         url: /piece1.html
@@ -15,7 +15,7 @@ toc:
         url: /piece2.html
       - page: Piece 3
         url: /piece3.html
-  - title: Group 3
+  - title: Topics on User Interface
     subfolderitems:
       - page: Widget 1
         url: /widget1.html

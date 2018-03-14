@@ -14,23 +14,26 @@
   </head>
   <body>
     <div class="wrapper">
+      {% include topHeader.html %}
       <header>
-        <a href="{{ site.github.url }}"> <h1>{{ site.title | default: site.github.repository_name }}</h1> </a>
-        <p>{{ site.description | default: site.github.project_tagline }}</p>
+        <a href="{{ site.github.url }}"> <h1 class="siteTitle">{{ site.title | default: site.github.repository_name }}</h1> </a>
+        <p class="siteDescription">{{ site.description | default: site.github.project_tagline }}</p>
 
         {% comment %}
           The code below dynamically generates a sidebar nav of pages with
           `sidebar_link: true` in the front-matter. See readme for usage.
         {% endcomment %}
         {% for item in site.data.hierarchy.toc %}
-            <h3>{{ item.title }}</h3>
+            <div class="sidebarTopics">{{ item.title }}</div>
               <ul>
                 {% for entry in item.subfolderitems %}
                   <li><a href="{{ entry.url }}">{{ entry.page }}</a></li>
                 {% endfor %}
               </ul>
+              <hr class="horizontalLine">
           {% endfor %}
           
+          {% include social.html %}
 
         {% if site.show_downloads %}
           <ul>
@@ -45,9 +48,6 @@
       {{ content }}
 
       </section>
-      <footer>
-        <p><small>Contact &mdash; khalidansari@gmail.com</small></p>
-      </footer>
     </div>
     <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
 
