@@ -7,6 +7,7 @@
 {% seo %}
 
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
     <meta name="viewport" content="width=device-width">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -14,7 +15,6 @@
   </head>
   <body>
     <div class="wrapper">
-      {% include topHeader.html %}
       <header>
         <a href="{{ site.github.url }}"> <h1 class="siteTitle">{{ site.title | default: site.github.repository_name }}</h1> </a>
         <p class="siteDescription">{{ site.description | default: site.github.project_tagline }}</p>
@@ -32,6 +32,7 @@
               </ul>
               <hr class="horizontalLine">
           {% endfor %}
+          <div class="sidebarTopics">All Posts</div>
           
           {% include social.html %}
 

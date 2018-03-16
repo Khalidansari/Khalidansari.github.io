@@ -1,8 +1,10 @@
-title: Technical Documentation
-description: Keeping track of what I do
+title:  Technical Notes
+description: 
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal
 
 disqus:
     shortname: https-khalidansari-github-io
+    
+linenos: true
