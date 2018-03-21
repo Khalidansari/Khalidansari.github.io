@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Inconsolata|Montserrat:300,400");
+@import url("https://fonts.googleapis.com/css?family=Anonymous+Pro|Inconsolata|Nanum+Gothic+Coding|PT+Mono|Ubuntu+Mono");
 @font-face {
   font-family: 'Noto Sans';
   font-weight: 400;
@@ -248,8 +249,9 @@ body {
   padding: 50px;
   font: 14px/1.5 "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #000000;
-  font-weight: 400;
-  font-size: 15px; }
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 28px; }
 
 h1, h2, h3, h4, h5, h6 {
   color: #222;
@@ -309,7 +311,7 @@ blockquote {
   font-style: italic; }
 
 code, pre {
-  font-family: Monospace, Montserrat, Inconsolata, Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+  font-family: PT Mono, Monospace, Montserrat, Inconsolata, Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
   color: #333;
   font-size: 12px; }
 
@@ -361,7 +363,7 @@ header {
   overflow-y: scroll; }
 
 .siteDescription {
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   padding-left: 50px;
   color: #ffffff; }
 
@@ -381,7 +383,8 @@ header {
 header ul {
   list-style: none;
   padding-top: 10px;
-  padding-left: 57px; }
+  padding-left: 57px;
+  line-height: 22px; }
 
 header li {
   padding-bottom: 5px; }
@@ -398,10 +401,10 @@ strong {
   font-weight: 700; }
 
 section {
-  width: calc(100% - 550px);
+  width: calc(100% - 500px);
   float: right;
   padding-bottom: 50px;
-  padding-right: 180px; }
+  padding-right: 140px; }
 
 small {
   font-size: 11px; }
