@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Inconsolata|Montserrat:300,400");
 @import url("https://fonts.googleapis.com/css?family=Anonymous+Pro|Inconsolata|Nanum+Gothic+Coding|PT+Mono|Ubuntu+Mono");
+@import url("https://fonts.googleapis.com/css?family=Aladin|Amatic+SC|Amita|Architects+Daughter|Bad+Script|Berkshire+Swash|Bilbo+Swash+Caps|Caveat|Caveat+Brush|Cookie|Courgette|Covered+By+Your+Grace|Dancing+Script|Delius|Delius+Swash+Caps|Give+You+Glory|Gloria+Hallelujah|Great+Vibes|Handlee|Homemade+Apple|Indie+Flower|Itim|Jim+Nightshade|Julee|Just+Another+Hand|Kalam|Kaushan+Script|Loved+by+the+King|Lovers+Quarrel|Nanum+Brush+Script|Nanum+Pen+Script|Neucha|Pacifico|Pangolin|Patrick+Hand+SC|Permanent+Marker|Qwigley|Rancho|Reenie+Beanie|Sacramento|Satisfy|Sedgwick+Ave+Display|Shadows+Into+Light|Shadows+Into+Light+Two|Sue+Ellen+Francisco");
 @font-face {
   font-family: 'Noto Sans';
   font-weight: 400;
@@ -363,9 +364,11 @@ header {
   overflow-y: scroll; }
 
 .siteDescription {
-  padding-bottom: 30px;
-  padding-left: 50px;
-  color: #ffffff; }
+  padding-bottom: 50px;
+  padding-left: 30px;
+  color: #ffffff;
+  font-family: "Architects Daughter";
+  FONT-SIZE: 15PX; }
 
 .horizontalLine {
   border: 1px;
@@ -374,11 +377,13 @@ header {
   margin-left: 30px; }
 
 .siteTitle {
-  padding-left: 50px;
-  padding-top: 80px;
-  font-family: "Open sans", sans-serif;
+  font-family: "PATRICK HAND SC";
+  PADDING-BOTTOM: 0PX;
+  padding-left: 30px;
+  padding-top: 65px;
   color: #ffffff;
-  font-size: 40px; }
+  font-size: 48px;
+  text-transform: uppercase; }
 
 header ul {
   list-style: none;
