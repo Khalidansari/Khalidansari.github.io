@@ -1,25 +1,21 @@
 toc:
-  - title: Salesforce Documentation
+  - title: Salesforce
     subfolderitems:
       - page: Hello World in Salesforce
         url: /documentation/Salesforce/about.html
-      - page: Configuration
-        url: /thing2.html
-      - page: Thing 3
-        url: /thing3.html
-  - title: Java Related Topics
+  - title: Algorithms & Data Structures
     subfolderitems:
-      - page: Piece 1
-        url: /piece1.html
-      - page: Piece 2
-        url: /piece2.html
-      - page: Piece 3
-        url: /piece3.html
+      - page: Sorting
+        url: /documentation/toolkit/unix.html
+      - page: Data Structure
+        url: /documentation/toolkit/unix.html
+      - page: Other Important Alogirithms
+        url: /documentation/toolkit/unix.html
   - title: Developer's Toolkit
     subfolderitems:
       - page: Basic Unix Commands
         url: /documentation/toolkit/unix.html
-      - page: Widget 2
-        url: /widget2.html
-      - page: Widget 3
-        url: /widget3.html
+      - page: Helpful Tools
+        url: /documentation/toolkit/unix.html
+      - page: Comparison of programming languages
+        url: /documentation/toolkit/unix.html
