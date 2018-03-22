@@ -15,10 +15,10 @@ toc:
         url: /piece2.html
       - page: Piece 3
         url: /piece3.html
-  - title: Topics on User Interface
+  - title: Developer's Toolkit
     subfolderitems:
-      - page: Widget 1
-        url: /widget1.html
+      - page: Basic Unix Commands
+        url: /documentation/toolkit/unix.html
       - page: Widget 2
         url: /widget2.html
       - page: Widget 3

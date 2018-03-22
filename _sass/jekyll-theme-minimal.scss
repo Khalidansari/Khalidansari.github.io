@@ -34,20 +34,20 @@ h1 {
     color: #000000;
     font-weight: 400;
     font-family: "open sans";
-    font-size: 30px;
+    font-size: 35px;
     padding-bottom: 40px;
     padding-bottom: 20px;
 }
 
 h2 {
-  color: #0571c6;
+    color: #000000;
     font-weight: 400;
     font-family: "open sans";
-    font-size: 25px;
+    font-size: 23px;
 }
 
 h3, h4, h5, h6 {
-  color: #0571c6;
+    color: #585858;
     font-weight: 400;
     font-family: "open sans";
     font-size: 20px;
@@ -80,7 +80,7 @@ a:hover small {
 }
 
 blockquote {
-  border-left:1px solid #e5e5e5;
+  border-left:2px solid #e5e5e5;
   margin:0;
   padding:0 0 0 20px;
   font-style:italic;
@@ -88,7 +88,7 @@ blockquote {
 
 code, pre {
   font-family:PT Mono, Monospace, Montserrat, Inconsolata, Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
-  color:#333;
+  color:#a0a0a0;
   font-size:12px;
 }
 
