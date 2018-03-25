@@ -11,11 +11,11 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Quick Notes for Developers" />
 <meta property="og:description" content="Quick Notes for Developers" />
-<link rel="canonical" href="http://localhost:4000/documentation/toolkit/unix.html" />
-<meta property="og:url" content="http://localhost:4000/documentation/toolkit/unix.html" />
+<link rel="canonical" href="http://localhost:4000/documentation/toolkit/ANT%20with%20Salesforce.html" />
+<meta property="og:url" content="http://localhost:4000/documentation/toolkit/ANT%20with%20Salesforce.html" />
 <meta property="og:site_name" content="Objectary" />
 <script type="application/ld+json">
-{"description":"Quick Notes for Developers","@type":"WebPage","url":"http://localhost:4000/documentation/toolkit/unix.html","headline":"Objectary","@context":"http://schema.org"}</script>
+{"description":"Quick Notes for Developers","@type":"WebPage","url":"http://localhost:4000/documentation/toolkit/ANT%20with%20Salesforce.html","headline":"Objectary","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -89,16 +89,16 @@
       </header>
       <section>
 
-      <h1 id="basic-unix-commands">Basic Unix Commands</h1>
+      <h1 id="using-ant-for-salesforce-deployments">Using ANT for Salesforce deployments</h1>
 
 <p>No matter which OS you are using, these commands will come handy to any developer interested in quick scanning of code. For those are on Windows system can install cygwin to get a command prompt where they can execute the following commands.</p>
 
-<h2 id="grep">grep</h2>
+<blockquote>
+  <p>Using ant to retrieve results from a previously executed task. Replace REQUESTED_ID with actual id e.g. 0Af800000006OKL</p>
+</blockquote>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">grep</span> <span class="s1">'TEXT_TO_BE_SEARCHED'</span> <span class="nt">-OPTIONS</span> DIRECTORY_TO_BE_SEARCHED_IN
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ant rp <span class="nt">-Dsf</span>.asyncRequestId<span class="o">=</span>REQUESTED_ID
 </code></pre></div></div>
-
-<h2 id="find">find</h2>
 
 
 
@@ -126,9 +126,9 @@
   *  https://disqus.com/admin/universalcode/#configuration-variables
   */
   var disqus_config = function () {
-    this.page.url = "http://localhost:4000/documentation/toolkit/unix.html";
+    this.page.url = "http://localhost:4000/documentation/toolkit/ANT%20with%20Salesforce.html";
     this.page.identifier = "" ||
-                           "http://localhost:4000/documentation/toolkit/unix.html";
+                           "http://localhost:4000/documentation/toolkit/ANT%20with%20Salesforce.html";
   }
   function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');

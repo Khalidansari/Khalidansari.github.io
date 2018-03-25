@@ -34,26 +34,22 @@
 
         
         
-            <div class="sidebarTopics">Salesforce Documentation</div>
+            <div class="sidebarTopics">Salesforce</div>
               <ul>
                 
                   <li><a href="/documentation/Salesforce/about.html">Hello World in Salesforce</a></li>
                 
-                  <li><a href="/thing2.html">Configuration</a></li>
-                
-                  <li><a href="/thing3.html">Thing 3</a></li>
-                
               </ul>
               <hr class="horizontalLine">
           
-            <div class="sidebarTopics">Java Related Topics</div>
+            <div class="sidebarTopics">Algorithms & Data Structures</div>
               <ul>
                 
-                  <li><a href="/piece1.html">Piece 1</a></li>
+                  <li><a href="/documentation/toolkit/unix.html">Sorting</a></li>
                 
-                  <li><a href="/piece2.html">Piece 2</a></li>
+                  <li><a href="/documentation/toolkit/unix.html">Data Structure</a></li>
                 
-                  <li><a href="/piece3.html">Piece 3</a></li>
+                  <li><a href="/documentation/toolkit/unix.html">Other Important Alogirithms</a></li>
                 
               </ul>
               <hr class="horizontalLine">
@@ -63,9 +59,9 @@
                 
                   <li><a href="/documentation/toolkit/unix.html">Basic Unix Commands</a></li>
                 
-                  <li><a href="/widget2.html">Widget 2</a></li>
+                  <li><a href="/documentation/toolkit/ANT with Salesforce.html">ANT with Salesforce</a></li>
                 
-                  <li><a href="/widget3.html">Widget 3</a></li>
+                  <li><a href="/documentation/toolkit/unix.html">Comparison of programming languages</a></li>
                 
               </ul>
               <hr class="horizontalLine">
@@ -93,224 +89,10 @@
       </header>
       <section>
 
-      <h1 id="salesforce---how-to-automate-any-process"><a href="#header-1"></a>Salesforce - How to Automate Any Process</h1>
+      <h1 id="about-this-site">About this site</h1>
 
-<p>This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere. This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere. This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.</p>
+<p>This site will provide easy to understand concepts which are a must for all developers.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">public</span> <span class="kr">static</span> <span class="nx">List</span><span class="o">&lt;</span><span class="nx">List</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;&gt;</span> <span class="nx">parseCSV</span><span class="p">(</span><span class="nb">String</span> <span class="nx">contents</span><span class="p">,</span><span class="nb">Boolean</span> <span class="nx">skipHeaders</span><span class="p">)</span> <span class="p">{</span>
-	<span class="nx">List</span><span class="o">&lt;</span><span class="nx">List</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;&gt;</span> <span class="nx">allFields</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="o">&lt;</span><span class="nx">List</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;&gt;</span><span class="p">();</span>
-
-	<span class="c1">// replace instances where a double quote begins a field containing a comma</span>
-	<span class="c1">// in this case you get a double quote followed by a doubled double quote</span>
-	<span class="c1">// do this for beginning and end of a field</span>
-	<span class="nx">contents</span> <span class="o">=</span> <span class="nx">contents</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="s1">',"""'</span><span class="p">,</span><span class="s1">',"DBLQT'</span><span class="p">).</span><span class="nx">replaceall</span><span class="p">(</span><span class="s1">'""",'</span><span class="p">,</span><span class="s1">'DBLQT",'</span><span class="p">);</span>
-	<span class="c1">// now replace all remaining double quotes - we do this so that we can reconstruct</span>
-	<span class="c1">// fields with commas inside assuming they begin and end with a double quote</span>
-	<span class="nx">contents</span> <span class="o">=</span> <span class="nx">contents</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="s1">'""'</span><span class="p">,</span><span class="s1">'DBLQT'</span><span class="p">);</span>
-	<span class="c1">// we are not attempting to handle fields with a newline inside of them</span>
-	<span class="c1">// so, split on newline to get the spreadsheet rows</span>
-	<span class="nx">List</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span> <span class="nx">lines</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">();</span>
-	<span class="k">try</span> <span class="p">{</span>
-		<span class="nx">lines</span> <span class="o">=</span> <span class="nx">contents</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">'</span><span class="err">\</span><span class="s1">n'</span><span class="p">);</span>
-	<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">System</span><span class="p">.</span><span class="nx">ListException</span> <span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-		<span class="nx">System</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="s1">'Limits exceeded?'</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">getMessage</span><span class="p">());</span>
-	<span class="p">}</span>
-	<span class="nx">Integer</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-	<span class="k">for</span><span class="p">(</span><span class="nb">String</span> <span class="na">line</span> <span class="p">:</span> <span class="nx">lines</span><span class="p">)</span> <span class="p">{</span>
-		<span class="c1">// check for blank CSV lines (only commas)</span>
-		<span class="k">if</span> <span class="p">(</span><span class="nx">line</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span><span class="s1">''</span><span class="p">).</span><span class="nx">trim</span><span class="p">().</span><span class="nx">length</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
-		
-		<span class="nx">List</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span> <span class="nx">fields</span> <span class="o">=</span> <span class="nx">line</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">','</span><span class="p">);</span>	
-		<span class="nx">List</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span> <span class="nx">cleanFields</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">();</span>
-		<span class="nb">String</span> <span class="nx">compositeField</span><span class="p">;</span>
-		<span class="nb">Boolean</span> <span class="nx">makeCompositeField</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-		<span class="k">for</span><span class="p">(</span><span class="nb">String</span> <span class="na">field</span> <span class="p">:</span> <span class="nx">fields</span><span class="p">)</span> <span class="p">{</span>
-			<span class="k">if</span> <span class="p">(</span><span class="nx">field</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s1">'"'</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">field</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s1">'"'</span><span class="p">))</span> <span class="p">{</span>
-				<span class="nx">cleanFields</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">field</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="s1">'DBLQT'</span><span class="p">,</span><span class="s1">'"'</span><span class="p">));</span>
-			<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">field</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s1">'"'</span><span class="p">))</span> <span class="p">{</span>
-				<span class="nx">makeCompositeField</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-				<span class="nx">compositeField</span> <span class="o">=</span> <span class="nx">field</span><span class="p">;</span>
-			<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">field</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s1">'"'</span><span class="p">))</span> <span class="p">{</span>
-				<span class="nx">compositeField</span> <span class="o">+=</span> <span class="s1">','</span> <span class="o">+</span> <span class="nx">field</span><span class="p">;</span>
-				<span class="nx">cleanFields</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">compositeField</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="s1">'DBLQT'</span><span class="p">,</span><span class="s1">'"'</span><span class="p">));</span>
-				<span class="nx">makeCompositeField</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-			<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">makeCompositeField</span><span class="p">)</span> <span class="p">{</span>
-				<span class="nx">compositeField</span> <span class="o">+=</span>  <span class="s1">','</span> <span class="o">+</span> <span class="nx">field</span><span class="p">;</span>
-			<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-				<span class="nx">cleanFields</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">field</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">(</span><span class="s1">'DBLQT'</span><span class="p">,</span><span class="s1">'"'</span><span class="p">));</span>
-			<span class="p">}</span>
-		<span class="p">}</span>
-		
-		<span class="nx">allFields</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">cleanFields</span><span class="p">);</span>
-	<span class="p">}</span>
-	<span class="k">if</span> <span class="p">(</span><span class="nx">skipHeaders</span><span class="p">)</span> <span class="nx">allFields</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-	<span class="k">return</span> <span class="nx">allFields</span><span class="p">;</span>		
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>Text can be <strong>bold</strong>, <em>italic</em>, or <del>strikethrough</del>.</p>
-
-<p><a href="another-page">Link to another page</a>.</p>
-
-<p>There should be whitespace between paragraphs.</p>
-
-<p>There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.</p>
-
-<h1 id="header-1"><a href="#header-1"></a>Header 1</h1>
-
-<p>This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.</p>
-
-<h2 id="header-2"><a href="#header-2"></a>Header 2</h2>
-
-<blockquote>
-  <p>This is a blockquote following a header.</p>
-
-  <p>When something is important enough, you do it even if the odds are not in your favor.</p>
-</blockquote>
-
-<h3 id="header-3"><a href="#header-3"></a>Header 3</h3>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Javascript code with syntax highlighting.</span>
-<span class="kd">var</span> <span class="nx">fun</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">lang</span><span class="p">(</span><span class="nx">l</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">dateformat</span><span class="p">.</span><span class="nx">i18n</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'./lang/'</span> <span class="o">+</span> <span class="nx">l</span><span class="p">)</span>
-  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Ruby code with syntax highlighting</span>
-<span class="no">GitHubPages</span><span class="o">::</span><span class="no">Dependencies</span><span class="p">.</span><span class="nf">gems</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">gem</span><span class="p">,</span> <span class="n">version</span><span class="o">|</span>
-  <span class="n">s</span><span class="p">.</span><span class="nf">add_dependency</span><span class="p">(</span><span class="n">gem</span><span class="p">,</span> <span class="s2">"= </span><span class="si">#{</span><span class="n">version</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<h4 id="header-4"><a href="#header-4"></a>Header 4</h4>
-
-<ul>
-  <li>This is an unordered list following a header.</li>
-  <li>This is an unordered list following a header.</li>
-  <li>This is an unordered list following a header.</li>
-</ul>
-
-<h5 id="header-5"><a href="#header-5"></a>Header 5</h5>
-
-<ol>
-  <li>This is an ordered list following a header.</li>
-  <li>This is an ordered list following a header.</li>
-  <li>This is an ordered list following a header.</li>
-</ol>
-
-<h6 id="header-6"><a href="#header-6"></a>Header 6</h6>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">head1</th>
-      <th style="text-align: left">head two</th>
-      <th style="text-align: left">three</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">ok</td>
-      <td style="text-align: left">good swedish fish</td>
-      <td style="text-align: left">nice</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">out of stock</td>
-      <td style="text-align: left">good and plenty</td>
-      <td style="text-align: left">nice</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">ok</td>
-      <td style="text-align: left">good <code class="highlighter-rouge">oreos</code></td>
-      <td style="text-align: left">hmm</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">ok</td>
-      <td style="text-align: left">good <code class="highlighter-rouge">zoute</code> drop</td>
-      <td style="text-align: left">yumm</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="theres-a-horizontal-rule-below-this">There’s a horizontal rule below this.</h3>
-
-<hr />
-
-<h3 id="here-is-an-unordered-list">Here is an unordered list:</h3>
-
-<ul>
-  <li>Item foo</li>
-  <li>Item bar</li>
-  <li>Item baz</li>
-  <li>Item zip</li>
-</ul>
-
-<h3 id="and-an-ordered-list">And an ordered list:</h3>
-
-<ol>
-  <li>Item one</li>
-  <li>Item two</li>
-  <li>Item three</li>
-  <li>Item four</li>
-</ol>
-
-<h3 id="and-a-nested-list">And a nested list:</h3>
-
-<ul>
-  <li>level 1 item
-    <ul>
-      <li>level 2 item</li>
-      <li>level 2 item
-        <ul>
-          <li>level 3 item</li>
-          <li>level 3 item</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>level 1 item
-    <ul>
-      <li>level 2 item</li>
-      <li>level 2 item</li>
-      <li>level 2 item</li>
-    </ul>
-  </li>
-  <li>level 1 item
-    <ul>
-      <li>level 2 item</li>
-      <li>level 2 item</li>
-    </ul>
-  </li>
-  <li>level 1 item</li>
-</ul>
-
-<h3 id="small-image">Small image</h3>
-
-<p><img src="https://assets-cdn.github.com/images/icons/emoji/octocat.png" alt="" /></p>
-
-<h3 id="large-image">Large image</h3>
-
-<p><img src="https://guides.github.com/activities/hello-world/branching.png" alt="" /></p>
-
-<h3 id="definition-lists-can-be-used-with-html-syntax">Definition lists can be used with HTML syntax.</h3>
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-</code></pre></div></div>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The final element.
-</code></pre></div></div>
 
 
       </section>
