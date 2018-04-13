@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+<!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Objectary | Quick Notes for Developers</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Objectary" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Quick Notes for Developers" />
+<meta property="og:description" content="Quick Notes for Developers" />
+<link rel="canonical" href="http://localhost:4000/documentation/others/webservices.html" />
+<meta property="og:url" content="http://localhost:4000/documentation/others/webservices.html" />
+<meta property="og:site_name" content="Objectary" />
+<script type="application/ld+json">
+{"description":"Quick Notes for Developers","@type":"WebPage","url":"http://localhost:4000/documentation/others/webservices.html","headline":"Objectary","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <a href=""> <h1 class="siteTitle">Objectary</h1> </a>
+        <p class="siteDescription">Quick Notes for Developers</p>
+
+        
+        
+            <div class="sidebarTopics">Salesforce</div>
+              <ul>
+                
+                  <li><a href="/documentation/Salesforce/about.html">Hello World in Salesforce</a></li>
+                
+              </ul>
+              <hr class="horizontalLine">
+          
+            <div class="sidebarTopics">Developer's Toolkit</div>
+              <ul>
+                
+                  <li><a href="/documentation/toolkit/unix.html">Basic Unix Commands</a></li>
+                
+              </ul>
+              <hr class="horizontalLine">
+          
+            <div class="sidebarTopics">Other Topics from Computer Science</div>
+              <ul>
+                
+                  <li><a href="/documentation/others/cryptography.html">Cryptography</a></li>
+                
+              </ul>
+              <hr class="horizontalLine">
+          
+            <div class="sidebarTopics">Google Code Jam</div>
+              <ul>
+                
+                  <li><a href="/documentation/codejam/what.html">What is it?</a></li>
+                
+                  <li><a href="/documentation/codejam/solutions.html">Solutions</a></li>
+                
+              </ul>
+              <hr class="horizontalLine">
+          
+          <div class="sidebarTopics">All Posts</div>
+          
+          <table style="width: 120px;margin-left: 24px;;margin-top:100px;">
+    <tr>
+        <td style="border-bottom: none;" class="socialCell">
+            <a href="https://www.linkedin.com/in/sfdckhalidansari/" title="LinkedIn" class="no-mark-external"> <span class="icon icon-linkedin2"></span></a>
+        </td>
+        <td class="socialCell" style="border-bottom: none;">
+            <a href="https://stackoverflow.com/users/2226577/khalid-ansari" title="StackOverflow" class="no-mark-external"> <span class="icon icon-stackoverflow"></span></a>
+        </td>
+        <td class="socialCell" style="border-bottom: none;">
+            <a href="https://github.com/Khalidansari" title="GitHub" class="no-mark-external"> <span class="icon icon-github"></span></a>
+        </td>
+        <td class="socialCell" style="border-bottom: none;">
+            <a href="mailto:khalidansari@gmail.com" title="EMail" class="no-mark-external"> <span class="icon icon-mail"></span></a>
+        </td>
+    </tr>
+</table>
+
+        
+      </header>
+      <section>
+
+      <h1 id="web-services">Web Services</h1>
+
+<p>Parts of WSDL:
+    1. Definitions - namespace, self reference of wsdl
+    2. Messages - request &amp; response objects (with part &gt; parameter for request and return value for response)
+    3. PortType - Method name + request/response (Can be of four types - two types of one ways and two types of two ways)
+    4. Binding - How the request/response will be transmitted (SOAP, HTTP). Service ports are also called endpoints.
+    5. Types (optional) - Inside this element we define both simple type and complex types of data types.</p>
+
+<p>Mapping
+    1. Operation &gt; Public methods
+    2. Complex type &gt; Inner class
+    3. TargetNameSpace &gt; Class name
+    4. WSDL port name &gt; Stub class which is a Inner class with invoke method</p>
+
+<p>Joke: Authoring wsdl without any editors is like great punishment for misbehaving developers</p>
+
+<p>SOAP: Was created by Microsoft as a platform neutral alternative to COBRA, which is a platform specific technology. SOAP is transfer in a specific XML (soap header, soap body (payload), soap envelope(main node), soap fault(in case of error)). It is a XML based protocol.</p>
+
+<hr />
+<p>GET /StockPrice HTTP/1.1
+Host: example.org
+Content-Type: application/soap+xml; charset=utf-8
+Content-Length: nnn</p>
+
+<?xml version="1.0"?>
+<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:s="http://www.example.org/stock-service">
+   <env:Body>
+     <s:GetStockQuote>
+          <s:TickerSymbol>IBM</s:TickerSymbol>
+     </s:GetStockQuote>
+   </env:Body>
+</env:Envelope>
+
+<p>The response:</p>
+
+<p>HTTP/1.1 200 OK
+Content-Type: application/soap+xml; charset=utf-8
+Content-Length: nnn</p>
+
+<?xml version="1.0"?>
+<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:s="http://www.example.org/stock-service">
+   <env:Body>
+     <s:GetStockQuoteResponse>
+          <s:StockPrice>45.25</s:StockPrice>
+     </s:GetStockQuoteResponse>
+   </env:Body>
+</env:Envelope>
+<hr />
+<p>REST</p>
+
+<p>The request:</p>
+
+<p>GET /StockPrice/IBM HTTP/1.1
+Host: example.org
+Accept: text/xml
+Accept-Charset: utf-8</p>
+
+<p>The response:</p>
+
+<p>HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Content-Length: nnn</p>
+
+<?xml version="1.0"?>
+<s:Quote xmlns:s="http://example.org/stock-service">
+     <s:TickerSymbol>IBM</s:TickerSymbol>
+     <s:StockPrice>45.25</s:StockPrice>
+</s:Quote>
+
+<hr />
+<p>JAXB - Java Architecture for XML Binding (Converts XML to Java classes and vice versa)
+JAXP - Java API for XML Parsing (DOM Constructs whole document in-memory while SAX does not and hence is faster)
+SAX - Simple API for XML 
+DOM - Document Object Model 
+XSLT - XML Stylesheet Language for Transformation
+XSD - XML Schema: Specification to write XMLs
+JAX-WS ( Moved towards document style WS from RPC)
+SOAP: Simple Object Access Protocol
+REST - Representational State Transfer
+JSON - Javascript Object Notation (Alternative to XML, created for better human readability)</p>
+
+<h2 id="note-use-rest-until-there-is-a-reason-to-use-soap">Note: Use REST until there is a reason to use SOAP</h2>
+<p>Differences:
+—————</p>
+<ol>
+  <li>SOAP uses only XML to exchange data while REST uses all types of data for exchange and uses standard HTTP. REST
+ can use JSON also but SOAP can not.</li>
+  <li>SOAP can perform ACID transactions while REST cannot.</li>
+  <li>SOAP is good for enterprise apps while REST is good for Internet Apps.</li>
+  <li>REST has no WSDL interface</li>
+  <li>SOAP can work over HTTP, FTP, SMTP, JMS while REST can work only over HTTP</li>
+</ol>
+
+<p>XSLT - Mainly used for applying data to XML template (e.g. generating PDF, HTML)
+            XSLT Input + XML Template &gt; XSLT Processor &gt; Document</p>
+
+<h2 id="web-service-protocol-stack">Web Service Protocol Stack</h2>
+<ol>
+  <li>Transport Protocol - HTTP</li>
+  <li>Messaging Protocol - SOAP</li>
+  <li>Description Protocol - WSDL</li>
+  <li>Discovery Protocol - UDDI - Used to search available APIs. Not widely adopted.</li>
+</ol>
+
+<p>REST - Uses existing methods of HTTP while SOAP allows user to create any method.</p>
+
+<h2 id="glue-and-wsif---are-tools-through-which-we-can-call-webservice-on-command-prompt-easily-without-doing-any-extra-work-it-download-wsdl-created-the-java-classes-compiles-them-and-then-call-the-service-all-by-itself">GLUE and WSIF - are tools through which we can call webservice on command prompt easily, without doing any extra work. It download wsdl, created the java classes, compiles them and then call the service all by itself.</h2>
+
+<p>SOAP Request example:</p>
+
+<p>POST /InStock HTTP/1.1
+Host: www.example.org
+Content-Type: application/soap+xml; charset=utf-8
+Content-Length: 299
+SOAPAction: “http://www.w3.org/2003/05/soap-envelope”</p>
+
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+  <soap:Header>
+  </soap:Header>
+  <soap:Body>
+    <m:GetStockPrice xmlns:m="http://www.example.org/stock">
+      <m:StockName>IBM</m:StockName>
+    </m:GetStockPrice>
+  </soap:Body>
+</soap:Envelope>
+
+
+      </section>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+
+
+  
+  
+  <section class="comments">
+    <h2>Comments</h2>
+    
+  <div id="disqus_thread">
+    <button class="disqus-load" onClick="loadDisqusComments()">
+      Load Comments
+    </button>
+  </div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW
+  *  TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:s
+  *  https://disqus.com/admin/universalcode/#configuration-variables
+  */
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/documentation/others/webservices.html";
+    this.page.identifier = "" ||
+                           "http://localhost:4000/documentation/others/webservices.html";
+  }
+  function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//www-objectary-com.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  </script>
+  <noscript>
+    Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus</a>.
+  </noscript>
+
+
+
+  </section>
+
+  </body>
+</html>

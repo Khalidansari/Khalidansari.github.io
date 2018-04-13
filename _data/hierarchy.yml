@@ -3,19 +3,17 @@ toc:
     subfolderitems:
       - page: Hello World in Salesforce
         url: /documentation/Salesforce/about.html
-  - title: Algorithms & Data Structures
-    subfolderitems:
-      - page: Sorting
-        url: /documentation/toolkit/unix.html
-      - page: Data Structure
-        url: /documentation/toolkit/unix.html
-      - page: Other Important Alogirithms
-        url: /documentation/toolkit/unix.html
   - title: Developer's Toolkit
     subfolderitems:
       - page: Basic Unix Commands
         url: /documentation/toolkit/unix.html
-      - page: ANT with Salesforce
-        url: "/documentation/toolkit/ANT with Salesforce.html"
-      - page: Comparison of programming languages
-        url: /documentation/toolkit/unix.html
+  - title: Other Topics from Computer Science
+    subfolderitems:
+      - page: Cryptography
+        url: /documentation/others/cryptography.html
+  - title: Google Code Jam
+    subfolderitems:
+      - page: What is it?
+        url: /documentation/codejam/what.html
+      - page: Solutions
+        url: /documentation/codejam/solutions.html

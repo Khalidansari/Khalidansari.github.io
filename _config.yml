@@ -5,6 +5,6 @@ google_analytics:
 theme: jekyll-theme-minimal
 
 disqus:
-    shortname: https-khalidansari-github-io
+    shortname: www-objectary-com
     
 linenos: true

@@ -1,15 +1,12 @@
 ---
 layout: page
 title: About
-sidebar_link: true
 ---
 
-<p class="message">
-  Hey there! This page is included as an example. Feel free to customize it
-  for your own use upon downloading. Carry on!
-</p>
+# Salesforce Tips
 
-To make pages show up in the sidebar, add `sidebar_link: true` to the front
-matter.
+1. Indexing on formula field is possible now if the formula is deterministic. If not then do consider the fact that any SOQL filtering on that field will not work if its indeterministic. In such a case it is better to put the logic in a before update/insert trigger.
 
-{% include comments.html %}
+2. Data in recycle bin is still recalculated for sharing rules. So you might not want to keep the data too long in recycle bin.
+
+3. 

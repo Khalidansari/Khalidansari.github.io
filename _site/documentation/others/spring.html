@@ -11,11 +11,11 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Quick Notes for Developers" />
 <meta property="og:description" content="Quick Notes for Developers" />
-<link rel="canonical" href="http://localhost:4000/documentation/toolkit/ANT%20with%20Salesforce.html" />
-<meta property="og:url" content="http://localhost:4000/documentation/toolkit/ANT%20with%20Salesforce.html" />
+<link rel="canonical" href="http://localhost:4000/documentation/others/spring.html" />
+<meta property="og:url" content="http://localhost:4000/documentation/others/spring.html" />
 <meta property="og:site_name" content="Objectary" />
 <script type="application/ld+json">
-{"description":"Quick Notes for Developers","@type":"WebPage","url":"http://localhost:4000/documentation/toolkit/ANT%20with%20Salesforce.html","headline":"Objectary","@context":"http://schema.org"}</script>
+{"description":"Quick Notes for Developers","@type":"WebPage","url":"http://localhost:4000/documentation/others/spring.html","headline":"Objectary","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -91,17 +91,51 @@
       </header>
       <section>
 
-      <h1 id="using-ant-for-salesforce-deployments">Using ANT for Salesforce deployments</h1>
+      <h1 id="spring">Spring</h1>
 
-<p>No matter which OS you are using, these commands will come handy to any developer interested in quick scanning of code. For those are on Windows system can install cygwin to get a command prompt where they can execute the following commands.</p>
+<ol>
+  <li>
+    <p>To install it also add commons logging api - else the project will not compile.</p>
+  </li>
+  <li>jar required for aop of spring 3.0 are aspectjweaver.jar,aspectjrt-1.6.0.jar,aopalliance.jar,asm.jar,cglib-2.2.2.jar
+ use cglib no dep.</li>
+  <li>If you are implementing interfaces then use JDK Proxy else use CGLIB</li>
+</ol>
 
-<blockquote>
-  <p>Using ant to retrieve results from a previously executed task. Replace REQUESTED_ID with actual id e.g. 0Af800000006OKL</p>
-</blockquote>
+<p>Java Dynamic Proxy is a reflective element of the Java language that allows a user to create a proxy of an interface at runtime.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ant rp <span class="nt">-Dsf</span>.asyncRequestId<span class="o">=</span>REQUESTED_ID
+<p>CGLIB is a code generation library which has the capability to extend Java classes at runtime. Because of this, Spring utilizes this functionality to proxy non-interfaces for its AOP library.</p>
+
+<p>There is a invocationHandler interface with only one method invoke(Proxy, Method, args).</p>
+
+<p>Spring does not apply advice on methods which are called internally. In the below e.g. advice will be applied on AAA but on on the call to BBB which is done from inside AAA:</p>
+
+<p>publc class abc {</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public void AAA() {
+    BBB()
+}
+
+public BBB() {
+    Do something
+} } --------------------------------------------------- Aspect: The cross cutting concern Advice: Actual implementation of the aspect Jointpoint: Where the advice can be plugged in Pointcut: The jointpoints where we actually plug Proxy: Is the class which is created after applying the advice
 </code></pre></div></div>
 
+<p>Spring creates the proxy class in runtime and it can do that in two ways:</p>
+<ol>
+  <li>CGLIB - Target class is without interface</li>
+  <li>Java Dynamic Proxy - When target class is using interface</li>
+</ol>
+
+<p>Spring implements AOP Alliance interfaces but supports only method jointpoints (unlike AspectJ or JBoss which even support field jointpoints)</p>
+
+<p>Types:</p>
+<ol>
+  <li>After - AfterReturningAdvice - afterReturning(Object, Method, Object[], Object)</li>
+  <li>Before - BeforeAdvice - before(Method, Object[], Object)</li>
+  <li>Throws - ThrowsAdvice - Marker. Only two method signatures can be used.</li>
+  <li>Around - MethodInteruptor - invoke(MethodInvocation) the method does not call the actual method automatically; it is to be fired using MethodInvocation.Proceed()</li>
+</ol>
 
 
       </section>
@@ -128,9 +162,9 @@
   *  https://disqus.com/admin/universalcode/#configuration-variables
   */
   var disqus_config = function () {
-    this.page.url = "http://localhost:4000/documentation/toolkit/ANT%20with%20Salesforce.html";
+    this.page.url = "http://localhost:4000/documentation/others/spring.html";
     this.page.identifier = "" ||
-                           "http://localhost:4000/documentation/toolkit/ANT%20with%20Salesforce.html";
+                           "http://localhost:4000/documentation/others/spring.html";
   }
   function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');

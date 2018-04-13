@@ -42,26 +42,28 @@
               </ul>
               <hr class="horizontalLine">
           
-            <div class="sidebarTopics">Algorithms & Data Structures</div>
-              <ul>
-                
-                  <li><a href="/documentation/toolkit/unix.html">Sorting</a></li>
-                
-                  <li><a href="/documentation/toolkit/unix.html">Data Structure</a></li>
-                
-                  <li><a href="/documentation/toolkit/unix.html">Other Important Alogirithms</a></li>
-                
-              </ul>
-              <hr class="horizontalLine">
-          
             <div class="sidebarTopics">Developer's Toolkit</div>
               <ul>
                 
                   <li><a href="/documentation/toolkit/unix.html">Basic Unix Commands</a></li>
                 
-                  <li><a href="/documentation/toolkit/ANT with Salesforce.html">ANT with Salesforce</a></li>
+              </ul>
+              <hr class="horizontalLine">
+          
+            <div class="sidebarTopics">Other Topics from Computer Science</div>
+              <ul>
                 
-                  <li><a href="/documentation/toolkit/unix.html">Comparison of programming languages</a></li>
+                  <li><a href="/documentation/others/cryptography.html">Cryptography</a></li>
+                
+              </ul>
+              <hr class="horizontalLine">
+          
+            <div class="sidebarTopics">Google Code Jam</div>
+              <ul>
+                
+                  <li><a href="/documentation/codejam/what.html">What is it?</a></li>
+                
+                  <li><a href="/documentation/codejam/solutions.html">Solutions</a></li>
                 
               </ul>
               <hr class="horizontalLine">
@@ -91,15 +93,192 @@
 
       <h1 id="basic-unix-commands">Basic Unix Commands</h1>
 
-<p>No matter which OS you are using, these commands will come handy to any developer interested in quick scanning of code. For those are on Windows system can install cygwin to get a command prompt where they can execute the following commands.</p>
+<p>No matter which OS you are on, these commands will come handy to you if you are interested in quick scanning of code/docs. For those are on Windows system can install cygwin to get a command prompt where they can execute the following commands.</p>
+
+<p><br /></p>
 
 <h2 id="grep">grep</h2>
+
+<blockquote>
+  <p>search for a text in file/directory</p>
+</blockquote>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">grep</span> <span class="s1">'TEXT_TO_BE_SEARCHED'</span> <span class="nt">-OPTIONS</span> DIRECTORY_TO_BE_SEARCHED_IN
 </code></pre></div></div>
 
-<h2 id="find">find</h2>
+<p><br /></p>
 
+<h2 id="dudf">du/df</h2>
+
+<blockquote>
+  <p>to check total used space</p>
+</blockquote>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">du</span> <span class="nt">-sh</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>to check total free space</p>
+</blockquote>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">df</span> <span class="nt">-h</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>to check space usage of all subdirectories within current directory. If you want to see the space usage of subdirectories within subdirectories then change “-d 1” to “-d 2” (-d stands for depth)</p>
+</blockquote>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo du</span> <span class="nt">-h</span> <span class="nt">-d</span> 1 <span class="nb">.</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h2 id="java-variables">Java variables</h2>
+
+<blockquote>
+  <p>check value of variables related to java heapsize, permsize &amp; thread stack size</p>
+</blockquote>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java <span class="nt">-XX</span>:+PrintFlagsFinal <span class="nt">-version</span> | <span class="nb">grep</span> <span class="nt">-iE</span> <span class="s1">'HeapSize|PermSize|ThreadStackSize'</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>change java variables</p>
+</blockquote>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">_JAVA_OPTIONS</span><span class="o">=</span><span class="s2">"-Xmx2g"</span>
+java <span class="nt">-XX</span>:+PrintFlagsFinal <span class="nt">-version</span> | <span class="nb">grep</span> <span class="nt">-iE</span> <span class="s1">'HeapSize|PermSize|ThreadStackSize'</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="ram-size">ram size</h2>
+
+<blockquote>
+  <p>check total size of ram</p>
+</blockquote>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> /proc/meminfo
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="timezone">timezone</h2>
+
+<blockquote>
+  <p>see date time with timezone</p>
+</blockquote>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">date</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>remove localtime</p>
+</blockquote>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">rm</span> /etc/localtime
+</code></pre></div></div>
+
+<blockquote>
+  <p>check available timezones</p>
+</blockquote>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> /usr/share/zoneinfo/US/
+Alaska          Arizona         Eastern         Hawaii          Michigan        Pacific
+Aleutian        Central         East-Indiana    Indiana-Starke  Mountain    
+</code></pre></div></div>
+
+<blockquote>
+  <p>change local timezone to another timezone. Here we have set the local timezone as US Pacific</p>
+</blockquote>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ln</span> <span class="nt">-s</span> /usr/share/zoneinfo/US/Pacific localtime
+</code></pre></div></div>
+
+<blockquote>
+  <p>set/change time</p>
+</blockquote>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">set time
+date</span> +%T <span class="nt">-s</span> <span class="s2">"11:14:00"</span>
+</code></pre></div></div>
+<blockquote>
+  <p>set/change date</p>
+</blockquote>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">set date
+date</span> +%Y%m%d <span class="nt">-s</span> <span class="s2">"20120418"</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="loop">loop</h2>
+
+<blockquote>
+  <p>you can either loop in through a result set of another command e.g. $ls or through a fixed set of numbers e.g. <code class="highlighter-rouge">seq 1 10</code>.</p>
+</blockquote>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>i <span class="k">in</span> <span class="k">$(</span><span class="nb">ls</span><span class="k">)</span><span class="p">;</span> <span class="k">do 
+    </span><span class="nb">echo</span> <span class="s2">"Final Line: "</span> <span class="nv">$i</span> <span class="s2">"================================================"</span><span class="p">;</span> 
+    <span class="nb">grep</span> <span class="nv">$i</span> <span class="nt">-ir</span> <span class="nb">.</span> <span class="p">;</span> 
+<span class="k">done</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="regex">RegEx</h2>
+
+<p>Explained through an excercise of removing comments from java code using regex.</p>
+
+<blockquote>
+  <p>Basic options</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>. = Any character. One instance.
+.* = Any character. Any number of times. Greedy matching (will get the longest such string)
+*? = Any character. Any number of times. Non-Greedy matching (will match the shortest possible length)
+(?s) = Should consider multi lines. Normally it will search for regex within same line considering that
+       it will start and end in the same line. To do this in multi line, use this.
+\ = To escape any character
+</code></pre></div></div>
+
+<blockquote>
+  <p>remove single line comment from class content</p>
+</blockquote>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>commentedCode <span class="o">=</span> commentedCode.replaceAll<span class="o">(</span><span class="s1">'//.*'</span>, <span class="s1">''</span><span class="o">)</span><span class="p">;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>remove multi line comment from class content</p>
+</blockquote>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>commentedCode <span class="o">=</span> commentedCode.replaceAll<span class="o">(</span><span class="s1">'(?s)/\\*.*\\*/'</span>, <span class="s1">''</span><span class="o">)</span><span class="p">;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>final solution to get rid of all single and multi line comments</p>
+</blockquote>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Greedy: <span class="o">(</span>/<span class="se">\*</span><span class="o">([</span>^<span class="k">*</span><span class="o">]</span>|[<span class="se">\r\n</span><span class="o">]</span>|<span class="o">(</span><span class="se">\*</span>+<span class="o">([</span>^<span class="k">*</span>/]|[<span class="se">\r\n</span><span class="o">])))</span><span class="k">*</span><span class="se">\*</span>+/<span class="o">)</span>|<span class="o">(</span>//.<span class="k">*</span><span class="o">)</span>
+Non-Greedy: <span class="o">(</span>/<span class="se">\*</span><span class="o">(</span>.|[<span class="se">\r\n</span><span class="o">])</span><span class="k">*</span>?<span class="se">\*</span>/<span class="o">)</span>|<span class="o">(</span>//.<span class="k">*</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>The above still does not consider the comments inside the quotes e.g. the below will cause issue because there is a // inside the quotes.
+            String url = ‘https://chart.googleapis.com/chart?chs=300x120&amp;cht=lxy:nda&amp;chd=t:’;</p>
+
+<p>[dasdasdasdsa] - only one character
+(dasdsad) - sub regex
+? - one or none of preceding char</p>
+<ul>
+  <li>
+    <ul>
+      <li>one or more
+. - one</li>
+    </ul>
+  </li>
+</ul>
+
+<p>“SOMETHING” = everything except “something”</p>
 
 
       </section>
@@ -132,7 +311,7 @@
   }
   function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');
-    s.src = '//https-khalidansari-github-io.disqus.com/embed.js';
+    s.src = '//www-objectary-com.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
   }

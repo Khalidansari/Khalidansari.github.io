@@ -11,11 +11,11 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Quick Notes for Developers" />
 <meta property="og:description" content="Quick Notes for Developers" />
-<link rel="canonical" href="http://localhost:4000/documentation/toolkit/ANT%20with%20Salesforce.html" />
-<meta property="og:url" content="http://localhost:4000/documentation/toolkit/ANT%20with%20Salesforce.html" />
+<link rel="canonical" href="http://localhost:4000/documentation/others/git.html" />
+<meta property="og:url" content="http://localhost:4000/documentation/others/git.html" />
 <meta property="og:site_name" content="Objectary" />
 <script type="application/ld+json">
-{"description":"Quick Notes for Developers","@type":"WebPage","url":"http://localhost:4000/documentation/toolkit/ANT%20with%20Salesforce.html","headline":"Objectary","@context":"http://schema.org"}</script>
+{"description":"Quick Notes for Developers","@type":"WebPage","url":"http://localhost:4000/documentation/others/git.html","headline":"Objectary","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -91,17 +91,42 @@
       </header>
       <section>
 
-      <h1 id="using-ant-for-salesforce-deployments">Using ANT for Salesforce deployments</h1>
+      <h1 id="unix">Unix</h1>
 
-<p>No matter which OS you are using, these commands will come handy to any developer interested in quick scanning of code. For those are on Windows system can install cygwin to get a command prompt where they can execute the following commands.</p>
+<p>Single Sign On</p>
 
-<blockquote>
-  <p>Using ant to retrieve results from a previously executed task. Replace REQUESTED_ID with actual id e.g. 0Af800000006OKL</p>
-</blockquote>
+<p>OAuth2 is an authorization protocol that doesn’t define the specifics of how the authentication occurs, but any complete implementation will support a variety of authentication mechanisms. These grants include:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ant rp <span class="nt">-Dsf</span>.asyncRequestId<span class="o">=</span>REQUESTED_ID
-</code></pre></div></div>
+<ul>
+  <li>Authorization Code Grant</li>
+  <li>Implicit Grant</li>
+  <li>Resource Owner Password Credential Grant</li>
+  <li>Client Credential Grant</li>
+</ul>
 
+<p>The OIDC spec adds to this list by providing a set of authentication flows including:</p>
+
+<ul>
+  <li>Authorization Code Flow</li>
+  <li>Implicit Flow</li>
+  <li>Hybrid Flow</li>
+</ul>
+
+<p>Message Digest (MD) = Hash</p>
+
+<p>Digitally Signing something = Message &gt; Hash &gt; Encrypt with private key &gt; send &gt; received by receiver &gt; Decrypted using public key &gt; check if message was tampered with (Message and its encrypted hash (digital sig) was sent together. The receiver will separate them and compare the signature after decrypting it and hash of the message.</p>
+
+<p>JWT Token - &gt; digitally signing the ids - used if certificates are to be used. For server to server connection. https://en.wikipedia.org/wiki/JSON_Web_Token</p>
+
+<p>Single Signon - SAML, OpenID Connect
+API Access - OAuth &amp; OpenID Connect
+Server to Server - JWT Tokens</p>
+
+<p>JIT Provisioning - create users on the fly in Salesforce. Option available only through SAML. The new user attributes can be passed in the SAML assertion. Need to provide prefix of object name to the field to specify the object as well. e.g. User.Username. ProfileId field can be name or Id.</p>
+
+<p>JIT For Communities &gt; Find match using fed id &gt; find match using contact details &gt; find match using account &gt; else create account and others</p>
+
+<p>SAML Bearer flow in OAuth is same as Authorization Code flow except that a refresh token is not issued. A SAML Assertion token is sent in the request and a certificate is uploaded in salesforce.</p>
 
 
       </section>
@@ -128,9 +153,9 @@
   *  https://disqus.com/admin/universalcode/#configuration-variables
   */
   var disqus_config = function () {
-    this.page.url = "http://localhost:4000/documentation/toolkit/ANT%20with%20Salesforce.html";
+    this.page.url = "http://localhost:4000/documentation/others/git.html";
     this.page.identifier = "" ||
-                           "http://localhost:4000/documentation/toolkit/ANT%20with%20Salesforce.html";
+                           "http://localhost:4000/documentation/others/git.html";
   }
   function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');

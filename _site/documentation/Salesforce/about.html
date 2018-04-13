@@ -1,44 +1,12 @@
-<p class="message">
-  Hey there! This page is included as an example. Feel free to customize it
-  for your own use upon downloading. Carry on!
-</p>
+<h1 id="salesforce-tips">Salesforce Tips</h1>
 
-<p>To make pages show up in the sidebar, add <code class="highlighter-rouge">sidebar_link: true</code> to the front
-matter.</p>
+<ol>
+  <li>
+    <p>Indexing on formula field is possible now if the formula is deterministic. If not then do consider the fact that any SOQL filtering on that field will not work if its indeterministic. In such a case it is better to put the logic in a before update/insert trigger.</p>
+  </li>
+  <li>
+    <p>Data in recycle bin is still recalculated for sharing rules. So you might not want to keep the data too long in recycle bin.</p>
+  </li>
+  <li></li>
+</ol>
 
-<section class="comments">
-    <h2>Comments</h2>
-    
-  <div id="disqus_thread">
-    <button class="disqus-load" onclick="loadDisqusComments()">
-      Load Comments
-    </button>
-  </div>
-  <script>
-
-  /**
-  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW
-  *  TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:s
-  *  https://disqus.com/admin/universalcode/#configuration-variables
-  */
-  var disqus_config = function () {
-    this.page.url = "http://localhost:4000/documentation/Salesforce/about.html";
-    this.page.identifier = "" ||
-                           "http://localhost:4000/documentation/Salesforce/about.html";
-  }
-  function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = '//https-khalidansari-github-io.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-  }
-  </script>
-  <noscript>
-    Please enable JavaScript to view the
-    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus</a>.
-  </noscript>
-
-
-
-  </section>
