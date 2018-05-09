@@ -9,7 +9,7 @@ layout: default
 
 It works on the principle of asymmetric encryption algoritm. Generally all the algorithms we think of intutively when encrypting is symmetric. When we were in school we could exchange encrypted messages by simply rotating alphabets - e.g. replace A with C; B with D; C with E and ... Z with B. But what if someone comes to know how we are encrypting? If they know that we are simply rotating/moving an alphabet two places higher than they can decrypt it by moving each alphabet in encrypted text by moving them two places lower (moving C to A, etc.). Hence in symmetric encryption algorithms knowing the encrption key (the method/way encrption is done) jeopardizes everything.
 
-A digital signature is used to verify a message. It is basically an encrypted hash (encrypted by the private key of the sender) of the message. The recipient can check if the message was tampered with by hashing the received message and comparing this value with the decrypted signature. To decrypt the signature, the corresponding public key is required. 
+A digital signature is used to verify a message. It is basically an encrypted hash (encrypted by the private key of the sender) of the message. The recipient can check if the message was tampered with by hashing the received message and comparing this value with the decrypted signature. To decrypt the signature, the corresponding public key is required.
 
 A digital certificate is used to bind public keys to persons or other entities. If there were no certificates, the signature could be easily be forged, as the recipient could not check if the public key belongs to the sender. The certificate itself is signed by a trusted third party, a Certificate Authority like VeriSign.
 
@@ -31,25 +31,7 @@ Ready made java api - jasypt
 --------------------
 MD5 is of not much use because it does not use salt.
 --------------------
-Use filters in J2EE for authenticating the users everytime a request is made.
-
-Create a class which implements Filter class. This should have the methods - doFilter, init and destroy.
-
-<filter>
-    <filter-name>UserAuthFilter</filter-name>
-    <filter-class>com.servlet.filter.UserAuthFilter </filter-class>
-    <init-param>
-      <param-name>avoid-urls</param-name>
-      <param-value>/login.jsp,/static.jsp</param-value>
-    </init-param>
-  </filter>
-  <filter-mapping>
-    <filter-name>UserAuthFilter</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>
-
----------------------
-## Term
+##Term
 
 E - Encrption Algo
 D - Decreption Algo
@@ -57,7 +39,7 @@ M - Message space
 C - Cypher Text
 K - Key Space
 
-## Perfect Secrecy
+##Perfect Secrecy
 
 For any given c, the following should hold for all messages in M:
 
@@ -75,3 +57,47 @@ G : {0,1}^s -> {0,1}^n
 
 n should be very large than s and the result should look random.
 
+-----------
+Terminology
+
+Universe (U) - Set of elements - Generally, it contains all the possible binary numbers constraint by a particular length of the number - e.g. {0,1}^n
+
+Probability Distribution (P) over Universe (U) is a function P: U -> [0,1]
+
+1. Uniform Distribution - for all xEU P(x) = 1/|U|
+
+2. Point Distribution at X0 - P(x0) = 1 and for all other points it is 0
+
+Distribution Vector - (P(1st element in U), P(2nd element in U)... P(last element in U))
+
+Event (A) - Subset of U - P(A) = Summation of P(x) over all xEA
+
+Pr(AUB) <= Pr(A) + Pr(B) {The difference is of Pr(AnB)}
+
+Random Variable (X) - Is a function over U - X:U -> V
+
+Uniform Random Variable (r) - represented as "r <- over R - U" - For any element a of U the following should hold Pr(r=a) = 1/|U|
+
+r is a identify function??
+
+Deterministic algorithms - y <- A(m)
+
+Randomized algorithms - They additionally take a random variable to generate a random output.
+
+y <- A(m;r) where r <- R - U
+
+implies the following
+
+y <- R - A(m)
+
+Independent events A & B implies Pr(A and B) = Pr(A).Pr(B)
+
+Two random variable X & Y are independent iff - for all elements in U Pr(X=a and Y=b) = Pr(X=a).Pr(Y=b)
+
+XOR of two strings = bitwise addition mod 2
+
+If Y is a random variable and X an independent uniform variable then Z:= Y XOR X is uniform Variable
+
+Birthday Paradox - Let r1, r2, r3, ... E U be independent random variables. When n = 1.2*Sqrt(|U|) the probability that two rs are same is > 0.5
+
+This is called collision probability. It converges very fast. E.g. for 1000 it can be 0.5 and for 3000 it can be 0.99

@@ -11,11 +11,11 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Quick Notes for Developers" />
 <meta property="og:description" content="Quick Notes for Developers" />
-<link rel="canonical" href="http://localhost:4000/documentation/others/cryptography.html" />
-<meta property="og:url" content="http://localhost:4000/documentation/others/cryptography.html" />
+<link rel="canonical" href="http://localhost:4000/documentation/others/adhoc.html" />
+<meta property="og:url" content="http://localhost:4000/documentation/others/adhoc.html" />
 <meta property="og:site_name" content="Objectary" />
 <script type="application/ld+json">
-{"description":"Quick Notes for Developers","@type":"WebPage","url":"http://localhost:4000/documentation/others/cryptography.html","headline":"Objectary","@context":"http://schema.org"}</script>
+{"description":"Quick Notes for Developers","@type":"WebPage","url":"http://localhost:4000/documentation/others/adhoc.html","headline":"Objectary","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -92,79 +92,22 @@
       </header>
       <section>
 
-      <h1 id="cryptography-basics">Cryptography Basics</h1>
+      <h1 id="adhoc-tricks">Adhoc Tricks</h1>
 
-<h2 id="digital-signature">Digital signature</h2>
+<h2 id="run-jd-decompiler-on-mac">Run JD decompiler on mac</h2>
 
-<h2 id="what-is-it-and-how-does-it-work">What is it and how does it work?</h2>
+<p>CD to the directory with the JD jar and then run the following command:</p>
 
-<p>It works on the principle of asymmetric encryption algoritm. Generally all the algorithms we think of intutively when encrypting is symmetric. When we were in school we could exchange encrypted messages by simply rotating alphabets - e.g. replace A with C; B with D; C with E and … Z with B. But what if someone comes to know how we are encrypting? If they know that we are simply rotating/moving an alphabet two places higher than they can decrypt it by moving each alphabet in encrypted text by moving them two places lower (moving C to A, etc.). Hence in symmetric encryption algorithms knowing the encrption key (the method/way encrption is done) jeopardizes everything.</p>
+<blockquote>
+  <p>java –add-opens java.base/jdk.internal.loader=ALL-UNNAMED –add-opens jdk.zipfs/jdk.nio.zipfs=ALL-UNNAMED -jar jd-gui-1.4.0.jar</p>
+</blockquote>
 
-<p>A digital signature is used to verify a message. It is basically an encrypted hash (encrypted by the private key of the sender) of the message. The recipient can check if the message was tampered with by hashing the received message and comparing this value with the decrypted signature. To decrypt the signature, the corresponding public key is required.</p>
+<h2 id="enable-unidentified-apps-to-run-enable-anywhere-option-in-mac">Enable unidentified apps to run, enable Anywhere option in MAC:</h2>
 
-<p>A digital certificate is used to bind public keys to persons or other entities. If there were no certificates, the signature could be easily be forged, as the recipient could not check if the public key belongs to the sender. The certificate itself is signed by a trusted third party, a Certificate Authority like VeriSign.</p>
-
-<p>Other points:</p>
-
-<p>I. Encrypt passwords using one-way techniques, this is, digests.</p>
-
-<p>II. Match input and stored passwords by comparing digests, not unencrypted strings.</p>
-
-<p>III. Use a salt containing at least 8 random bytes, and attach these random bytes, undigested, to the result.</p>
-
-<p>IV. Iterate the hash function at least 1,000 times.</p>
-
-<p>V. Prior to digesting, perform string-to-byte sequence translation using a fixed encoding, preferably UTF-8.</p>
-
-<h2 id="vi-finally-apply-base64-encoding-and-store-the-digest-as-an-us-ascii-character-string">VI. Finally, apply BASE64 encoding and store the digest as an US-ASCII character string.</h2>
-<p>Ready made java api - jasypt
-——————–
-MD5 is of not much use because it does not use salt.
-——————–
-Use filters in J2EE for authenticating the users everytime a request is made.</p>
-
-<p>Create a class which implements Filter class. This should have the methods - doFilter, init and destroy.</p>
-
-<filter>
-    <filter-name>UserAuthFilter</filter-name>
-    <filter-class>com.servlet.filter.UserAuthFilter </filter-class>
-    <init-param>
-      <param-name>avoid-urls</param-name>
-      <param-value>/login.jsp,/static.jsp</param-value>
-    </init-param>
-  </filter>
-<filter-mapping>
-    <filter-name>UserAuthFilter</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>
-
-<hr />
-<h2 id="term">Term</h2>
-
-<p>E - Encrption Algo
-D - Decreption Algo
-M - Message space
-C - Cypher Text
-K - Key Space</p>
-
-<h2 id="perfect-secrecy">Perfect Secrecy</h2>
-
-<p>For any given c, the following should hold for all messages in M:</p>
-
-<p>Probability of m0 being original text is same as m1 being original text. This boils down that the probability should be constant.</p>
-
-<p>Bad new lemma - Perfect Secrecy is only possible if the length of c is same or more than the length of m.</p>
-
-<h2 id="how-to-make-it-efficient">How to make it efficient?</h2>
-
-<p>As noted above, it is not useful to have perfect secrecy as it will demand long key length</p>
-
-<p>This requires the concept of Pseudo-Random-Generator</p>
-
-<p>G : {0,1}^s -&gt; {0,1}^n</p>
-
-<p>n should be very large than s and the result should look random.</p>
-
+<blockquote>
+  <p>sudo spctl –master-disable
+sudo spctl –master-enable</p>
+</blockquote>
 
 
       </section>
@@ -191,9 +134,9 @@ K - Key Space</p>
   *  https://disqus.com/admin/universalcode/#configuration-variables
   */
   var disqus_config = function () {
-    this.page.url = "http://localhost:4000/documentation/others/cryptography.html";
+    this.page.url = "http://localhost:4000/documentation/others/adhoc.html";
     this.page.identifier = "" ||
-                           "http://localhost:4000/documentation/others/cryptography.html";
+                           "http://localhost:4000/documentation/others/adhoc.html";
   }
   function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');
