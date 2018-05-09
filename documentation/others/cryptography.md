@@ -58,6 +58,9 @@ G : {0,1}^s -> {0,1}^n
 n should be very large than s and the result should look random.
 
 -----------
+
+Origin > Ceasar > Poly > One time pad
+
 Terminology
 
 Universe (U) - Set of elements - Generally, it contains all the possible binary numbers constraint by a particular length of the number - e.g. {0,1}^n
@@ -101,3 +104,29 @@ If Y is a random variable and X an independent uniform variable then Z:= Y XOR X
 Birthday Paradox - Let r1, r2, r3, ... E U be independent random variables. When n = 1.2*Sqrt(|U|) the probability that two rs are same is > 0.5
 
 This is called collision probability. It converges very fast. E.g. for 1000 it can be 0.5 and for 3000 it can be 0.99
+---------
+Symetric Cipher defined over K(key), M(Message), C(Cypher) is a pair of efficient algo E(Encryption) and D(Decryption) such that:
+
+E:KxM -> C
+D:KxC -> M
+
+E is often randomized while D is Deterministic
+-------
+One Time Pad - Key is of same length as that of message. The cypher is also of the same length
+
+Simple example:
+C = E(K,M) = K XOR M
+
+It works because D(E(K,M)) = M
+
+Shannon's Theorem - A cypher has perfect secrecy if cypher reveals no info about message. Following is the mathematical definition
+Pr[E(k,m0) = c] = Pr[E(k,m1) = c] This means that based on message m the probability of original message being m0 or m1 should exactly be the same.
+No cypher text only attack possible on such algorithms
+
+OTP has perfect Secrecy
+Proof
+Pr(E(k,m) = c) = 1/|U| - this is because given k & m only one c is possible or rather given c and k only one message is possible.
+
+But issue with OTP is that the key size is same as message. So why not send the message the same way you are sending the key?
+
+Shannon proved that for the perfect secrecy the length of the key should be greater than or equal to the message length. (The number of keys should be equal to or more than the number of possible messages)
