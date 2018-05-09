@@ -49,4 +49,29 @@ Create a class which implements Filter class. This should have the methods - doF
   </filter-mapping>
 
 ---------------------
+## Term
+
+E - Encrption Algo
+D - Decreption Algo
+M - Message space
+C - Cypher Text
+K - Key Space
+
+## Perfect Secrecy
+
+For any given c, the following should hold for all messages in M:
+
+Probability of m0 being original text is same as m1 being original text. This boils down that the probability should be constant.
+
+Bad new lemma - Perfect Secrecy is only possible if the length of c is same or more than the length of m.
+
+## How to make it efficient?
+
+As noted above, it is not useful to have perfect secrecy as it will demand long key length
+
+This requires the concept of Pseudo-Random-Generator
+
+G : {0,1}^s -> {0,1}^n
+
+n should be very large than s and the result should look random.
 

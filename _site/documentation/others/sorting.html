@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+<!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Objectary | Quick Notes for Developers</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Objectary" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Quick Notes for Developers" />
+<meta property="og:description" content="Quick Notes for Developers" />
+<link rel="canonical" href="http://localhost:4000/documentation/others/sorting.html" />
+<meta property="og:url" content="http://localhost:4000/documentation/others/sorting.html" />
+<meta property="og:site_name" content="Objectary" />
+<script type="application/ld+json">
+{"description":"Quick Notes for Developers","@type":"WebPage","url":"http://localhost:4000/documentation/others/sorting.html","headline":"Objectary","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <a href=""> <h1 class="siteTitle">Objectary</h1> </a>
+        <p class="siteDescription">Quick Notes for Developers</p>
+
+        
+        
+            <div class="sidebarTopics">Salesforce</div>
+              <ul>
+                
+                  <li><a href="/documentation/Salesforce/about.html">Hello World in Salesforce</a></li>
+                
+              </ul>
+              <hr class="horizontalLine">
+          
+            <div class="sidebarTopics">Developer's Toolkit</div>
+              <ul>
+                
+                  <li><a href="/documentation/toolkit/unix.html">Basic Unix Commands</a></li>
+                
+              </ul>
+              <hr class="horizontalLine">
+          
+            <div class="sidebarTopics">Other Topics from Computer Science</div>
+              <ul>
+                
+                  <li><a href="/documentation/others/cryptography.html">Cryptography</a></li>
+                
+              </ul>
+              <hr class="horizontalLine">
+          
+            <div class="sidebarTopics">Google Code Jam</div>
+              <ul>
+                
+                  <li><a href="/documentation/codejam/what.html">What is it?</a></li>
+                
+                  <li><a href="/documentation/codejam/solutions.html">Solutions</a></li>
+                
+              </ul>
+              <hr class="horizontalLine">
+          
+          <div class="sidebarTopics">All Posts</div>
+          
+          <table style="width: 120px;margin-left: 24px;;margin-top:100px;">
+    <tr>
+        <td style="border-bottom: none;" class="socialCell">
+            <a href="https://www.linkedin.com/in/sfdckhalidansari/" title="LinkedIn" class="no-mark-external"> <span class="icon icon-linkedin2"></span></a>
+        </td>
+        <td class="socialCell" style="border-bottom: none;">
+            <a href="https://stackoverflow.com/users/2226577/khalid-ansari" title="StackOverflow" class="no-mark-external"> <span class="icon icon-stackoverflow"></span></a>
+        </td>
+        <td class="socialCell" style="border-bottom: none;">
+            <a href="https://github.com/Khalidansari" title="GitHub" class="no-mark-external"> <span class="icon icon-github"></span></a>
+        </td>
+        <td class="socialCell" style="border-bottom: none;">
+            <a href="mailto:khalidansari@gmail.com" title="EMail" class="no-mark-external"> <span class="icon icon-mail"></span></a>
+        </td>
+    </tr>
+</table>
+
+        
+      </header>
+      <section>
+
+      <h1 id="sorting">Sorting</h1>
+
+<p>Sorting has been of interest since the old times but one of the first algorithms were developed in 1950s. Sorting a list of elements involes reordering the elements in a particular order e.g. non-decreasing or non-increasing. We have to use words like ‘non-decreasing’ or ‘non-increasing’ instead of simply saying ‘increasing’ or ‘decreasing’ because it is better to assume that the input can have multiple elements with same value e.g. 10 13 11 20 12 13 14 13.</p>
+
+<p>There are various ways developed over time to sort but they all fall in two broad categories - comparison sort and counting sort.</p>
+
+<p>For all general purpose it will be considered from now on that we want to sort the list in non-decreasing order.</p>
+
+<h2 id="bubble-sort">Bubble Sort</h2>
+
+<p>Pick the first element and compare with the second. If the first is smaller or equal to the second then do nothing else swap them. Then compare the second and third and do the same thing which we did in previous step. Then compare third and fouth. Keep on doing that till you reach the end. If you notice the elements might not be sorted still because in a way we have just ensured the largest element bubbles to the end. We will have to run the whole process again to get the second largest element just before the largest. We need to keep doing this N times to sort the elements where N is the number of elements.</p>
+
+<p>E.g.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Inital State</th>
+      <th>New Updated State</th>
+      <th>Logical Steps</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span style="color:#006d51;font-weight:bold">7 8</span> 9 3 4 5 1 2 7 4</td>
+      <td><span style="color:#006d51;font-weight:bold">7 8</span> 9 3 4 5 1 2 7 4</td>
+      <td>Compare first and second elements. As first is not larger than second, do nothing</td>
+    </tr>
+    <tr>
+      <td>7 <span style="color:#006d51;font-weight:bold">8 9</span> 3 4 5 1 2 7 4</td>
+      <td>7 <span style="color:#006d51;font-weight:bold">8 9</span> 3 4 5 1 2 7 4</td>
+      <td>Compare second and third elements. As second is not larger than third, do nothing</td>
+    </tr>
+    <tr>
+      <td>7 8 <span style="color:#006d51;font-weight:bold">9 3</span> 4 5 1 2 7 4</td>
+      <td>7 8 <span style="color:#006d51;font-weight:bold">3 9</span> 4 5 1 2 7 4</td>
+      <td>Compare third and fourth elements. As third is larger than fourth swap them</td>
+    </tr>
+    <tr>
+      <td>7 8 3 <span style="color:#006d51;font-weight:bold">9 4</span> 5 1 2 7 4</td>
+      <td>7 8 3 <span style="color:#006d51;font-weight:bold">4 9</span> 5 1 2 7 4</td>
+      <td>Compare fourth and fifth elements. As fourth is larger than fifth swap them</td>
+    </tr>
+    <tr>
+      <td>7 8 3 4 <span style="color:#006d51;font-weight:bold">9 5</span> 1 2 7 4</td>
+      <td>7 8 3 4 <span style="color:#006d51;font-weight:bold">5 9</span> 1 2 7 4</td>
+      <td>Compare fifth and sixth elements. As fifth is larger than sixth swap them</td>
+    </tr>
+    <tr>
+      <td>7 8 3 4 5 <span style="color:#006d51;font-weight:bold">9 1</span> 2 7 4</td>
+      <td>7 8 3 4 5 <span style="color:#006d51;font-weight:bold">1 9</span> 2 7 4</td>
+      <td>Compare sixth and seventh elements. As sixth is larger than seventh swap them</td>
+    </tr>
+    <tr>
+      <td>7 8 3 4 5 1 <span style="color:#006d51;font-weight:bold">9 2</span> 7 4</td>
+      <td>7 8 3 4 5 1 <span style="color:#006d51;font-weight:bold">2 9</span> 7 4</td>
+      <td>Compare seventh and eigth elements. As seventh is larger than eigth swap them</td>
+    </tr>
+    <tr>
+      <td>7 8 3 4 5 1 2 <span style="color:#006d51;font-weight:bold">9 7</span> 4</td>
+      <td>7 8 3 4 5 1 2 <span style="color:#006d51;font-weight:bold">7 9</span> 4</td>
+      <td>Compare eigth and ninth elements. As eigth is larger than ninth swap them</td>
+    </tr>
+    <tr>
+      <td>7 8 3 4 5 1 2 7 <span style="color:#006d51;font-weight:bold">9 4</span></td>
+      <td>7 8 3 4 5 1 2 7 <span style="color:#006d51;font-weight:bold">4 9</span></td>
+      <td>Compare ninth and tenth elements. As ninth is larger than eigth swap them</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The above is one pass over the list. If you notice, it bubbled (9), which was the largest element in the list, to the end of the list. Similarily, the second pass will bubble the second largest element (8) just before (9) and the third pass will bubble (7) just before the element (8). As said earlier, in worst case, we need to perform the above steps a total of N time where N is the number of elements. If a pass does not change the list, it means the list is sorted now and we can stop.</p>
+
+<h3 id="space-complexity">Space Complexity</h3>
+
+<p>As it processes the list in place (It does not take the elements and put them in a separate list to process) the space used is N + 1. N is to store N elements and 1 for swapping (to hold an element temporarily).</p>
+
+<h3 id="time-complexity">Time Complexity</h3>
+
+<p>In the worst case the list will be in decreasing order. So we will be doing N comparison in one pass and we have to make N passes in total. Which equals  <script type="math/tex">N\times N = N^2</script>. Hence worst case order is <script type="math/tex">N^2</script>. You might be thinking but I don’t have to do N comparisons for all passes. For example just before the last pass, everything in the list is sorted except the first two elements. So running the last pass will take only one comparison. So let us try to find the exact number of steps to sort a list in worst case:</p>
+
+<p>Pass 1 = N - 1 steps</p>
+
+<p>Pass 2 = N - 2 steps</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>Pass N - 1 = 1 step</p>
+
+<p>Total Steps = Sum of integers from 1 to (N - 1) = <script type="math/tex">\frac{(N - 1) \times (N)}{2} = \frac{N^2}{2} + \frac{N}{2}</script> = <script type="math/tex">O(N^2)</script></p>
+
+<p>What the hell is this last step? Basically what it means is that when N is really large (imagine millions), the total is not much contributed by <script type="math/tex">\frac{N}{2}</script> as compared to what is contributed by <script type="math/tex">\frac{N^2}{2}</script>. Hey wait! We even removed the 2 from the denominator. What happened there? That is because we are interested in the order and not the exact amount. Okay, consider this. Lets say a computer program used to take 0.1 second to complete. You made some changes to the program which resulted in slowing down the execution time. What will worry you more - Time taken by a computer program to complete execution increases by a factor of 2 = 0.2? Or, when it changes by a factors 100 = 10 seconds. When we try to analyze alogirthms at a very coarse level, which generally is the case, we do what we did in that live above. It is called as big order notation. In our case of bubble sort, we will say that the worst case = <script type="math/tex">O(N^2)</script></p>
+
+<p>Big O = For large enough N the big O function should approach original O function</p>
+
+<p>Small O = Same as above. Additionally the following should be true for all values of N
+f(x)</p>
+
+<p>Binary Tree = each node can have two children, one child or none.</p>
+
+<p>K-Ary Tree = Generalization on binary tree. They can have any number of children.</p>
+
+<p>B Tree = a K-Ary Tree which is sorted at all times</p>
+
+<p>While can be used when the jump is not linear - hopping different lengths or moving back and forward.</p>
+
+<p>Insertion sort = How you sort cards. Insertion sort looks very similar to bubble but is better than it because it can stop current as soon as it finds the correct location of an element while in bubble sort it has to go till the end of the list anyways.</p>
+
+<p>Selection sort - get the minimum from remaining list and putting it at the right place in the sorted list. Performance same as bubble sort.</p>
+
+<p>counting sort = when range of values is close to the number of values. Assume the value as the index of the list</p>
+
+<p>radix sort - sort the list one by one on each digit of the number - Ones place then twos place and so on</p>
+
+<p>bucket sort - when the range is a lot more than what can be accomodated by counting sort but still it is possible to group numbers so that each group can be applied counting sort. E.g. 10 - 20 put in bucket 1 and apply counting sort. Put 20-30 in another bucket and sort them using counting sort. Finally merge all buckets.</p>
+
+<p>merge sort - assume each element a already merged list and then merge by pairs to finally produce a single list</p>
+
+<p>library sort - in insertion sort you insert an element and move all the right side elements to one place on the right. To avoid this it is better to leave space in between elements so that the right hand side elements are not required to be moved.</p>
+
+
+
+      </section>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+
+
+  
+  
+  <section class="comments">
+    <h2>Comments</h2>
+    
+  <div id="disqus_thread">
+    <button class="disqus-load" onClick="loadDisqusComments()">
+      Load Comments
+    </button>
+  </div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW
+  *  TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:s
+  *  https://disqus.com/admin/universalcode/#configuration-variables
+  */
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/documentation/others/sorting.html";
+    this.page.identifier = "" ||
+                           "http://localhost:4000/documentation/others/sorting.html";
+  }
+  function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//www-objectary-com.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  </script>
+  <noscript>
+    Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus</a>.
+  </noscript>
+
+
+
+  </section>
+
+  </body>
+</html>
