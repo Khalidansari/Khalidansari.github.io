@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+<!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Objectary | Quick Notes for Developers</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Objectary" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Quick Notes for Developers" />
+<meta property="og:description" content="Quick Notes for Developers" />
+<link rel="canonical" href="http://localhost:4000/documentation/others/maths.html" />
+<meta property="og:url" content="http://localhost:4000/documentation/others/maths.html" />
+<meta property="og:site_name" content="Objectary" />
+<script type="application/ld+json">
+{"description":"Quick Notes for Developers","@type":"WebPage","url":"http://localhost:4000/documentation/others/maths.html","headline":"Objectary","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <a href=""> <h1 class="siteTitle">Objectary</h1> </a>
+        <p class="siteDescription">Quick Notes for Developers</p>
+
+        
+        
+            <div class="sidebarTopics">Salesforce</div>
+              <ul>
+                
+                  <li><a href="/documentation/Salesforce/about.html">Hello World in Salesforce</a></li>
+                
+              </ul>
+              <hr class="horizontalLine">
+          
+            <div class="sidebarTopics">Developer's Toolkit</div>
+              <ul>
+                
+                  <li><a href="/documentation/toolkit/unix.html">Basic Unix Commands</a></li>
+                
+              </ul>
+              <hr class="horizontalLine">
+          
+            <div class="sidebarTopics">Other Topics from Computer Science</div>
+              <ul>
+                
+                  <li><a href="/documentation/others/cryptography.html">Cryptography</a></li>
+                
+              </ul>
+              <hr class="horizontalLine">
+          
+            <div class="sidebarTopics">Google Code Jam</div>
+              <ul>
+                
+                  <li><a href="/documentation/codejam/what.html">What is it?</a></li>
+                
+                  <li><a href="/documentation/codejam/solutions.html">Solutions</a></li>
+                
+              </ul>
+              <hr class="horizontalLine">
+          
+          <div class="sidebarTopics">All Posts</div>
+          
+          <table style="width: 120px;margin-left: 24px;;margin-top:100px;">
+    <tr>
+        <td style="border-bottom: none;" class="socialCell">
+            <a href="https://www.linkedin.com/in/sfdckhalidansari/" title="LinkedIn" class="no-mark-external"> <span class="icon icon-linkedin2"></span></a>
+        </td>
+        <td class="socialCell" style="border-bottom: none;">
+            <a href="https://stackoverflow.com/users/2226577/khalid-ansari" title="StackOverflow" class="no-mark-external"> <span class="icon icon-stackoverflow"></span></a>
+        </td>
+        <td class="socialCell" style="border-bottom: none;">
+            <a href="https://github.com/Khalidansari" title="GitHub" class="no-mark-external"> <span class="icon icon-github"></span></a>
+        </td>
+        <td class="socialCell" style="border-bottom: none;">
+            <a href="mailto:khalidansari@gmail.com" title="EMail" class="no-mark-external"> <span class="icon icon-mail"></span></a>
+        </td>
+    </tr>
+</table>
+
+        
+      </header>
+      <section>
+
+      <h1 id="mathematics">Mathematics</h1>
+
+<p>Types of numbers:</p>
+
+<ol>
+  <li>Real</li>
+  <li>Complex</li>
+  <li>Rational</li>
+  <li>Irrational</li>
+  <li>Algebraic (root of a polynomial)</li>
+  <li>Transcendental (Which are not algebraic)</li>
+</ol>
+
+<p>Important Theorem for Cryptography:</p>
+
+<ol>
+  <li>Chinese Remainder Theorem</li>
+  <li>Fermat’s Little Theorem</li>
+  <li>AKS</li>
+  <li>Theorems on Perfect Number</li>
+</ol>
+
+<h2 id="fermats-little-theorem">Fermat’s little Theorem</h2>
+<p>Although Fermat said that is it true only for prime numbers, it not not correct. It is true for pseudoprime numbers which pass the test but are composite.
+Testing for many value of 1 &lt; a &lt; p-1 helps establish more chances of it being a prime. However there is a special kind of pseudoprime called Carmichael number. This class of number passes all test for all a. So that is the problem with this test. Many a times the pseudoprime from this Theorem are simply called pseudoprime instead of adding the modifier of Fermat.</p>
+
+<p>Gauss formulaized modular operations in 1800</p>
+
+<p>congruences can be multiplied and added like ordinary maths but inverse is very different. For the same reason you can’t cancel numbers on the two sides like ordinary maths</p>
+
+<p>(You can only cancel the number k when it is coprime to N from Mod N or GCD(k,N) = 1)
+If the above is true then k.k’ is congruent to 1 Mod N</p>
+
+<p>GCD(k,N) = 1 implies sk + tN = 1 (Reversing steps of Euclidean Algo)</p>
+
+<p>Fermat’s primality test - Using fermat’s to predict if a number is prime. This is not a great method considering Carmichael numbers</p>
+
+<p>Miller-Rabin primality test - Uses Fermat’s little Theorem and the concept of square of 1 under mod N to predict a prime. This is better becasue each iteration has a chance of predicting the prime correctly by 1/4. So each iteration is acutally getting us closer to the solution unlike Fermat’s primality test.</p>
+
+<p>AKS Algo - it is the only known polynomial Deterministic algo for primality testing. It is stated as follows:</p>
+
+<p>p should divide all the coefficient in  (X-1)^p - (X^p-1)</p>
+
+<hr />
+<p>Gauss found the prime number distribution (n/logn)</p>
+
+<p>Riemann’s Zeta function - student of gauss created this. Euler found this too but only for real while riemann found it for complex number. Somehow zeta is closely related prime number.</p>
+
+<p>Diophantine equation - polynomial in 2 or more variables where we are seeking intergal solution</p>
+
+<h2 id="elliptic-curve---y2--x3--ax--b---take-two-rational-points-and-extend-the-line-both-ways-it-will-intersert-the-curve-again-at-3rd-point-this-will-be-rational-too">Elliptic Curve - y^2 = x^3 + ax + b - Take two rational points and extend the line both ways. It will intersert the curve again at 3rd point. This will be rational too.</h2>
+
+<p>GCD of two numbers is always a linear combination of those two numbers.</p>
+
+<p>a &amp; b can be found using extended Euclid algo</p>
+
+<p>if GCD is 1 then x and y are relatively prime</p>
+
+<p>inverse of a number in mod is (N+1)/2 - inverse is only possible if x and N are relatively prime</p>
+
+<p>Zn is the ring and Zn* is the set of elements which have a inverse</p>
+
+<p>Consistency of public key encryption is D(E(x)) = x</p>
+
+
+      </section>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+
+
+  
+  
+  <section class="comments">
+    <h2>Comments</h2>
+    
+  <div id="disqus_thread">
+    <button class="disqus-load" onClick="loadDisqusComments()">
+      Load Comments
+    </button>
+  </div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW
+  *  TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:s
+  *  https://disqus.com/admin/universalcode/#configuration-variables
+  */
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/documentation/others/maths.html";
+    this.page.identifier = "" ||
+                           "http://localhost:4000/documentation/others/maths.html";
+  }
+  function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//www-objectary-com.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  </script>
+  <noscript>
+    Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus</a>.
+  </noscript>
+
+
+
+  </section>
+
+  </body>
+</html>

@@ -7,14 +7,15 @@
 @import url('https://fonts.googleapis.com/css?family=Aladin|Amatic+SC|Amita|Architects+Daughter|Bad+Script|Berkshire+Swash|Bilbo+Swash+Caps|Caveat|Caveat+Brush|Cookie|Courgette|Covered+By+Your+Grace|Dancing+Script|Delius|Delius+Swash+Caps|Give+You+Glory|Gloria+Hallelujah|Great+Vibes|Handlee|Homemade+Apple|Indie+Flower|Itim|Jim+Nightshade|Julee|Just+Another+Hand|Kalam|Kaushan+Script|Loved+by+the+King|Lovers+Quarrel|Nanum+Brush+Script|Nanum+Pen+Script|Neucha|Pacifico|Pangolin|Patrick+Hand+SC|Permanent+Marker|Qwigley|Rancho|Reenie+Beanie|Sacramento|Satisfy|Sedgwick+Ave+Display|Shadows+Into+Light|Shadows+Into+Light+Two|Sue+Ellen+Francisco');
 
 body {
-  background-color: #f6f6f6;
+  background-color: #ffffff;
   padding:50px;
-  font: 14px/1.5 "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#000000;
+  /*font: 14px/1.5 "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-family:"open sans";
+  color:#001118;
   font-weight:300;
   //font-family: "open sans";
-  font-size: 15px;
-    line-height:28px;
+  font-size: 14px;
+  line-height:28px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -31,20 +32,20 @@ h1, h2, h3 {
 }
 
 h1 {
-    color: #000000;
-    font-weight: 300;
-    font-family: "open sans";
-    font-size: 50px;
-    padding-bottom: 40px;
-}
-
-h2 {
-    color: #000000;
+    color: #33444C;
     font-weight: 300;
     font-family: "open sans";
     font-size: 35px;
-    padding-top:40px;
-    padding-bottom:20px;
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: #33444C;
+    font-weight: 700;
+    font-family: "open sans";
+    font-size: 20px;
+    padding-top:20px;
+    padding-bottom:5px;
 }
 
 h3, h4, h5, h6 {
@@ -152,8 +153,8 @@ header {
 }
 
 .siteDescription {
-    
-   padding-bottom:50px;   
+
+   padding-bottom:50px;
    padding-left: 30px;
    color:#ffffff;
    font-family: "Architects Daughter";
@@ -161,7 +162,7 @@ header {
 }
 
 .horizontalLine {
-    
+
     border: 1px;
     background: #d0d0d0;
     width: 265px;
@@ -172,7 +173,7 @@ header {
     font-family: "PATRICK HAND SC";
     PADDING-BOTTOM: 0PX;
     padding-left: 30px;
-    padding-top: 65px; 
+    padding-top: 65px;
     color:#ffffff;
     font-size: 48px;
     text-transform: uppercase;
@@ -312,7 +313,7 @@ footer {
     font-variant: normal;
     text-transform: none;
     line-height: 1;
-    
+
     /* Enable Ligatures ================ */
     letter-spacing: 0;
     -webkit-font-feature-settings: "liga";

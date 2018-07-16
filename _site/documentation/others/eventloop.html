@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+<!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Objectary | Quick Notes for Developers</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Objectary" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Quick Notes for Developers" />
+<meta property="og:description" content="Quick Notes for Developers" />
+<link rel="canonical" href="http://localhost:4000/documentation/others/eventloop.html" />
+<meta property="og:url" content="http://localhost:4000/documentation/others/eventloop.html" />
+<meta property="og:site_name" content="Objectary" />
+<script type="application/ld+json">
+{"description":"Quick Notes for Developers","@type":"WebPage","url":"http://localhost:4000/documentation/others/eventloop.html","headline":"Objectary","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <a href=""> <h1 class="siteTitle">Objectary</h1> </a>
+        <p class="siteDescription">Quick Notes for Developers</p>
+
+        
+        
+            <div class="sidebarTopics">Salesforce</div>
+              <ul>
+                
+                  <li><a href="/documentation/Salesforce/about.html">Hello World in Salesforce</a></li>
+                
+              </ul>
+              <hr class="horizontalLine">
+          
+            <div class="sidebarTopics">Developer's Toolkit</div>
+              <ul>
+                
+                  <li><a href="/documentation/toolkit/unix.html">Basic Unix Commands</a></li>
+                
+              </ul>
+              <hr class="horizontalLine">
+          
+            <div class="sidebarTopics">Other Topics from Computer Science</div>
+              <ul>
+                
+                  <li><a href="/documentation/others/cryptography.html">Cryptography</a></li>
+                
+              </ul>
+              <hr class="horizontalLine">
+          
+            <div class="sidebarTopics">Google Code Jam</div>
+              <ul>
+                
+                  <li><a href="/documentation/codejam/what.html">What is it?</a></li>
+                
+                  <li><a href="/documentation/codejam/solutions.html">Solutions</a></li>
+                
+              </ul>
+              <hr class="horizontalLine">
+          
+          <div class="sidebarTopics">All Posts</div>
+          
+          <table style="width: 120px;margin-left: 24px;;margin-top:100px;">
+    <tr>
+        <td style="border-bottom: none;" class="socialCell">
+            <a href="https://www.linkedin.com/in/sfdckhalidansari/" title="LinkedIn" class="no-mark-external"> <span class="icon icon-linkedin2"></span></a>
+        </td>
+        <td class="socialCell" style="border-bottom: none;">
+            <a href="https://stackoverflow.com/users/2226577/khalid-ansari" title="StackOverflow" class="no-mark-external"> <span class="icon icon-stackoverflow"></span></a>
+        </td>
+        <td class="socialCell" style="border-bottom: none;">
+            <a href="https://github.com/Khalidansari" title="GitHub" class="no-mark-external"> <span class="icon icon-github"></span></a>
+        </td>
+        <td class="socialCell" style="border-bottom: none;">
+            <a href="mailto:khalidansari@gmail.com" title="EMail" class="no-mark-external"> <span class="icon icon-mail"></span></a>
+        </td>
+    </tr>
+</table>
+
+        
+      </header>
+      <section>
+
+      <h1 id="event-loop">Event Loop</h1>
+
+<p>A primary concept used in Javascript. This is to avoid using threads because each thread has its own heap and stack. A thread blocks a lot of things.</p>
+
+<p>JS is a single threaded non blocking language.</p>
+
+<p>JS Architecture of V8 has the following 2 things only:</p>
+<ol>
+  <li>heap - memory allocation where actual data is saved</li>
+  <li>stack - maintains the execution queue (method stack sort of things)</li>
+</ol>
+
+<p>Extra are event loop and WEB API (provided by the OS) and they are not provided by JS.</p>
+
+<p>Amazing explanation by Philip Roberts
+https://www.youtube.com/watch?v=8aGhZQkoFbQ</p>
+
+<p>Please note that JS runs on many threads but the code is executed only on one thread. Other threads capture triggers, clicks, etc.</p>
+
+<p>e.g. setTimeout does not sit on the stack but moves to the callback queue/event loop. When the time comes, it is pushed back to the stack through task queue. Event loop just checks if there is anything in the task queue. If there is and the stack is empty, it will push the task to stack.</p>
+
+<p>Browser has a JS engine but also provides other things like webapis, etc.</p>
+
+<h1 id="js-promise">JS Promise</h1>
+
+<p>At first glance looks like a callback. Indeed the promise uses the callbacks behind the scene but they were added to provide better readability and intuition. It comes handy when callbacks are called within other callbacks (nested)</p>
+
+
+      </section>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+
+
+  
+  
+  <section class="comments">
+    <h2>Comments</h2>
+    
+  <div id="disqus_thread">
+    <button class="disqus-load" onClick="loadDisqusComments()">
+      Load Comments
+    </button>
+  </div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW
+  *  TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:s
+  *  https://disqus.com/admin/universalcode/#configuration-variables
+  */
+  var disqus_config = function () {
+    this.page.url = "http://localhost:4000/documentation/others/eventloop.html";
+    this.page.identifier = "" ||
+                           "http://localhost:4000/documentation/others/eventloop.html";
+  }
+  function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//www-objectary-com.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  </script>
+  <noscript>
+    Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus</a>.
+  </noscript>
+
+
+
+  </section>
+
+  </body>
+</html>
