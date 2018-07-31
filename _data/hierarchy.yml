@@ -1,18 +1,24 @@
 toc:
   - title: Salesforce
     subfolderitems:
-      - page: Hello World in Salesforce
+      - page: Hello World in Salesforces
         url: /documentation/Salesforce/about.html
+      - page: Einstein
+        url: /documentation/Salesforce/einstein.html
+      - page: Shield
+        url: /documentation/Salesforce/shield.html
   - title: Developer's Toolkit
     subfolderitems:
       - page: Basic Unix Commands
         url: /documentation/toolkit/unix.html
-  - title: Other Topics from Computer Science
+  - title: Other Topics from Computer Sciences
     subfolderitems:
       - page: Cryptographyy
         url: /documentation/others/cryptography.html
-        page: Web Services
-        url: /documentation/others/cryptography.html
+      - page: Web Services
+        url: /documentation/others/webservices.html
+      - page: Single-Sing-On
+        url: /documentation/others/sso.html
   - title: Google Code Jam
     subfolderitems:
       - page: What is it?
