@@ -9,4 +9,4 @@ title: About
 
 2. Data in recycle bin is still recalculated for sharing rules. So you might not want to keep the data too long in recycle bin.
 
-3. 
+3.

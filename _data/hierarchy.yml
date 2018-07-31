@@ -11,6 +11,8 @@ toc:
     subfolderitems:
       - page: Cryptography
         url: /documentation/others/cryptography.html
+        page: Web Services
+        url: /documentation/others/cryptography.html
   - title: Google Code Jam
     subfolderitems:
       - page: What is it?
