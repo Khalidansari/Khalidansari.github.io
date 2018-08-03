@@ -1,10 +1,10 @@
 title:  Objectary
-description: Quick Notes for Developers
+description: minimal from various topics
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal
 
 disqus:
     shortname: www-objectary-com
-    
+
 linenos: true

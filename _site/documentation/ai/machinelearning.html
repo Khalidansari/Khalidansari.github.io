@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
 <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Objectary | Quick Notes for Developers</title>
+<title>Machine Learning | Objectary</title>
 <meta name="generator" content="Jekyll v3.7.3" />
-<meta property="og:title" content="Objectary" />
+<meta property="og:title" content="Machine Learning" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Quick Notes for Developers" />
-<meta property="og:description" content="Quick Notes for Developers" />
-<link rel="canonical" href="http://localhost:4000/documentation/ai/machinelanguage.html" />
-<meta property="og:url" content="http://localhost:4000/documentation/ai/machinelanguage.html" />
+<meta name="description" content="minimal from various topics" />
+<meta property="og:description" content="minimal from various topics" />
+<link rel="canonical" href="http://localhost:4000/documentation/ai/machinelearning.html" />
+<meta property="og:url" content="http://localhost:4000/documentation/ai/machinelearning.html" />
 <meta property="og:site_name" content="Objectary" />
 <script type="application/ld+json">
-{"description":"Quick Notes for Developers","@type":"WebPage","url":"http://localhost:4000/documentation/ai/machinelanguage.html","headline":"Objectary","@context":"http://schema.org"}</script>
+{"description":"minimal from various topics","@type":"WebPage","url":"http://localhost:4000/documentation/ai/machinelearning.html","headline":"Machine Learning","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -31,7 +31,7 @@
     <div class="wrapper">
       <header>
         <a href=""> <h1 class="siteTitle">Objectary</h1> </a>
-        <p class="siteDescription">Quick Notes for Developers</p>
+        <p class="siteDescription">minimal from various topics</p>
 
         
         
@@ -39,6 +39,10 @@
               <ul>
                 
                   <li><a href="/documentation/Salesforce/about.html">Hello World in Salesforces</a></li>
+                
+                  <li><a href="/documentation/Salesforce/einstein.html">Einstein</a></li>
+                
+                  <li><a href="/documentation/Salesforce/shield.html">Shield</a></li>
                 
               </ul>
               <hr class="horizontalLine">
@@ -54,9 +58,9 @@
             <div class="sidebarTopics">Other Topics from Computer Sciences</div>
               <ul>
                 
-                  <li><a href="/documentation/others/cryptography.html">Cryptographyy</a></li>
+                  <li><a href="/documentation/others/cryptography.html">Cryptography</a></li>
                 
-                  <li><a href="/documentation/others/cryptographyy.html">Web Services</a></li>
+                  <li><a href="/documentation/others/webservices.html">Web Services</a></li>
                 
               </ul>
               <hr class="horizontalLine">
@@ -94,41 +98,31 @@
       </header>
       <section>
 
-      <h1 id="machine-language">Machine Language</h1>
+      <h1 id="machine-learning">Machine Learning</h1>
 
-<p>A Processor will have limited number of instruction sets which processor will take in binary form. This basic binary form is machine language. Machine language and Assembly language are nearly at the same level as the difference is that in machine language the instruction set is in binary form while in assembly language it is in label form.</p>
+<p>Various methods:</p>
 
-<p>Instruction Set:</p>
+<h2 id="neural-network">Neural Network</h2>
+
+<p>Started with Perceptron but could not be trained because the activation function was not differentiable. Research guided to make it differentiable but then some problem like XOR could not be solved. This was resolved by using more than one layer. Back propagation algorithm was developed to train such deeper nns.</p>
+
+<p>Learning can be done in various ways:</p>
+
 <ol>
-  <li>
-    <p>Arithmetic - 
-     ADD R2, R3         : Assign the value of register R2 + value of register R3 to R2
-     ADD R2, x            : Assign value of register R2 + value of x to register R2
-     ADD x, R2            : Not valid as we can assign the value to some register only
-     AND R4, R5, R2   : Assign result of bitwise and of R5 &amp; R2 to register R4
-     SUBR4 x               : Assign the value of register R4 - x to register R4
-     ADD x                   : add the value of x to a special register called “accumulator”</p>
-  </li>
-  <li>Memory Access - 
-     Direct addressing         : LOAD R1, 67     - This will load the value at memory 67 to register R1
-     Immediate addressing  : LOADI R1, 67     - This will load the value 67 to register R1
-     Indirect addressing       : LOAD* R1, R2   - Take the value of R1. Treat this as memory address and fetch the value from this address. The value here is address to a different location.
-                                                                        Get the value from there and push it to R1</li>
-  <li>
-    <p>Flow - 
-     Repetition                     : Jump backward
-     Conditional execution   : Jump forward
-     Subroutine Calling        : Jump to a separate code segment</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> To support the above there are two instruction sets provided - conditional jump and unconditional jump.
-
- Unconditional jump       : JMP foo              - Jump to label fooo unconditionally
-
- Conditional jump           : JGE R1, foo       - jump if R1&gt;=0
-                                      : JZR foo              - jump if result of previous command was 0
-</code></pre></div>    </div>
-  </li>
+  <li>Stochastic Gradient Descent - Run on training example one by one</li>
+  <li>Batch Gradient Descent - Run it on whole data set in a single execution</li>
+  <li>Mini Batch Gradient Descent - Divide the entire training set into mini batches or around 50-300 and run on them one by one.</li>
 </ol>
+
+<p>Each run is called an epoch. At every run we try to recalculate the gradient and the loss function. Generally the learning rate is manually adjusted but following can be used to automatically adjust it - Adam optimizer, AdaGrad and RMSProp.</p>
+
+<h2 id="random-forest">Random Forest</h2>
+
+<h2 id="decision-tree">Decision Tree</h2>
+
+<h2 id="linear-regression">Linear Regression</h2>
+
+<h2 id="others">Others</h2>
 
 
       </section>
@@ -155,9 +149,9 @@
   *  https://disqus.com/admin/universalcode/#configuration-variables
   */
   var disqus_config = function () {
-    this.page.url = "http://localhost:4000/documentation/ai/machinelanguage.html";
+    this.page.url = "http://localhost:4000/documentation/ai/machinelearning.html";
     this.page.identifier = "" ||
-                           "http://localhost:4000/documentation/ai/machinelanguage.html";
+                           "http://localhost:4000/documentation/ai/machinelearning.html";
   }
   function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');

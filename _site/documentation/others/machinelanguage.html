@@ -11,11 +11,11 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="minimal from various topics" />
 <meta property="og:description" content="minimal from various topics" />
-<link rel="canonical" href="http://localhost:4000/documentation/codejam/what.html" />
-<meta property="og:url" content="http://localhost:4000/documentation/codejam/what.html" />
+<link rel="canonical" href="http://localhost:4000/documentation/others/machinelanguage.html" />
+<meta property="og:url" content="http://localhost:4000/documentation/others/machinelanguage.html" />
 <meta property="og:site_name" content="Objectary" />
 <script type="application/ld+json">
-{"description":"minimal from various topics","@type":"WebPage","url":"http://localhost:4000/documentation/codejam/what.html","headline":"Objectary","@context":"http://schema.org"}</script>
+{"description":"minimal from various topics","@type":"WebPage","url":"http://localhost:4000/documentation/others/machinelanguage.html","headline":"Objectary","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -98,59 +98,41 @@
       </header>
       <section>
 
-      <h1 id="what-is-google-code-jam">What is Google Code Jam?</h1>
+      <h1 id="machine-language">Machine Language</h1>
 
-<p>It is an annual coding competition where developers participate to access their coding skills at a global level. It is also used by Google to recruit top developers. I doubt that anyone participates in it for money as you can see the prizes <a href="#prizes">below</a>.</p>
+<p>A Processor will have limited number of instruction sets which processor will take in binary form. This basic binary form is machine language. Machine language and Assembly language are nearly at the same level as the difference is that in machine language the instruction set is in binary form while in assembly language it is in label form.</p>
 
-<h2 id="rounds">Rounds</h2>
+<p>Instruction Set:</p>
+<ol>
+  <li>
+    <p>Arithmetic - 
+     ADD R2, R3         : Assign the value of register R2 + value of register R3 to R2
+     ADD R2, x            : Assign value of register R2 + value of x to register R2
+     ADD x, R2            : Not valid as we can assign the value to some register only
+     AND R4, R5, R2   : Assign result of bitwise and of R5 &amp; R2 to register R4
+     SUBR4 x               : Assign the value of register R4 - x to register R4
+     ADD x                   : add the value of x to a special register called “accumulator”</p>
+  </li>
+  <li>Memory Access - 
+     Direct addressing         : LOAD R1, 67     - This will load the value at memory 67 to register R1
+     Immediate addressing  : LOADI R1, 67     - This will load the value 67 to register R1
+     Indirect addressing       : LOAD* R1, R2   - Take the value of R1. Treat this as memory address and fetch the value from this address. The value here is address to a different location.
+                                                                        Get the value from there and push it to R1</li>
+  <li>
+    <p>Flow - 
+     Repetition                     : Jump backward
+     Conditional execution   : Jump forward
+     Subroutine Calling        : Jump to a separate code segment</p>
 
-<p>There are total of 5 rounds out of which the first 4 are online and the final is onsite. It is in Toronto this year, 2018. Last year it was in Ireland. Each programming problem is to be solved for two levels - level one is to solve them for a smaller range of numbers while level two is to solve them for large numbers</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> To support the above there are two instruction sets provided - conditional jump and unconditional jump.
 
-<h3 id="qualification-round">Qualification Round</h3>
+ Unconditional jump       : JMP foo              - Jump to label fooo unconditionally
 
-<p>Code Jam starts with an online qualification round held over a weekend where you get around 27 hours to complete. Coders are presented with 4 programming problems. Each of which has two levels. Top 1000 coders will be selected for the next round - Round 1.</p>
-
-<h3 id="round-1">Round 1</h3>
-
-<p>You get 3 chances to qualify this round - Round 1A, Round 1B and Round 1C. Each sub round is scheduled on someday of a weekend so if you miss 1A then you may appear for 1B the next weekend. Similarily, if you miss 1A and 1B that then you may appear for 1C the next weekend. Each sub round is presented with 3 programming problems and to qualify this round you need to be one of the 1000 top coders in either of these sub rounds. You get only 2.5 hours to complete each sub round.</p>
-
-<h3 id="round-2">Round 2</h3>
-
-<p>Around 3000 coders reach this round - 1000 from 1A, 1000 from 1B and 1000 from 1C. It is generally less than this as most of the winners of the sub rounds are common. You are presented with 4 programming problems which are to be solved in 2.5 hours. Top 500 coders qualify to participate in round 3 while the next top 1000 get a T-shirt.</p>
-
-<h3 id="round-3">Round 3</h3>
-
-<p>Around 500 coders reach this round. You are presented with 4 programming problems which are to be solved in 2.5 hours. Top 25 coders qualify to participate in the final round. Last year’s winner is also included in the finals making a total of 26 contestants. This round is onsite and runs for 4 hours.</p>
-
-<h2 id="prizes">Prizes</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Position</th>
-      <th>Prize</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1st Place</td>
-      <td>$15,000 USD</td>
-    </tr>
-    <tr>
-      <td>2nd Place</td>
-      <td>$2,000 USD</td>
-    </tr>
-    <tr>
-      <td>3rd Place</td>
-      <td>$1,000 USD</td>
-    </tr>
-    <tr>
-      <td>4th—26th Place</td>
-      <td>$100 USD</td>
-    </tr>
-  </tbody>
-</table>
-
+ Conditional jump           : JGE R1, foo       - jump if R1&gt;=0
+                                      : JZR foo              - jump if result of previous command was 0
+</code></pre></div>    </div>
+  </li>
+</ol>
 
 
       </section>
@@ -177,9 +159,9 @@
   *  https://disqus.com/admin/universalcode/#configuration-variables
   */
   var disqus_config = function () {
-    this.page.url = "http://localhost:4000/documentation/codejam/what.html";
+    this.page.url = "http://localhost:4000/documentation/others/machinelanguage.html";
     this.page.identifier = "" ||
-                           "http://localhost:4000/documentation/codejam/what.html";
+                           "http://localhost:4000/documentation/others/machinelanguage.html";
   }
   function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');

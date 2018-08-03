@@ -13,12 +13,10 @@ toc:
         url: /documentation/toolkit/unix.html
   - title: Other Topics from Computer Sciences
     subfolderitems:
-      - page: Cryptographyy
+      - page: Cryptography
         url: /documentation/others/cryptography.html
       - page: Web Services
         url: /documentation/others/webservices.html
-      - page: Single-Sing-On
-        url: /documentation/others/sso.html
   - title: Google Code Jam
     subfolderitems:
       - page: What is it?
