@@ -34,7 +34,7 @@
               <hr class="horizontalLine">
           {% endfor %}
           <div class="sidebarTopics">All Posts</div>
-          
+
           {% include social.html %}
 
         {% if site.show_downloads %}
@@ -52,7 +52,25 @@
       </section>
     </div>
     <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
+    <script>
 
+            (function() {
+              var pre = document.getElementsByTagName('pre'),
+                pl = pre.length;
+                console.log(pre);
+                console.log(pre.length);
+              for (var i = 0; i < pl; i++) {
+                pre[i].innerHTML = '<span class="line-number"></span>' + pre[i].innerHTML + '<span class="cl"></span>';
+                var num = pre[i].innerHTML.split(/\n/).length;
+                console.log('pre[i] ' + pre[i].innerHTML);
+                console.log('num ' + num);
+                for (var j = 0; j < (num-1); j++) {
+                  var line_num = pre[i].getElementsByTagName('span')[0];
+                  line_num.innerHTML += '<span>' + (j + 1) + '</span>';
+                }
+              }
+            })();
+    </script>
 
   {% if site.google_analytics %}
     <script>

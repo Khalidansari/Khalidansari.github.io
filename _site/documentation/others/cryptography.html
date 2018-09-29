@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
 <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Objectary | minimal from various topics</title>
+<title>Objectary | collecting topics from science and technology</title>
 <meta name="generator" content="Jekyll v3.7.3" />
 <meta property="og:title" content="Objectary" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="minimal from various topics" />
-<meta property="og:description" content="minimal from various topics" />
+<meta name="description" content="collecting topics from science and technology" />
+<meta property="og:description" content="collecting topics from science and technology" />
 <link rel="canonical" href="http://localhost:4000/documentation/others/cryptography.html" />
 <meta property="og:url" content="http://localhost:4000/documentation/others/cryptography.html" />
 <meta property="og:site_name" content="Objectary" />
 <script type="application/ld+json">
-{"description":"minimal from various topics","@type":"WebPage","url":"http://localhost:4000/documentation/others/cryptography.html","headline":"Objectary","@context":"http://schema.org"}</script>
+{"description":"collecting topics from science and technology","@type":"WebPage","url":"http://localhost:4000/documentation/others/cryptography.html","headline":"Objectary","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -31,7 +31,7 @@
     <div class="wrapper">
       <header>
         <a href=""> <h1 class="siteTitle">Objectary</h1> </a>
-        <p class="siteDescription">minimal from various topics</p>
+        <p class="siteDescription">collecting topics from science and technology</p>
 
         
         
@@ -76,7 +76,7 @@
               <hr class="horizontalLine">
           
           <div class="sidebarTopics">All Posts</div>
-          
+
           <table style="width: 120px;margin-left: 24px;;margin-top:100px;">
     <tr>
         <td style="border-bottom: none;" class="socialCell">
@@ -332,11 +332,77 @@ Pseudo random Permutation - F:K x X -&gt; X This function should be efficient; O
 
 <h1 id="padding-in-rsa-helps-read-more">Padding in RSA helps. Read more</h1>
 
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Something</span>
+<span class="cm">/*sometjng*/</span>
+
+<span class="c1">//Comments - #008200 !important</span>
+<span class="c1">//keywords - #006699 !important</span>
+<span class="c1">//strings - blue !important</span>
+<span class="c1">//gray !important</span>
+
+<span class="n">global</span> <span class="kd">class</span> <span class="nc">CatalogSharingBatch</span> <span class="kd">implements</span> <span class="n">Database</span><span class="o">.</span><span class="na">Batchable</span><span class="o">&lt;</span><span class="n">sObject</span><span class="o">&gt;</span> <span class="o">{</span>
+
+    <span class="n">global</span> <span class="n">Database</span><span class="o">.</span><span class="na">QueryLocator</span> <span class="nf">start</span><span class="o">(</span><span class="n">Database</span><span class="o">.</span><span class="na">BatchableContext</span> <span class="n">BC</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="n">String</span> <span class="n">query</span> <span class="o">=</span> <span class="err">'</span><span class="n">SELECT</span> <span class="n">Id</span> <span class="n">FROM</span> <span class="n">Contact</span> <span class="n">WHERE</span> <span class="n">Catalog_Sharing_Completed__c</span> <span class="o">=</span> <span class="kc">false</span><span class="err">'</span><span class="o">;</span>
+
+        <span class="k">if</span><span class="o">(</span><span class="n">Test</span><span class="o">.</span><span class="na">isRunningTest</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">query</span> <span class="o">+=</span> <span class="err">'</span> <span class="n">LIMIT</span> <span class="mi">1</span><span class="err">'</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="k">return</span> <span class="n">Database</span><span class="o">.</span><span class="na">getQueryLocator</span><span class="o">(</span><span class="n">query</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="n">global</span> <span class="kt">void</span> <span class="nf">execute</span><span class="o">(</span><span class="n">Database</span><span class="o">.</span><span class="na">BatchableContext</span> <span class="n">BC</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">sObject</span><span class="o">&gt;</span> <span class="n">scope</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="n">Set</span><span class="o">&lt;</span><span class="n">Id</span><span class="o">&gt;</span> <span class="n">contactIds</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">Id</span><span class="o">&gt;();</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">Id</span><span class="o">,</span> <span class="n">Contact</span><span class="o">&gt;</span> <span class="n">contactMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">Id</span><span class="o">,</span> <span class="n">Contact</span><span class="o">&gt;();</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">Contact</span><span class="o">&gt;</span> <span class="n">contactsToBeUpdated</span> <span class="o">=</span> <span class="k">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Contact</span><span class="o">&gt;();</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="n">Contact</span> <span class="n">cont</span> <span class="o">:</span> <span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Contact</span><span class="o">&gt;)</span><span class="n">scope</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">contactIds</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">cont</span><span class="o">.</span><span class="na">Id</span><span class="o">);</span>
+            <span class="n">contactMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">cont</span><span class="o">.</span><span class="na">Id</span><span class="o">,</span> <span class="n">cont</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">Id</span><span class="o">,</span> <span class="n">User</span><span class="o">&gt;</span> <span class="n">userMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">Id</span><span class="o">,</span> <span class="n">User</span><span class="o">&gt;([</span><span class="n">SELECT</span> <span class="n">Id</span><span class="o">,</span> <span class="n">ContactId</span> <span class="n">FROM</span> <span class="n">User</span> <span class="n">WHERE</span> <span class="n">isActive</span><span class="o">=</span> <span class="kc">true</span> <span class="n">AND</span> <span class="n">ContactId</span> <span class="n">IN</span> <span class="o">:</span> <span class="n">contactIds</span><span class="o">]);</span>
+
+        <span class="n">ParticipantCatalogSharingManager</span><span class="o">.</span><span class="na">performSharingOnUserCreation</span><span class="o">(</span><span class="n">userMap</span><span class="o">.</span><span class="na">keySet</span><span class="o">());</span>
+
+        <span class="k">for</span><span class="o">(</span><span class="n">User</span> <span class="n">u</span> <span class="o">:</span> <span class="n">userMap</span><span class="o">.</span><span class="na">values</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">contactMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="na">ContactId</span><span class="o">).</span><span class="na">Catalog_Sharing_Completed__c</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+            <span class="n">contactsToBeUpdated</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">contactMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="na">ContactId</span><span class="o">));</span>
+        <span class="o">}</span>
+
+        <span class="n">update</span> <span class="n">contactsToBeUpdated</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="n">global</span> <span class="kt">void</span> <span class="nf">finish</span><span class="o">(</span><span class="n">Database</span><span class="o">.</span><span class="na">BatchableContext</span> <span class="n">BC</span><span class="o">){}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
 
       </section>
     </div>
     <script src="/assets/js/scale.fix.js"></script>
+    <script>
 
+            (function() {
+              var pre = document.getElementsByTagName('pre'),
+                pl = pre.length;
+                console.log(pre);
+                console.log(pre.length);
+              for (var i = 0; i < pl; i++) {
+                pre[i].innerHTML = '<span class="line-number"></span>' + pre[i].innerHTML + '<span class="cl"></span>';
+                var num = pre[i].innerHTML.split(/\n/).length;
+                console.log('pre[i] ' + pre[i].innerHTML);
+                console.log('num ' + num);
+                for (var j = 0; j < (num-1); j++) {
+                  var line_num = pre[i].getElementsByTagName('span')[0];
+                  line_num.innerHTML += '<span>' + (j + 1) + '</span>';
+                }
+              }
+            })();
+    </script>
 
   
   

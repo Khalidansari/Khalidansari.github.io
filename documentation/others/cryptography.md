@@ -205,3 +205,52 @@ Passwords are stored using one way function (secure hash). You can only go in on
 
 Padding in RSA helps. Read more
 ================================
+
+```java
+//Something
+/*sometjng*/
+
+//Comments - #008200 !important
+//keywords - #006699 !important
+//strings - blue !important
+//gray !important
+
+global class CatalogSharingBatch implements Database.Batchable<sObject> {
+
+    global Database.QueryLocator start(Database.BatchableContext BC) {
+
+        String query = 'SELECT Id FROM Contact WHERE Catalog_Sharing_Completed__c = false';
+
+        if(Test.isRunningTest()) {
+            query += ' LIMIT 1';
+        }
+
+        return Database.getQueryLocator(query);
+    }
+
+    global void execute(Database.BatchableContext BC, List<sObject> scope) {
+
+        Set<Id> contactIds = new Set<Id>();
+        Map<Id, Contact> contactMap = new Map<Id, Contact>();
+        List<Contact> contactsToBeUpdated = new List<Contact>();
+
+        for (Contact cont : (List<Contact>)scope) {
+            contactIds.add(cont.Id);
+            contactMap.put(cont.Id, cont);
+        }
+
+        Map<Id, User> userMap = new Map<Id, User>([SELECT Id, ContactId FROM User WHERE isActive= true AND ContactId IN : contactIds]);
+
+        ParticipantCatalogSharingManager.performSharingOnUserCreation(userMap.keySet());
+
+        for(User u : userMap.values()) {
+            contactMap.get(u.ContactId).Catalog_Sharing_Completed__c = true;
+            contactsToBeUpdated.add(contactMap.get(u.ContactId));
+        }
+
+        update contactsToBeUpdated;
+    }
+
+    global void finish(Database.BatchableContext BC){}
+}
+```

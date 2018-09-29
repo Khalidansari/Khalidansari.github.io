@@ -9,13 +9,13 @@
 <meta name="generator" content="Jekyll v3.7.3" />
 <meta property="og:title" content="About" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="minimal from various topics" />
-<meta property="og:description" content="minimal from various topics" />
+<meta name="description" content="collecting topics from science and technology" />
+<meta property="og:description" content="collecting topics from science and technology" />
 <link rel="canonical" href="http://localhost:4000/documentation/Salesforce/about.html" />
 <meta property="og:url" content="http://localhost:4000/documentation/Salesforce/about.html" />
 <meta property="og:site_name" content="Objectary" />
 <script type="application/ld+json">
-{"description":"minimal from various topics","@type":"WebPage","url":"http://localhost:4000/documentation/Salesforce/about.html","headline":"About","@context":"http://schema.org"}</script>
+{"description":"collecting topics from science and technology","@type":"WebPage","url":"http://localhost:4000/documentation/Salesforce/about.html","headline":"About","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -31,7 +31,7 @@
     <div class="wrapper">
       <header>
         <a href=""> <h1 class="siteTitle">Objectary</h1> </a>
-        <p class="siteDescription">minimal from various topics</p>
+        <p class="siteDescription">collecting topics from science and technology</p>
 
         
         
@@ -76,7 +76,7 @@
               <hr class="horizontalLine">
           
           <div class="sidebarTopics">All Posts</div>
-          
+
           <table style="width: 120px;margin-left: 24px;;margin-top:100px;">
     <tr>
         <td style="border-bottom: none;" class="socialCell">
@@ -113,7 +113,25 @@
       </section>
     </div>
     <script src="/assets/js/scale.fix.js"></script>
+    <script>
 
+            (function() {
+              var pre = document.getElementsByTagName('pre'),
+                pl = pre.length;
+                console.log(pre);
+                console.log(pre.length);
+              for (var i = 0; i < pl; i++) {
+                pre[i].innerHTML = '<span class="line-number"></span>' + pre[i].innerHTML + '<span class="cl"></span>';
+                var num = pre[i].innerHTML.split(/\n/).length;
+                console.log('pre[i] ' + pre[i].innerHTML);
+                console.log('num ' + num);
+                for (var j = 0; j < (num-1); j++) {
+                  var line_num = pre[i].getElementsByTagName('span')[0];
+                  line_num.innerHTML += '<span>' + (j + 1) + '</span>';
+                }
+              }
+            })();
+    </script>
 
   
   
