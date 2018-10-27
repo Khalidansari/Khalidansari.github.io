@@ -11,11 +11,11 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Programming, Logic and Other IT Concepts" />
 <meta property="og:description" content="Programming, Logic and Other IT Concepts" />
-<link rel="canonical" href="http://localhost:4000/documentation/others/webservices.html" />
-<meta property="og:url" content="http://localhost:4000/documentation/others/webservices.html" />
+<link rel="canonical" href="http://localhost:4000/documentation/others/knowledge.html" />
+<meta property="og:url" content="http://localhost:4000/documentation/others/knowledge.html" />
 <meta property="og:site_name" content="Objectary" />
 <script type="application/ld+json">
-{"description":"Programming, Logic and Other IT Concepts","@type":"WebPage","url":"http://localhost:4000/documentation/others/webservices.html","headline":"Objectary","@context":"http://schema.org"}</script>
+{"description":"Programming, Logic and Other IT Concepts","@type":"WebPage","url":"http://localhost:4000/documentation/others/knowledge.html","headline":"Objectary","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -99,133 +99,37 @@
       </header>
       <section>
 
-      <h1 id="web-services">Web Services</h1>
+      <h1 id="what-is-knowledge">What is Knowledge</h1>
 
-<p>Parts of WSDL:
-    1. Definitions - namespace, self reference of wsdl
-    2. Messages - request &amp; response objects (with part &gt; parameter for request and return value for response)
-    3. PortType - Method name + request/response (Can be of four types - two types of one ways and two types of two ways)
-    4. Binding - How the request/response will be transmitted (SOAP, HTTP). Service ports are also called endpoints.
-    5. Types (optional) - Inside this element we define both simple type and complex types of data types.</p>
+<h2 id="scratching-the-surface">Scratching the Surface</h2>
 
-<p>Mapping
-    1. Operation &gt; Public methods
-    2. Complex type &gt; Inner class
-    3. TargetNameSpace &gt; Class name
-    4. WSDL port name &gt; Stub class which is a Inner class with invoke method</p>
+<p>Truth is objective but the knowledge of that truth is always related to conscious living being. To gain knowledge the conscious being has to go through the following steps:</p>
 
-<p>Joke: Authoring wsdl without any editors is like great punishment for misbehaving developers</p>
-
-<p>SOAP: Was created by Microsoft as a platform neutral alternative to COBRA, which is a platform specific technology. SOAP is transfer in a specific XML (soap header, soap body (payload), soap envelope(main node), soap fault(in case of error)). It is a XML based protocol.</p>
-
-<hr />
-<p>GET /StockPrice HTTP/1.1
-Host: example.org
-Content-Type: application/soap+xml; charset=utf-8
-Content-Length: nnn</p>
-
-<?xml version="1.0"?>
-<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:s="http://www.example.org/stock-service">
-   <env:Body>
-     <s:GetStockQuote>
-          <s:TickerSymbol>IBM</s:TickerSymbol>
-     </s:GetStockQuote>
-   </env:Body>
-</env:Envelope>
-
-<p>The response:</p>
-
-<p>HTTP/1.1 200 OK
-Content-Type: application/soap+xml; charset=utf-8
-Content-Length: nnn</p>
-
-<?xml version="1.0"?>
-<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:s="http://www.example.org/stock-service">
-   <env:Body>
-     <s:GetStockQuoteResponse>
-          <s:StockPrice>45.25</s:StockPrice>
-     </s:GetStockQuoteResponse>
-   </env:Body>
-</env:Envelope>
-<hr />
-<p>REST</p>
-
-<p>The request:</p>
-
-<p>GET /StockPrice/IBM HTTP/1.1
-Host: example.org
-Accept: text/xml
-Accept-Charset: utf-8</p>
-
-<p>The response:</p>
-
-<p>HTTP/1.1 200 OK
-Content-Type: text/xml; charset=utf-8
-Content-Length: nnn</p>
-
-<?xml version="1.0"?>
-<s:Quote xmlns:s="http://example.org/stock-service">
-     <s:TickerSymbol>IBM</s:TickerSymbol>
-     <s:StockPrice>45.25</s:StockPrice>
-</s:Quote>
-
-<hr />
-<p>JAXB - Java Architecture for XML Binding (Converts XML to Java classes and vice versa)
-JAXP - Java API for XML Parsing (DOM Constructs whole document in-memory while SAX does not and hence is faster)
-SAX - Simple API for XML 
-DOM - Document Object Model 
-XSLT - XML Stylesheet Language for Transformation
-XSD - XML Schema: Specification to write XMLs
-JAX-WS ( Moved towards document style WS from RPC)
-SOAP: Simple Object Access Protocol
-REST - Representational State Transfer
-JSON - Javascript Object Notation (Alternative to XML, created for better human readability)</p>
-
-<h2 id="note-use-rest-until-there-is-a-reason-to-use-soap">Note: Use REST until there is a reason to use SOAP</h2>
-<p>Differences:
-—————</p>
 <ol>
-  <li>SOAP uses only XML to exchange data while REST uses all types of data for exchange and uses standard HTTP. REST
- can use JSON also but SOAP can not.</li>
-  <li>SOAP can perform ACID transactions while REST cannot.</li>
-  <li>SOAP is good for enterprise apps while REST is good for Internet Apps.</li>
-  <li>REST has no WSDL interface</li>
-  <li>SOAP can work over HTTP, FTP, SMTP, JMS while REST can work only over HTTP</li>
+  <li>
+    <p>Perceive through their senses</p>
+  </li>
+  <li>
+    <p>Store the information gained through their senses in their brain or devices. Sometimes the storage can be long term while at other times it can be short term.</p>
+  </li>
+  <li>
+    <p>Analyze the stored information in brain using brain. Short term memory can be used to conceptually understand a complex idea and a long term memory to be retrieved later with other information.</p>
+  </li>
 </ol>
 
-<p>XSLT - Mainly used for applying data to XML template (e.g. generating PDF, HTML)
-            XSLT Input + XML Template &gt; XSLT Processor &gt; Document</p>
+<p>May be because the 1st step is perception through senses, we try to imagine abstract information by visualizing. We try to imagine ideas by having a visual representation of it somehow and at some level a sense of touch is involved as well. But its not very clear why don’t we imagine them using taste or smell. May be because those senses are not able to quantifiable to an extent.</p>
 
-<h2 id="web-service-protocol-stack">Web Service Protocol Stack</h2>
+<h2 id="philosophy-of-knowledge">Philosophy of Knowledge</h2>
+
+<p>The ideas here are taken from the book by Jennifer Nagel’s A Very Short Introduction of Knowledge.</p>
+
+<h2 id="ideas-which-can-be-pondered-upon-later">Ideas which can be pondered upon later</h2>
+
 <ol>
-  <li>Transport Protocol - HTTP</li>
-  <li>Messaging Protocol - SOAP</li>
-  <li>Description Protocol - WSDL</li>
-  <li>Discovery Protocol - UDDI - Used to search available APIs. Not widely adopted.</li>
+  <li>To prove something in maths we have to assume it is true or false and then build further logic based on that to see if we fall into a conflict. If so then the assumption was incorrect and hence we reach a conclusion. Similarly we might assume that brain can figure out everything about itself. May be this assumption can provide some idea into how brain works/knowledge structure works.</li>
 </ol>
 
-<p>REST - Uses existing methods of HTTP while SOAP allows user to create any method.</p>
-
-<h2 id="glue-and-wsif---are-tools-through-which-we-can-call-webservice-on-command-prompt-easily-without-doing-any-extra-work-it-download-wsdl-created-the-java-classes-compiles-them-and-then-call-the-service-all-by-itself">GLUE and WSIF - are tools through which we can call webservice on command prompt easily, without doing any extra work. It download wsdl, created the java classes, compiles them and then call the service all by itself.</h2>
-
-<p>SOAP Request example:</p>
-
-<p>POST /InStock HTTP/1.1
-Host: www.example.org
-Content-Type: application/soap+xml; charset=utf-8
-Content-Length: 299
-SOAPAction: “http://www.w3.org/2003/05/soap-envelope”</p>
-
-<?xml version="1.0"?>
-<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
-  <soap:Header>
-  </soap:Header>
-  <soap:Body>
-    <m:GetStockPrice xmlns:m="http://www.example.org/stock">
-      <m:StockName>IBM</m:StockName>
-    </m:GetStockPrice>
-  </soap:Body>
-</soap:Envelope>
+<p>Metonymy - Using different words for something similar. But this is not analogy. E.g. using press for the media organization or “pen is mightier than sword”.</p>
 
 
       </section>
@@ -270,9 +174,9 @@ SOAPAction: “http://www.w3.org/2003/05/soap-envelope”</p>
   *  https://disqus.com/admin/universalcode/#configuration-variables
   */
   var disqus_config = function () {
-    this.page.url = "http://localhost:4000/documentation/others/webservices.html";
+    this.page.url = "http://localhost:4000/documentation/others/knowledge.html";
     this.page.identifier = "" ||
-                           "http://localhost:4000/documentation/others/webservices.html";
+                           "http://localhost:4000/documentation/others/knowledge.html";
   }
   function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');

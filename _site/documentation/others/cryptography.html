@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
 <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Objectary | collecting topics from science and technology</title>
+<title>Objectary | Programming, Logic and Other IT Concepts</title>
 <meta name="generator" content="Jekyll v3.7.3" />
 <meta property="og:title" content="Objectary" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="collecting topics from science and technology" />
-<meta property="og:description" content="collecting topics from science and technology" />
+<meta name="description" content="Programming, Logic and Other IT Concepts" />
+<meta property="og:description" content="Programming, Logic and Other IT Concepts" />
 <link rel="canonical" href="http://localhost:4000/documentation/others/cryptography.html" />
 <meta property="og:url" content="http://localhost:4000/documentation/others/cryptography.html" />
 <meta property="og:site_name" content="Objectary" />
 <script type="application/ld+json">
-{"description":"collecting topics from science and technology","@type":"WebPage","url":"http://localhost:4000/documentation/others/cryptography.html","headline":"Objectary","@context":"http://schema.org"}</script>
+{"description":"Programming, Logic and Other IT Concepts","@type":"WebPage","url":"http://localhost:4000/documentation/others/cryptography.html","headline":"Objectary","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -30,8 +30,9 @@
   <body>
     <div class="wrapper">
       <header>
-        <a href=""> <h1 class="siteTitle">Objectary</h1> </a>
-        <p class="siteDescription">collecting topics from science and technology</p>
+        <!--<a href=""> <h1 class="siteTitle">Objectary</h1> </a>-->
+        <a href=""> <h1 class="siteTitle"><span style="font-weight:bold;color:#E91E63;">OBJECT</span><span>ARY</span></h1> </a>
+        <p class="siteDescription">Programming, Logic and Other IT Concepts</p>
 
         
         
@@ -332,7 +333,7 @@ Pseudo random Permutation - F:K x X -&gt; X This function should be efficient; O
 
 <h1 id="padding-in-rsa-helps-read-more">Padding in RSA helps. Read more</h1>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Something</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Something</span>
 <span class="cm">/*sometjng*/</span>
 
 <span class="c1">//Comments - #008200 !important</span>
@@ -340,44 +341,44 @@ Pseudo random Permutation - F:K x X -&gt; X This function should be efficient; O
 <span class="c1">//strings - blue !important</span>
 <span class="c1">//gray !important</span>
 
-<span class="n">global</span> <span class="kd">class</span> <span class="nc">CatalogSharingBatch</span> <span class="kd">implements</span> <span class="n">Database</span><span class="o">.</span><span class="na">Batchable</span><span class="o">&lt;</span><span class="n">sObject</span><span class="o">&gt;</span> <span class="o">{</span>
+<span class="nb">global</span> <span class="kd">class</span> <span class="nx">CatalogSharingBatch</span> <span class="kr">implements</span> <span class="nx">Database</span><span class="p">.</span><span class="nx">Batchable</span><span class="o">&lt;</span><span class="nx">sObject</span><span class="o">&gt;</span> <span class="p">{</span>
 
-    <span class="n">global</span> <span class="n">Database</span><span class="o">.</span><span class="na">QueryLocator</span> <span class="nf">start</span><span class="o">(</span><span class="n">Database</span><span class="o">.</span><span class="na">BatchableContext</span> <span class="n">BC</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nb">global</span> <span class="nx">Database</span><span class="p">.</span><span class="nx">QueryLocator</span> <span class="nx">start</span><span class="p">(</span><span class="nx">Database</span><span class="p">.</span><span class="nx">BatchableContext</span> <span class="nx">BC</span><span class="p">)</span> <span class="p">{</span>
 
-        <span class="n">String</span> <span class="n">query</span> <span class="o">=</span> <span class="err">'</span><span class="n">SELECT</span> <span class="n">Id</span> <span class="n">FROM</span> <span class="n">Contact</span> <span class="n">WHERE</span> <span class="n">Catalog_Sharing_Completed__c</span> <span class="o">=</span> <span class="kc">false</span><span class="err">'</span><span class="o">;</span>
+        <span class="nb">String</span> <span class="nx">query</span> <span class="o">=</span> <span class="s1">'SELECT Id FROM Contact WHERE Catalog_Sharing_Completed__c = false'</span><span class="p">;</span>
 
-        <span class="k">if</span><span class="o">(</span><span class="n">Test</span><span class="o">.</span><span class="na">isRunningTest</span><span class="o">())</span> <span class="o">{</span>
-            <span class="n">query</span> <span class="o">+=</span> <span class="err">'</span> <span class="n">LIMIT</span> <span class="mi">1</span><span class="err">'</span><span class="o">;</span>
-        <span class="o">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">Test</span><span class="p">.</span><span class="nx">isRunningTest</span><span class="p">())</span> <span class="p">{</span>
+            <span class="nx">query</span> <span class="o">+=</span> <span class="s1">' LIMIT 1'</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        <span class="k">return</span> <span class="n">Database</span><span class="o">.</span><span class="na">getQueryLocator</span><span class="o">(</span><span class="n">query</span><span class="o">);</span>
-    <span class="o">}</span>
+        <span class="k">return</span> <span class="nx">Database</span><span class="p">.</span><span class="nx">getQueryLocator</span><span class="p">(</span><span class="nx">query</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    <span class="n">global</span> <span class="kt">void</span> <span class="nf">execute</span><span class="o">(</span><span class="n">Database</span><span class="o">.</span><span class="na">BatchableContext</span> <span class="n">BC</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">sObject</span><span class="o">&gt;</span> <span class="n">scope</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nb">global</span> <span class="k">void</span> <span class="nx">execute</span><span class="p">(</span><span class="nx">Database</span><span class="p">.</span><span class="nx">BatchableContext</span> <span class="nx">BC</span><span class="p">,</span> <span class="nx">List</span><span class="o">&lt;</span><span class="nx">sObject</span><span class="o">&gt;</span> <span class="nx">scope</span><span class="p">)</span> <span class="p">{</span>
 
-        <span class="n">Set</span><span class="o">&lt;</span><span class="n">Id</span><span class="o">&gt;</span> <span class="n">contactIds</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">Id</span><span class="o">&gt;();</span>
-        <span class="n">Map</span><span class="o">&lt;</span><span class="n">Id</span><span class="o">,</span> <span class="n">Contact</span><span class="o">&gt;</span> <span class="n">contactMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">Id</span><span class="o">,</span> <span class="n">Contact</span><span class="o">&gt;();</span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">Contact</span><span class="o">&gt;</span> <span class="n">contactsToBeUpdated</span> <span class="o">=</span> <span class="k">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Contact</span><span class="o">&gt;();</span>
+        <span class="nb">Set</span><span class="o">&lt;</span><span class="nx">Id</span><span class="o">&gt;</span> <span class="nx">contactIds</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Set</span><span class="o">&lt;</span><span class="nx">Id</span><span class="o">&gt;</span><span class="p">();</span>
+        <span class="nb">Map</span><span class="o">&lt;</span><span class="nx">Id</span><span class="p">,</span> <span class="nx">Contact</span><span class="o">&gt;</span> <span class="nx">contactMap</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="o">&lt;</span><span class="nx">Id</span><span class="p">,</span> <span class="nx">Contact</span><span class="o">&gt;</span><span class="p">();</span>
+        <span class="nx">List</span><span class="o">&lt;</span><span class="nx">Contact</span><span class="o">&gt;</span> <span class="nx">contactsToBeUpdated</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="o">&lt;</span><span class="nx">Contact</span><span class="o">&gt;</span><span class="p">();</span>
 
-        <span class="k">for</span> <span class="o">(</span><span class="n">Contact</span> <span class="n">cont</span> <span class="o">:</span> <span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Contact</span><span class="o">&gt;)</span><span class="n">scope</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">contactIds</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">cont</span><span class="o">.</span><span class="na">Id</span><span class="o">);</span>
-            <span class="n">contactMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">cont</span><span class="o">.</span><span class="na">Id</span><span class="o">,</span> <span class="n">cont</span><span class="o">);</span>
-        <span class="o">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="nx">Contact</span> <span class="na">cont</span> <span class="p">:</span> <span class="p">(</span><span class="nx">List</span><span class="o">&lt;</span><span class="nx">Contact</span><span class="o">&gt;</span><span class="p">)</span><span class="nx">scope</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">contactIds</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">cont</span><span class="p">.</span><span class="nx">Id</span><span class="p">);</span>
+            <span class="nx">contactMap</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="nx">cont</span><span class="p">.</span><span class="nx">Id</span><span class="p">,</span> <span class="nx">cont</span><span class="p">);</span>
+        <span class="p">}</span>
 
-        <span class="n">Map</span><span class="o">&lt;</span><span class="n">Id</span><span class="o">,</span> <span class="n">User</span><span class="o">&gt;</span> <span class="n">userMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">Id</span><span class="o">,</span> <span class="n">User</span><span class="o">&gt;([</span><span class="n">SELECT</span> <span class="n">Id</span><span class="o">,</span> <span class="n">ContactId</span> <span class="n">FROM</span> <span class="n">User</span> <span class="n">WHERE</span> <span class="n">isActive</span><span class="o">=</span> <span class="kc">true</span> <span class="n">AND</span> <span class="n">ContactId</span> <span class="n">IN</span> <span class="o">:</span> <span class="n">contactIds</span><span class="o">]);</span>
+        <span class="nb">Map</span><span class="o">&lt;</span><span class="nx">Id</span><span class="p">,</span> <span class="nx">User</span><span class="o">&gt;</span> <span class="nx">userMap</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="o">&lt;</span><span class="nx">Id</span><span class="p">,</span> <span class="nx">User</span><span class="o">&gt;</span><span class="p">([</span><span class="nx">SELECT</span> <span class="nx">Id</span><span class="p">,</span> <span class="nx">ContactId</span> <span class="nx">FROM</span> <span class="nx">User</span> <span class="nx">WHERE</span> <span class="nx">isActive</span><span class="o">=</span> <span class="kc">true</span> <span class="nx">AND</span> <span class="nx">ContactId</span> <span class="na">IN</span> <span class="p">:</span> <span class="nx">contactIds</span><span class="p">]);</span>
 
-        <span class="n">ParticipantCatalogSharingManager</span><span class="o">.</span><span class="na">performSharingOnUserCreation</span><span class="o">(</span><span class="n">userMap</span><span class="o">.</span><span class="na">keySet</span><span class="o">());</span>
+        <span class="nx">ParticipantCatalogSharingManager</span><span class="p">.</span><span class="nx">performSharingOnUserCreation</span><span class="p">(</span><span class="nx">userMap</span><span class="p">.</span><span class="nx">keySet</span><span class="p">());</span>
 
-        <span class="k">for</span><span class="o">(</span><span class="n">User</span> <span class="n">u</span> <span class="o">:</span> <span class="n">userMap</span><span class="o">.</span><span class="na">values</span><span class="o">())</span> <span class="o">{</span>
-            <span class="n">contactMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="na">ContactId</span><span class="o">).</span><span class="na">Catalog_Sharing_Completed__c</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-            <span class="n">contactsToBeUpdated</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">contactMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">u</span><span class="o">.</span><span class="na">ContactId</span><span class="o">));</span>
-        <span class="o">}</span>
+        <span class="k">for</span><span class="p">(</span><span class="nx">User</span> <span class="na">u</span> <span class="p">:</span> <span class="nx">userMap</span><span class="p">.</span><span class="nx">values</span><span class="p">())</span> <span class="p">{</span>
+            <span class="nx">contactMap</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">u</span><span class="p">.</span><span class="nx">ContactId</span><span class="p">).</span><span class="nx">Catalog_Sharing_Completed__c</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+            <span class="nx">contactsToBeUpdated</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">contactMap</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">u</span><span class="p">.</span><span class="nx">ContactId</span><span class="p">));</span>
+        <span class="p">}</span>
 
-        <span class="n">update</span> <span class="n">contactsToBeUpdated</span><span class="o">;</span>
-    <span class="o">}</span>
+        <span class="nx">update</span> <span class="nx">contactsToBeUpdated</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    <span class="n">global</span> <span class="kt">void</span> <span class="nf">finish</span><span class="o">(</span><span class="n">Database</span><span class="o">.</span><span class="na">BatchableContext</span> <span class="n">BC</span><span class="o">){}</span>
-<span class="o">}</span>
+    <span class="nb">global</span> <span class="k">void</span> <span class="nx">finish</span><span class="p">(</span><span class="nx">Database</span><span class="p">.</span><span class="nx">BatchableContext</span> <span class="nx">BC</span><span class="p">){}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 

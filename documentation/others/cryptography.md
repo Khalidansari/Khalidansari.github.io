@@ -206,7 +206,7 @@ Passwords are stored using one way function (secure hash). You can only go in on
 Padding in RSA helps. Read more
 ================================
 
-```java
+```javascript
 //Something
 /*sometjng*/
 

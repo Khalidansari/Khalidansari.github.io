@@ -24,3 +24,5 @@ The ideas here are taken from the book by Jennifer Nagel's A Very Short Introduc
 ## Ideas which can be pondered upon later
 
 1. To prove something in maths we have to assume it is true or false and then build further logic based on that to see if we fall into a conflict. If so then the assumption was incorrect and hence we reach a conclusion. Similarly we might assume that brain can figure out everything about itself. May be this assumption can provide some idea into how brain works/knowledge structure works.
+
+Metonymy - Using different words for something similar. But this is not analogy. E.g. using press for the media organization or "pen is mightier than sword".
