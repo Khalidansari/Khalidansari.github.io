@@ -13,7 +13,7 @@ Truth is objective but the knowledge of that truth is always related to consciou
 
 3. Analyze the stored information in brain using brain. Short term memory can be used to conceptually understand a complex idea and a long term memory to be retrieved later with other information.
 
-May be because the 1st step is perception through senses, we try to imagine abstract information by visualizing. We try to imagine ideas by having a visual representation of it somehow and at some level a sense of touch is involved as well. But its not very clear why don't we imagine them using taste or smell. May be because those senses are not able to quantifiable to an extent.
+May be because the 1st step is perception through senses, we try to imagine abstract information by visualizing. We try to imagine ideas by having a visual representation of it somehow and at some level a sense of touch is involved as well. But its not very clear why don't we imagine them using taste or smell. May be because those senses are not quantifiable to an extent.
 
 
 ## Philosophy of Knowledge

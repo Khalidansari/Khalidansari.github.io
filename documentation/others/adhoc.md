@@ -100,9 +100,120 @@ const merged = [...one, ...two];
 // [ 1, 2, 3, 4, 5, 6 ]
 
 ## variadic functions
-
 Which can take variable number of arguments, even infinity. e.g. Math.max
 
 ## JS What is generator function function*
 
 ## What is ES6?
+
+## BFS - Breath First Search & DFS
+BFS - Search the nodes at same level before moving to the next level.
+DFS - Keep going to the last node in the same hiearchy. Then backtrak and go to neighbour
+
+## Priority queue
+Like a queue but can take priority of the element too.
+
+## maximum flow problem & maximum matching
+
+## Salesforce License categories
+
+Permissions are like locks and licenses are like ring of keys
+
+1. User License - Base permissions for a user. Only one per user.
+   a. Standard User
+      i. Salesforce - provides all functionality for internal users
+      ii. Knowledge Only - Manage articles and other Knowledge related information. No access to other Standard tabs.
+      iii. Identity - Identity for internal users
+      iv. External Identity - Identity for External users
+      v. Work.com only - to get access only to work.com and not salesforce.
+
+2. Permission Set License - Same as profile but can be assigned incrementally on user.
+3. Feature License - Generally can be assigned through a checkbox on user record or through some steps of configuration from setup
+4. Usage Based License -
+  a. Persistent - Number of users who can login to portal. You assign permission once and they can login as many times. These persist with user.
+  b. Non-persistent - Like credit card. How many records you can access per month (or yearly or it can be just once with no frequency)
+
+Lightning Platform license don't give permission on case but Salesforce User license does.
+
+Does not include Partner and customer portal licenses
+
+Chatter specific licenses - Chatter External, Chatter Free, and Chatter Only
+Chatter only if not available for new agreements. Salesforce suggest to take Lightining Plantform Starter User license.
+
+Community Specific licenses -
+1. Customer Community
+2. Customer Community Plus
+3. Partner Community
+4. Lightning External Apps
+5. Lightning External Apps Plus
+
+Salesforce license  = all crm functionality including accounts, cases, opps, leads, etc.
+Salesforce platform license = all core like account, contact but not cases, leads, etc.
+
+## About IP masking with CIDR notation
+
+Source: https://docs.apigee.com/api-platform/reference/policies/access-control-policy
+
+CIDR notation (Classless Inter-Domain Routing) is a way of indicating a range of IP addresses through masking. It applies to both IPv4 and IPv6. Here's how it works. We'll use IPv4 in our examples for simplicity.
+
+IP addresses are groups of numbers separated by periods. In binary terms, each group is a specific number of bits (8 for IPv4 and 16 for IPv6). The IPv4 address 10.20.30.40 looks like this in binary:
+
+00001010 . 00010100 . 00011110 . 00101000
+
+That's 4 groups of 8 bits, or 32 total bits. With CIDR, you can indicate a range by adding a /number (1-32) to the IP address, like this:
+
+10.20.30.40/16
+
+In this case, the 16 is the number you would use for the mask attribute value in this policy.
+
+This notation means, "Keep the first 16 bits exactly as is, the remaining bits can be anything."
+
+## Knight's tour
+
+Visiting all nodes by making a move of a knight. Special kind of hamiltonion cycle
+
+## Ore's theorem
+
+Sufficiently large graphs are hamiltonion
+
+## greedy algorithm
+
+Try to solve a sub problem at individual step and this will solve the whole problem
+
+## Bézout's identity
+
+if GDC(a,b) = d then there exits X and Y such that aX + bY = d
+
+
+## Chinese remainder theorem
+
+If one knows the remainders of the Euclidean division of an integer n by several integers, then one can determine uniquely the remainder of the division of n by the product of these integers, under the condition that the divisors are pairwise coprime.
+
+## Euclidean algorithm
+
+Find GDC of 102 and 38
+
+1. 102 % 38 = 26 => problem is reduced to finding GDC(26,38)
+2.  38 % 26 = 12
+3.  26 % 12 = 2
+4.  12 %  2 = 0
+
+Hence 2 is the GDC
+
+## Extended Euclidean algorithm
+
+Working the Euclidean algorithm backwords to get the X and Y in:
+
+aX + bY = GCD(a,b)
+
+## constructive proof
+
+Where while prooving you also calculate the answer
+
+## finding inverse of mod - a ^ (-1) mod N
+
+1. Simplest way - try all numbers (let b) from 1 to N so that a*b mod N = 1
+
+2. Efficient way - Using extended Euclidean algo to calculate inverse
+
+3. Euler Totient - applicable only on specific condition
