@@ -193,6 +193,8 @@ If one knows the remainders of the Euclidean division of an integer n by several
 
 Find GDC of 102 and 38
 
+GCD(a,b) = GCD(b, a-b) or faster will be following => GCD(b, a%b)
+
 1. 102 % 38 = 26 => problem is reduced to finding GDC(26,38)
 2.  38 % 26 = 12
 3.  26 % 12 = 2
@@ -206,6 +208,7 @@ Working the Euclidean algorithm backwords to get the X and Y in:
 
 aX + bY = GCD(a,b)
 
+This is imp as this can be used to get mod inverse of a number if a and b are coprime i.e. GCD(a,b) = 1
 ## constructive proof
 
 Where while prooving you also calculate the answer
@@ -217,3 +220,122 @@ Where while prooving you also calculate the answer
 2. Efficient way - Using extended Euclidean algo to calculate inverse
 
 3. Euler Totient - applicable only on specific condition
+
+## Sieve of Eratosthenes
+
+Write all numbers and mark all which are divisible by multiples of 2. Then pick next and do the same.
+
+## Segmented Sieve
+
+If the N is large then solving them usig sieve of Eratosthenes will be space consuming. So we break the range in smaller ranges or
+length sqroot of N and then solve each.
+
+## Fermat's little theorem
+
+if p is prime then:
+
+a^p is a mod p or a^p - a is a multiple of p or a^(p-1) is 1 mod p
+
+## Fermat primality test
+
+probalistic using fermat's little theorum for multiple as. Try using a few different 'a's which satisfy the equality. If they do then probablity is high that it is a prime. There are 'a's which do satisfy this test.
+
+## Euler's totient function (Euler's phi function)
+
+Number of integers less than 'n' which are relative prime to 'n'
+
+It is multiplicative
+
+## Bijection
+
+Exactly one to one mapping between two sets.
+
+## Lucas theorem
+
+## Miller–Rabin Primality Test
+
+## Reimann Hypothesis & Extended RH
+
+## Ring Theory
+
+Study of rings in which addition and multiplication are defined and have similar properties to those operations defined for the integers
+
+## Abelian group or commutative ring
+
+Set A => take two elements a & b => define an operation (let it be denoted by a dot) => Following should hold
+
+1. Closure - a.b should be in A
+2. Associativity - a.(b.c) = (a.b).c
+3. Identity element should be in A. Identity element e => a.e = e.a = a
+4. Inverse element in A. Inverse = b => a.b = b.a = e
+5. Commutative => a.b = b.a
+
+## Noncommutative ring or non-abelian group
+
+when group is not commutative.
+
+## Homology
+
+Mapping abelian groups with topological surfaces.
+
+## Bézout's identity
+
+ax + by = gcd(a,b)
+
+proof => gcd divides both a and b => ax + by is divisible by gcd => ax+by = k*GCD(a,b)
+
+
+## Greedy algorithm
+
+For some problems, making an optimal choice at every step might result in overall optimal choice. Not every problem can be solved greedily. They are more efficient than dynamic programming
+
+
+## Spanning tree
+
+A sub graph with minimum edges but all vertices. It has V-1 edges.
+
+## MST - Minimum Spanning Tree
+
+This concept is in case of weighted graphs. This is the spanning tree with least sum of all weights of its edges.
+
+## Dynamic programming
+
+Solving problems iteratively rather than recursively. we can use tabulation (solving sub problems first - bottom up) or memoization (top down - storing solved problems in memory to be reused)
+
+If a problem has optimal substructure then break it down and solve all sub problems. Store (memoize) the solution of the sub problems and use them through lookup when needed. It takes into account all subproblems before arriving at result while greedy method is assuming each step is linearly taking it closer to the final result. Check knapsack problem.
+
+E.g. find min number of coins whose value = X. There are plenty of each coin. Let the value of coins be 1,3,5,10.
+
+1. First you find this for value = 0
+2. Then find this for 1
+3. Then for 2
+4. Then for 3, etc.
+5. Keep updating at each step the optimal value. This can be used in the next step.
+
+Take another example of fibonacci calculation. Draw the graph of calculations and you will see some fib(n) multiple times. Dynamic programming will just store those and reuse than to calculate them again.
+
+It is still brute force but in a intelligent way you are trying to reduce it from exponential to polynomial.
+
+## Topological sort (Subproblem dependency DAG (Directed Acyclic Graph) )
+
+Figuring out order of subproblem dependency. E.g. in fibonacci we know that to calculate F(n) calculate f(n-1) and f(n-2) first. So it is a simple order but it might not be always the case.
+
+## Memoization is an issue in cyclic graphs
+
+
+## Backtracking
+
+
+## Brute-force
+
+## Self balancing trees (are mainly binary tree - each node can have at most 2 children) Also called sorted or ordered tree
+
+AVL & Red Black are most common - As the elements are deleted or added, the tree rebalances it self to keep the height minimum. These trees help in binary search of elements which is faster.
+
+Property => left child > parent node > right child
+
+## Theta of n
+
+Is the worst case ANALYSIS
+
+## 
