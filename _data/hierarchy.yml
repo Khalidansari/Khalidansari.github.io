@@ -7,6 +7,8 @@ toc:
         url: /documentation/Salesforce/einstein.html
       - page: Shield
         url: /documentation/Salesforce/shield.html
+      - page: ANT with Salesforce
+        url: /documentation/Salesforce/ANT with Salesforce.html
   - title: Developer's Toolkit
     subfolderitems:
       - page: Basic Unix Commands
@@ -23,3 +25,23 @@ toc:
         url: /documentation/codejam/what.html
       - page: Solutions
         url: /documentation/codejam/solutions.html
+  - title: Others
+    subfolderitems:
+      - page: Maths
+        url: /documentation/maths/maths.html
+      - page: Sorting
+        url: /documentation/maths/sorting.html
+      - page: Javascript Event Loop
+        url: /documentation/JavaScript/eventloop.html
+      - page: Machine Learning
+        url: /documentation/ai/machinelearning.html
+      - page: SSO
+        url: /documentation/others/sso.html
+      - page: Spring
+        url: /documentation/others/spring.html
+      - page: Machine Language
+        url: /documentation/others/machinelanguage.html
+      - page: Java
+        url: /documentation/others/java.html
+      - page: Knowledge
+        url: /documentation/others/knowledge.html        

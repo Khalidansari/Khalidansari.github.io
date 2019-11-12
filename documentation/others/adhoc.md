@@ -316,6 +316,12 @@ Take another example of fibonacci calculation. Draw the graph of calculations an
 
 It is still brute force but in a intelligent way you are trying to reduce it from exponential to polynomial.
 
+It needs two conditions - optimal substructure and overlapping subproblems.
+
+Optimal substructure - Let us take shortest path in a graph as a problem. If a > b has the shortest path p then any node 'n' on the path will have this property - shortest path from a > n is part of path p.
+
+overlapping subproblem - This can be taken care of by memoization. If overlap is not there then it is more like divide and conquer.
+
 ## Topological sort (Subproblem dependency DAG (Directed Acyclic Graph) )
 
 Figuring out order of subproblem dependency. E.g. in fibonacci we know that to calculate F(n) calculate f(n-1) and f(n-2) first. So it is a simple order but it might not be always the case.
@@ -336,6 +342,56 @@ Property => left child > parent node > right child
 
 ## Theta of n
 
-Is the worst case ANALYSIS
+Asymptotically equal. Same order is both lower as well as upper bound. No big or small.
 
-## 
+## Big O
+
+Asymptotically less than or equal to. Small o is "less than"
+
+## Big Omega
+
+Asymptotically greater than or equal to. Small omega is "greater than"
+
+## T(N)
+
+is used to demonstrate the amount of work needed to be done for calculating function for n
+
+## N vs NP
+
+N = Problems which can be solved in polynomial time. Also, given the solution, we can see if its correct or wrong in polynomial time.
+
+NP = Solution can be checked in polynomial.
+
+It is called Nondeterministic Polynomial. Which means we can only find non deterministic solutions of order of polynomial.
+
+NP Complete = Is a special class of NP problems which can all be converted to each other in polynomial time. They belong to NP class.
+
+NP Hard = If it is NP Complete but not NP.
+
+## Random Access Machine
+
+A machine which works on the basis of a giant table of indexes of stored words.
+
+e.g. Arrays in C language - a[]
+
+## Pointer Machine
+
+A machine which works on the basis of pointers to indexes. So you go from one word to another but not randomly jump.
+
+e.g. Object access in java - account.contact.Name
+
+## replace \r in files on mac osx
+
+tr -d '\r' < inputfile > output file
+
+## Using sed (Stream editor) commands - does not work on characters like \r which are not identified in macosx. Though they can be worked by some tricks but why use tricks when you have tr command (above)
+
+Normally
+sed -i 's/tobereplaced/replacedwith/g' filename
+
+On Mac
+sed -i '.bak' 's/tobereplaced/replacedwith/g' filename
+
+-i = in place changes (make changes in original file)
+s = replace
+g = globally and not just the first occurrence
