@@ -395,3 +395,7 @@ sed -i '.bak' 's/tobereplaced/replacedwith/g' filename
 -i = in place changes (make changes in original file)
 s = replace
 g = globally and not just the first occurrence
+
+## How DNS works
+
+Browser Cache > DNS Server configured in the browser (also called recursive DNS) > Root DNS > TLS (Top Level Server) one per com, org, etc. > Authoritative DNS Servers e.g. Amazon/godaddy/etc. > finally the IP for the domain.

@@ -15,4 +15,6 @@ Populating created date and created by during insert - Need to do it from setup.
 The history table of that object will still keep the created by and created date as the actual date and user who did it. So you can
 pull report on the records you inserted based on history table.
 
- 
+## force:refreshView - The Magic
+
+There is no way for standard and custom components to talk to each other. There is one caveat to that and that is refreshView. This is a app level event fired when the view of a component is refreshed. This applies to both custom and standard views. This event can be caught in a custom component too. If there are some values which are changed in standard component then we can in a way tag its refresh to a custom component's refresh and vice versa.
