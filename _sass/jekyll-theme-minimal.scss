@@ -173,7 +173,7 @@ header {
   margin-top: -58px;
   background-color:#111111;
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   /*border-right: 1px solid #e2e2e2;*/
 }
 
@@ -197,7 +197,7 @@ header {
     /*font-family: "play";*/
     font-family: "roboto";
     font-weight: 400;
-    PADDING-BOTTOM: 0PX;
+    PADDING-BOTTOM: 60PX;
     padding-left: 40px;
     padding-top: 40px;
     /*color:#9a2121;*/
