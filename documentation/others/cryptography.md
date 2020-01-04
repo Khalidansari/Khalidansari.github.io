@@ -203,6 +203,13 @@ Concept of witness
 
 Passwords are stored using one way function (secure hash). You can only go in one direction and not the other. This is unlike RSA which does provide a trapdoor for the other way. Adding salt helps (e.g.salt = username will make the password = password + username) Salt avoids rainbow attacks
 
+$$J(\theta) =\frac{1}{2m}
+[\sum^m_{i=1}(h_\theta(x^{(i)}) -
+y^{(i)})2 + \lambda\sum^n_{j=1}\theta^2_j$$
+
+- This
+- is
+
 Padding in RSA helps. Read more
 ================================
 
