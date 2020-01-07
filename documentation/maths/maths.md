@@ -19,6 +19,10 @@ Important Theorem for Cryptography:
 3. AKS
 4. Theorems on Perfect Number
 
+Commutative - Order when applying the operator does not matter: AxB = BxA
+Associative - Sequence of execution of operator does not matter: Ax(BxC) =(AxB)xC
+
+
 Fermat's little Theorem
 -----------------------
 Although Fermat said that is it true only for prime numbers, it not not correct. It is true for pseudoprime numbers which pass the test but are composite.
