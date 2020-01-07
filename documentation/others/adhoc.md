@@ -399,3 +399,9 @@ g = globally and not just the first occurrence
 ## How DNS works
 
 Browser Cache > DNS Server configured in the browser (also called recursive DNS) > Root DNS > TLS (Top Level Server) one per com, org, etc. > Authoritative DNS Servers e.g. Amazon/godaddy/etc. > finally the IP for the domain.
+
+## Abstraction
+
+Similar to generalization where we take a complex idea and capture essential details from it so that it can be looked at in a summary. Mostly this abstract model will not just be specific to one idea but to a category of similar ideas. It is like F=MA in physics instead of having different equations for different objects and different slopes. To get generic summary from complex ideas and the slicing and dicing those limited ideas to get all possible specific ideas rather than each complex idea having its own model. Studying in such a way won't lead us anywhere as for every new complex idea we will have to work again rather than using analysis of previously solved cases.
+
+E.g. converting Konigsberg Bridge problem to a graph or converting the social network to a graph. Taking out irrelevant details and reducing it to only the details which we need.

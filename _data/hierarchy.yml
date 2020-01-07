@@ -1,4 +1,12 @@
 toc:
+  - title: Google Code Jam
+    subfolderitems:
+      - page: What is it?
+        url: /documentation/codejam/what.html
+      - page: Solutions
+        url: /documentation/codejam/solutions.html
+      - page: Quick Notes
+        url: /documentation/codejam/quickNotes.html
   - title: Salesforce
     subfolderitems:
       - page: Hello World in Salesforces
@@ -19,14 +27,10 @@ toc:
         url: /documentation/others/cryptography.html
       - page: Web Services
         url: /documentation/others/webservices.html
-  - title: Google Code Jam
-    subfolderitems:
-      - page: What is it?
-        url: /documentation/codejam/what.html
-      - page: Solutions
-        url: /documentation/codejam/solutions.html
   - title: Others
     subfolderitems:
+      - page: Ways to Solve a Programming Problem
+        url: /documentation/others/waystosolve.html
       - page: Maths
         url: /documentation/maths/maths.html
       - page: Sorting
@@ -44,4 +48,4 @@ toc:
       - page: Java
         url: /documentation/others/java.html
       - page: Knowledge
-        url: /documentation/others/knowledge.html        
+        url: /documentation/others/knowledge.html
