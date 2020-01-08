@@ -7,6 +7,8 @@ toc:
         url: /documentation/codejam/solutions.html
       - page: Quick Notes
         url: /documentation/codejam/quickNotes.html
+      - page: Graph Theory
+        url: /documentation/codejam/graphs.html
   - title: Salesforce
     subfolderitems:
       - page: Hello World in Salesforces

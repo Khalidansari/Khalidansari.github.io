@@ -19,6 +19,14 @@ In dynamic programming the key is to find the sub problem and the set of base ca
 
 Common subproblems - Finding the right subproblem takes creativity and experimentation. But there are a few standard choices that seem to arise repeatedly in dynamic programming.
 
+The toughest part of this is finding the sub problems. It might take a little hit and trial and patience.
+
+Problems to practice:
+
+1. Knapsack (with repetition and without repetition)
+2. Traveling Salesman Problem
+3. Shortest/Longest Path (additional twists - pair wise, limited edges)
+
 ## Backtracking
 
 Might look like dynamic programming but it is not. This technique works for problems whose solution can only be checked at the end e.g. sudoku. And generally they involve finding all possible solutions. This is much better than the naive approach of trying all possible combinations. Backtracking removes the solution (prune the branch) as soon as it sees that it won't lead to a solution so that you don't have to go that path in future.
@@ -34,3 +42,7 @@ Similar like dynamic programming but the subproblems are substantially smaller s
 
 
 ## Backtracking
+
+## Graphs
+
+Represented as G(V,E) => V is vertex names and E is pair wise Vs representing edges.
