@@ -9,7 +9,7 @@ A structure where nodes are connected to each other through edges is called a gr
 
 ## Maximum Flow
 
-## Hamiltonion
+## Hamiltonian
 
 ## Shortest Path
 
