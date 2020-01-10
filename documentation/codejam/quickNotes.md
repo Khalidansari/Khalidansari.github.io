@@ -10,3 +10,5 @@ Array.sort() in Java uses quick sort for sorting primitive data types. In worst 
 \- [Reference from codeforces](https://codeforces.com/blog/entry/7108%3Flocale%3Dru)
 
 ## Using large numbers instead of int/Integers
+
+Integers are limited to $$\approx \pm$$ 2 billion and floats are not precise (e.g. 0.4 - 0.3 $$\ne$$ 0.1 in java if using floats) due to their implementations (IEEE 754). Hence using BigInteger and BigDecimal is the right way to go.
