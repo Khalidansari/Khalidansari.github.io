@@ -3,6 +3,28 @@ layout: default
 ---
 # Ways to Solve an Algorithmic Problems
 
+## Brute Force
+
+Just check all combinations
+
+## Backtracking
+
+Same as Brute force but it stops in the middle of the path as soon as it seems like it won't work. It also stops any future steps from goign through that sub path. Might look like dynamic programming but it is not. This technique works for problems whose solution can only be checked at the end e.g. sudoku. And generally they involve finding all possible solutions. This is much better than the naive approach of trying all possible combinations. Backtracking removes the solution (prune the branch) as soon as it sees that it won't lead to a solution so that you don't have to go that path in future.
+
+## Greedy Algorithm
+
+More like dynamic programming but once the decision is made on the subproblem using local information it is not changed. Subproblems are independent. In dynamic programming the solution to subproblems are revised based on new information as you progress.
+
+e.g.
+
+1. Fractional Knapsack - take the ratio of value/weight and start taking the one with max ratio until the Knapsack is either full or that item is consumed. Then start with the one with next max ratio and so on.
+
+2. Dijkstra's algorithms - It has a dynamic programming component to it but it idea it is greedy because each local solution (vertex) is solved first and then only after it is solved the next node is solved for.
+
+## Divide and Concur
+
+Similar like dynamic programming but the subproblems are substantially smaller say half the size. So the depth of the tree is logirithmic. Recursion works here because of this low depth. While in dynamic programming, the sub problem are  only slightly smaller like F(i-1) is sub problem of F(i).  Here the depth is polynomial and recursion is disastrous. Also, dynamic programming's sub problems are repeated while generally divide and concur's are disjoint.
+
 ## Dynamic Programing
 
 Two ways to do this:
@@ -27,22 +49,51 @@ Problems to practice:
 2. Traveling Salesman Problem
 3. Shortest/Longest Path (additional twists - pair wise, limited edges)
 
-## Backtracking
+Principle of Optimality
 
-Might look like dynamic programming but it is not. This technique works for problems whose solution can only be checked at the end e.g. sudoku. And generally they involve finding all possible solutions. This is much better than the naive approach of trying all possible combinations. Backtracking removes the solution (prune the branch) as soon as it sees that it won't lead to a solution so that you don't have to go that path in future.
+e.g If shortest path from A > E is A>B>C>D>E then the sub path C>D in this route used will be shortest between C>D.
+Longest path algo does not follow Principle of Optimality. Take a cyclic graph for example.
 
-## Greedy Algorithm
+\- [ref](https://www2.seas.gwu.edu/~ayoussef/cs6212/dynamicprog.html)
 
+e.g.
 
-## Divide and Concur
+0-1 Knapsack Problem -
 
-Similar like dynamic programming but the subproblems are substantially smaller say half the size. So the depth of the tree is logirithmic. Recursion works here because of this low depth. While in dynamic programming, the sub problem are  only slightly smaller like F(i-1) is sub problem of F(i).  Here the depth is polynomial and recursion is disastrous. Also, dynamic programming's sub problems are repeated while generally divide and concur's are disjoint.
+Capacity = W
+w1, w2, w3, w4
+v1, v2, v3, v4
+
+Let us start from the back:
+
+Take max of - considering w4 or not
+
+K(<w1, w2, w3, w4>, W) = Max[ K(<w1, w2, w3>, W), K(<w1, w2, w3>, W - w4) ]
 
 ## Genetic Algorithm
 
 
-## Backtracking
-
 ## Graphs
 
 Represented as G(V,E) => V is vertex names and E is pair wise Vs representing edges.
+
+
+## Stars and Bars
+
+Problem statement:
+How to put all N balls in K buckets
+or
+How to partition N identical items in K-tuples
+
+Natural way to solve - After several tries it seems the normal way of combinatorics is not possible.
+1. Take 1 bucket > 1 way : N
+2. Take 2 buckets > N + 1 ways : 0-(N), 1-(N-1), ... (N)-0
+3. Take 3 buckets >
+
+Better is the way of stars and bars. Imagine x below is a star
+
+$$xxxx|xxx|xx||xx$$
+
+Each bars above separates the balls into buckets. So for 5 buckets we need 4 bars. If we want the bucket to be empty then keep it either at the end of adjacent to another bar. Total placeholders including both stars and bars = N+K. Now this question has been turned into finding the total number of ways in which we can put these bars. Remember that the bars are identical themselves (this does not mean that the buckets are identical).
+
+Hence total number of ways = $$^{\small{N+K}}C_{\small{K-1}}$$

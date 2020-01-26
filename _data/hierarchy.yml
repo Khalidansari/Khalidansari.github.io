@@ -1,14 +1,20 @@
 toc:
+  - title: Algorithms
+    subfolderitems:
+      - page: Ways to Solve a Programming Problem
+        url: /documentation/others/waystosolve.html
+      - page: Sorting
+        url: /documentation/maths/sorting.html
+      - page: Graph Theory
+        url: /documentation/codejam/graphs.html
+      - page: Maths
+        url: /documentation/maths/maths.html
   - title: Google Code Jam
     subfolderitems:
       - page: What is it?
         url: /documentation/codejam/what.html
-      - page: Solutions
-        url: /documentation/codejam/solutions.html
       - page: Quick Notes
         url: /documentation/codejam/quickNotes.html
-      - page: Graph Theory
-        url: /documentation/codejam/graphs.html
   - title: Salesforce
     subfolderitems:
       - page: Hello World in Salesforces
@@ -17,26 +23,14 @@ toc:
         url: /documentation/Salesforce/einstein.html
       - page: Shield
         url: /documentation/Salesforce/shield.html
-      - page: ANT with Salesforce
-        url: /documentation/Salesforce/ANT with Salesforce.html
-  - title: Developer's Toolkit
-    subfolderitems:
-      - page: Basic Unix Commands
-        url: /documentation/toolkit/unix.html
   - title: Other Topics from Computer Sciences
     subfolderitems:
       - page: Cryptography
         url: /documentation/others/cryptography.html
       - page: Web Services
         url: /documentation/others/webservices.html
-  - title: Others
-    subfolderitems:
-      - page: Ways to Solve a Programming Problem
-        url: /documentation/others/waystosolve.html
-      - page: Maths
-        url: /documentation/maths/maths.html
-      - page: Sorting
-        url: /documentation/maths/sorting.html
+      - page: Basic Unix Commands
+        url: /documentation/toolkit/unix.html
       - page: Javascript Event Loop
         url: /documentation/JavaScript/eventloop.html
       - page: Machine Learning
@@ -49,5 +43,7 @@ toc:
         url: /documentation/others/machinelanguage.html
       - page: Java
         url: /documentation/others/java.html
-      - page: Knowledge
+  - title: Philosophy
+    subfolderitems:
+      - page: What is Knowledge?
         url: /documentation/others/knowledge.html

@@ -27,6 +27,10 @@ Same as Euler Path/Circuit above except that the constraint is on vertex instead
 
 ## Shortest Path
 
+ - Dijkstra's algorithm solves the single-source shortest path problem with non-negative edge weight. Because the path which is looking longer now may become shorter if a negative edge appears. 
+ - Bellman–Ford algorithm solves the single-source problem if edge weights may be negative.
+ - Floyd–Warshall algorithm solves all pairs shortest paths.
+
 ## Minimum Spanning Tree
 
 ## Traveling Salesman Problem
