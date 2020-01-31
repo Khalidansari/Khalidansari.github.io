@@ -1,26 +1,99 @@
 ---
 layout: default
 ---
-# What is Knowledge
+# Ways to Solve an Algorithmic Problems
 
-## Scratching the Surface
+## Brute Force
 
-Truth is objective but the knowledge of that truth is always related to conscious living being. To gain knowledge the conscious being has to go through the following steps:
+Just check all combinations
 
-1. Perceive through their senses
+## Backtracking
 
-2. Store the information gained through their senses in their brain or devices. Sometimes the storage can be long term while at other times it can be short term.
+Same as Brute force but it stops in the middle of the path as soon as it seems like it won't work. It also stops any future steps from goign through that sub path. Might look like dynamic programming but it is not. This technique works for problems whose solution can only be checked at the end e.g. sudoku. And generally they involve finding all possible solutions. This is much better than the naive approach of trying all possible combinations. Backtracking removes the solution (prune the branch) as soon as it sees that it won't lead to a solution so that you don't have to go that path in future.
 
-3. Analyze the stored information in brain using brain. Short term memory can be used to conceptually understand a complex idea and a long term memory to be retrieved later with other information.
+## Greedy Algorithm
 
-May be because the 1st step is perception through senses, we try to imagine abstract information by visualizing. We try to imagine ideas by having a visual representation of it somehow and at some level a sense of touch is involved as well. But its not very clear why don't we imagine them using taste or smell. May be because those senses are not able to quantifiable to an extent.
+More like dynamic programming but once the decision is made on the subproblem using local information it is not changed. Subproblems are independent. In dynamic programming the solution to subproblems are revised based on new information as you progress.
+
+e.g.
+
+1. Fractional Knapsack - take the ratio of value/weight and start taking the one with max ratio until the Knapsack is either full or that item is consumed. Then start with the one with next max ratio and so on.
+
+2. Dijkstra's algorithms - It has a dynamic programming component to it but it idea it is greedy because each local solution (vertex) is solved first and then only after it is solved the next node is solved for.
+
+## Divide and Concur
+
+Similar like dynamic programming but the subproblems are substantially smaller say half the size. So the depth of the tree is logirithmic. Recursion works here because of this low depth. While in dynamic programming, the sub problem are  only slightly smaller like F(i-1) is sub problem of F(i).  Here the depth is polynomial and recursion is disastrous. Also, dynamic programming's sub problems are repeated while generally divide and concur's are disjoint.
+
+## Dynamic Programing
+
+Two ways to do this:
+
+- Top to bottom - Solve sub problems to solve the bigger problem and store the solution to sub problems on the way so that if needed you don't have to calculate the sub problem again. The storing is called Memoization. This way is nothing but recursion enhanced by memoization
+
+- Botton to top - Still uses memoization but this is done in a different order. This order is more organic/natural and is generally efficient though harder (sometimes impossible) to find since it is not easy to predict which sub problem to start with.
+
+\- [Reference from stackoverflow](https://stackoverflow.com/questions/3592943/difference-between-back-tracking-and-dynamic-programming/26439292)
+
+As per Umesh Vazirani, you can imagine each and every dynamic problem as a DAG (directed acyclic graph) where the nodes are sub problems and reaching from starting point to end is traversing the graph. The edges are dependencies between sub problems. <sup>[ref](https://people.eecs.berkeley.edu/~vazirani/algorithms/chap6.pdf)</sup>
+
+In dynamic programming the key is to find the sub problem and the set of base cases. You can imagine progressing a dynamic programming problem either like a DAG or like a table structure (or cube or even higher dimensions) each dependency is one dimension.
+
+Common subproblems - Finding the right subproblem takes creativity and experimentation. But there are a few standard choices that seem to arise repeatedly in dynamic programming.
+
+The toughest part of this is finding the sub problems. It might take a little hit and trial and patience.
+
+Problems to practice:
+
+1. Knapsack (with repetition and without repetition)
+2. Traveling Salesman Problem
+3. Shortest/Longest Path (additional twists - pair wise, limited edges)
+
+Principle of Optimality
+
+e.g If shortest path from A > E is A>B>C>D>E then the sub path C>D in this route used will be shortest between C>D.
+Longest path algo does not follow Principle of Optimality. Take a cyclic graph for example.
+
+\- [ref](https://www2.seas.gwu.edu/~ayoussef/cs6212/dynamicprog.html)
+
+e.g.
+
+0-1 Knapsack Problem -
+
+Capacity = W
+w1, w2, w3, w4
+v1, v2, v3, v4
+
+Let us start from the back:
+
+Take max of - considering w4 or not
+
+K(<w1, w2, w3, w4>, W) = Max[ K(<w1, w2, w3>, W), K(<w1, w2, w3>, W - w4) ]
+
+## Genetic Algorithm
 
 
-## Philosophy of Knowledge
+## Graphs
 
-The ideas here are taken from the book by Jennifer Nagel's A Very Short Introduction of Knowledge.
+Represented as G(V,E) => V is vertex names and E is pair wise Vs representing edges.
 
 
-## Ideas which can be pondered upon later
+## Stars and Bars
 
-1. To prove something in maths we have to assume it is true or false and then build further logic based on that to see if we fall into a conflict. If so then the assumption was incorrect and hence we reach a conclusion. Similarly we might assume that brain can figure out everything about itself. May be this assumption can provide some idea into how brain works/knowledge structure works.
+Problem statement:
+How to put all N balls in K buckets
+or
+How to partition N identical items in K-tuples
+
+Natural way to solve - After several tries it seems the normal way of combinatorics is not possible.
+1. Take 1 bucket > 1 way : N
+2. Take 2 buckets > N + 1 ways : 0-(N), 1-(N-1), ... (N)-0
+3. Take 3 buckets >
+
+Better is the way of stars and bars. Imagine x below is a star
+
+$$xxxx|xxx|xx||xx$$
+
+Each bars above separates the balls into buckets. So for 5 buckets we need 4 bars. If we want the bucket to be empty then keep it either at the end of adjacent to another bar. Total placeholders including both stars and bars = N+K. Now this question has been turned into finding the total number of ways in which we can put these bars. Remember that the bars are identical themselves (this does not mean that the buckets are identical).
+
+Hence total number of ways = $$^{\small{N+K}}C_{\small{K-1}}$$
