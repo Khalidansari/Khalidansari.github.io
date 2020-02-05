@@ -21,6 +21,9 @@ e.g.
 
 2. Dijkstra's algorithms - It has a dynamic programming component to it but it idea it is greedy because each local solution (vertex) is solved first and then only after it is solved the next node is solved for.
 
+## Incremental
+E.g. Insertion sort - Take one element and put it in the correct place in the already sorted sub array. This technique is in contrast to divide concur.
+
 ## Divide and Concur
 
 Similar like dynamic programming but the subproblems are substantially smaller say half the size. So the depth of the tree is logirithmic. Recursion works here because of this low depth. While in dynamic programming, the sub problem are  only slightly smaller like F(i-1) is sub problem of F(i).  Here the depth is polynomial and recursion is disastrous. Also, dynamic programming's sub problems are repeated while generally divide and concur's are disjoint.
@@ -97,3 +100,23 @@ $$xxxx|xxx|xx||xx$$
 Each bars above separates the balls into buckets. So for 5 buckets we need 4 bars. If we want the bucket to be empty then keep it either at the end of adjacent to another bar. Total placeholders including both stars and bars = N+K. Now this question has been turned into finding the total number of ways in which we can put these bars. Remember that the bars are identical themselves (this does not mean that the buckets are identical).
 
 Hence total number of ways = $$^{\small{N+K}}C_{\small{K-1}}$$
+
+## Proving the correctness of Algorithm
+
+Let me start with an example. Suppose you are using a broom to clean the floor of a room. You can clean it going row by row (north to south) starting at the east and ending at the west. You may also start from the center and keep going outwards in a spiral (slowing overlapping your sweeps so that the circle becomes a square. This is not important here but just to be clear). There are many other ways too. These ways will be preferred compared to just going in patches or randomly because it is hard to track what is left and where are the overlaps. It is easy to see that going row by row will eventually clean the whole floor. Why? Because we can see that at any point in time, there is a section of the room which is clean and we are not leaving anything in that section when cleaning. Each row covers more swept floor without leaving anything in that row. This is called as "loop invariant". Using this concept it is easier to proof that a algorithm with end correctly. The pattern is more like mathematical induction which we learned in high school. Let me formalize here:
+
+1. Initialization - Loop invariant is present at the start.
+
+2. Maintenance - Loop invariant is maintained at the end of each iteration.
+
+3. Termination - Whole input is traversed.
+
+## Capital Theta
+
+$$\Theta$$
+If a function $$f(n)$$ can be sandwiched between $$c1(g(n)) and c2(g(n))$$ for all values greater than a specific value of $$n$$.
+
+
+## Inclusion-Exclusion Principle
+
+$$|A\cup B\cup C|=|A|+|B|+|C|-|A\cap B|-|A\cap C|-|B\cap C|+|A\cap B\cap C|$$
