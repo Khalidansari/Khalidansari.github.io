@@ -111,11 +111,28 @@ Let me start with an example. Suppose you are using a broom to clean the floor o
 
 3. Termination - Whole input is traversed.
 
-## Capital Theta
+## $$\Theta$$ (Big Theta) - asymptotic upper & lower bound
 
-$$\Theta$$
-If a function $$f(n)$$ can be sandwiched between $$c1(g(n)) and c2(g(n))$$ for all values greater than a specific value of $$n$$.
+If a function $$f(n)$$ can be sandwiched between $$c1(g(n))$$ and $$c2(g(n))$$ for all values greater than a specific value of $$n$$.
 
+## $$O$$ (Big O) - asymptotic upper bound
+
+## $$\Omega$$ (Big Omega) - asymptotic lower bound
+
+## $$o$$ (Small o) - asymptotic upper bound (not tight)
+
+## $$\omega$$ (Small omega) - asymptotic lower bound (not tight)
+
+## Theorem
+$$f(n) = \Theta(g(n))$$ if and only if
+$$f(n) = O(g(n))$$ and $$f(n) = \Omega(g(n))$$
+
+This theorem is not useful when going from theta to omega and O. It is useful trying to find theta based on omega and O.
+
+## Fibonacci Number
+if $$\phi$$ and $$\hat\phi$$ are roots of $$x^2 = x + 1$$ then
+
+F_i = $$\frac{\phi^i + \hat\phi^i} {\sqrt{5}}$$
 
 ## Inclusion-Exclusion Principle
 

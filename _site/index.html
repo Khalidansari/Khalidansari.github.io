@@ -69,8 +69,6 @@
                 
                   <li><a href="/documentation/Salesforce/shield.html">Shield</a></li>
                 
-                  <li><a href="/documentation/Salesforce/ANT with Salesforce.html">ANT with Salesforce</a></li>
-                
               </ul>
               <hr class="horizontalLine">
           
@@ -130,35 +128,114 @@
       </header>
       <section>
 
-      <h1 id="what-is-knowledge">What is Knowledge</h1>
+      <h1 id="ways-to-solve-an-algorithmic-problems">Ways to Solve an Algorithmic Problems</h1>
 
-<h2 id="scratching-the-surface">Scratching the Surface</h2>
+<h2 id="brute-force">Brute Force</h2>
 
-<p>Truth is objective but the knowledge of that truth is always related to conscious living being. To gain knowledge the conscious being has to go through the following steps:</p>
+<p>Just check all combinations</p>
+
+<h2 id="backtracking">Backtracking</h2>
+
+<p>Same as Brute force but it stops in the middle of the path as soon as it seems like it won’t work. It also stops any future steps from goign through that sub path. Might look like dynamic programming but it is not. This technique works for problems whose solution can only be checked at the end e.g. sudoku. And generally they involve finding all possible solutions. This is much better than the naive approach of trying all possible combinations. Backtracking removes the solution (prune the branch) as soon as it sees that it won’t lead to a solution so that you don’t have to go that path in future.</p>
+
+<h2 id="greedy-algorithm">Greedy Algorithm</h2>
+
+<p>More like dynamic programming but once the decision is made on the subproblem using local information it is not changed. Subproblems are independent. In dynamic programming the solution to subproblems are revised based on new information as you progress.</p>
+
+<p>e.g.</p>
 
 <ol>
   <li>
-    <p>Perceive through their senses</p>
+    <p>Fractional Knapsack - take the ratio of value/weight and start taking the one with max ratio until the Knapsack is either full or that item is consumed. Then start with the one with next max ratio and so on.</p>
   </li>
   <li>
-    <p>Store the information gained through their senses in their brain or devices. Sometimes the storage can be long term while at other times it can be short term.</p>
-  </li>
-  <li>
-    <p>Analyze the stored information in brain using brain. Short term memory can be used to conceptually understand a complex idea and a long term memory to be retrieved later with other information.</p>
+    <p>Dijkstra’s algorithms - It has a dynamic programming component to it but it idea it is greedy because each local solution (vertex) is solved first and then only after it is solved the next node is solved for.</p>
   </li>
 </ol>
 
-<p>May be because the 1st step is perception through senses, we try to imagine abstract information by visualizing. We try to imagine ideas by having a visual representation of it somehow and at some level a sense of touch is involved as well. But its not very clear why don’t we imagine them using taste or smell. May be because those senses are not able to quantifiable to an extent.</p>
+<h2 id="divide-and-concur">Divide and Concur</h2>
 
-<h2 id="philosophy-of-knowledge">Philosophy of Knowledge</h2>
+<p>Similar like dynamic programming but the subproblems are substantially smaller say half the size. So the depth of the tree is logirithmic. Recursion works here because of this low depth. While in dynamic programming, the sub problem are  only slightly smaller like F(i-1) is sub problem of F(i).  Here the depth is polynomial and recursion is disastrous. Also, dynamic programming’s sub problems are repeated while generally divide and concur’s are disjoint.</p>
 
-<p>The ideas here are taken from the book by Jennifer Nagel’s A Very Short Introduction of Knowledge.</p>
+<h2 id="dynamic-programing">Dynamic Programing</h2>
 
-<h2 id="ideas-which-can-be-pondered-upon-later">Ideas which can be pondered upon later</h2>
+<p>Two ways to do this:</p>
+
+<ul>
+  <li>
+    <p>Top to bottom - Solve sub problems to solve the bigger problem and store the solution to sub problems on the way so that if needed you don’t have to calculate the sub problem again. The storing is called Memoization. This way is nothing but recursion enhanced by memoization</p>
+  </li>
+  <li>
+    <p>Botton to top - Still uses memoization but this is done in a different order. This order is more organic/natural and is generally efficient though harder (sometimes impossible) to find since it is not easy to predict which sub problem to start with.</p>
+  </li>
+</ul>
+
+<p>- <a href="https://stackoverflow.com/questions/3592943/difference-between-back-tracking-and-dynamic-programming/26439292">Reference from stackoverflow</a></p>
+
+<p>As per Umesh Vazirani, you can imagine each and every dynamic problem as a DAG (directed acyclic graph) where the nodes are sub problems and reaching from starting point to end is traversing the graph. The edges are dependencies between sub problems. <sup><a href="https://people.eecs.berkeley.edu/~vazirani/algorithms/chap6.pdf">ref</a></sup></p>
+
+<p>In dynamic programming the key is to find the sub problem and the set of base cases. You can imagine progressing a dynamic programming problem either like a DAG or like a table structure (or cube or even higher dimensions) each dependency is one dimension.</p>
+
+<p>Common subproblems - Finding the right subproblem takes creativity and experimentation. But there are a few standard choices that seem to arise repeatedly in dynamic programming.</p>
+
+<p>The toughest part of this is finding the sub problems. It might take a little hit and trial and patience.</p>
+
+<p>Problems to practice:</p>
 
 <ol>
-  <li>To prove something in maths we have to assume it is true or false and then build further logic based on that to see if we fall into a conflict. If so then the assumption was incorrect and hence we reach a conclusion. Similarly we might assume that brain can figure out everything about itself. May be this assumption can provide some idea into how brain works/knowledge structure works.</li>
+  <li>Knapsack (with repetition and without repetition)</li>
+  <li>Traveling Salesman Problem</li>
+  <li>Shortest/Longest Path (additional twists - pair wise, limited edges)</li>
 </ol>
+
+<p>Principle of Optimality</p>
+
+<p>e.g If shortest path from A &gt; E is A&gt;B&gt;C&gt;D&gt;E then the sub path C&gt;D in this route used will be shortest between C&gt;D.
+Longest path algo does not follow Principle of Optimality. Take a cyclic graph for example.</p>
+
+<p>- <a href="https://www2.seas.gwu.edu/~ayoussef/cs6212/dynamicprog.html">ref</a></p>
+
+<p>e.g.</p>
+
+<p>0-1 Knapsack Problem -</p>
+
+<p>Capacity = W
+w1, w2, w3, w4
+v1, v2, v3, v4</p>
+
+<p>Let us start from the back:</p>
+
+<p>Take max of - considering w4 or not</p>
+
+<p>K(&lt;w1, w2, w3, w4&gt;, W) = Max[ K(&lt;w1, w2, w3&gt;, W), K(&lt;w1, w2, w3&gt;, W - w4) ]</p>
+
+<h2 id="genetic-algorithm">Genetic Algorithm</h2>
+
+<h2 id="graphs">Graphs</h2>
+
+<p>Represented as G(V,E) =&gt; V is vertex names and E is pair wise Vs representing edges.</p>
+
+<h2 id="stars-and-bars">Stars and Bars</h2>
+
+<p>Problem statement:
+How to put all N balls in K buckets
+or
+How to partition N identical items in K-tuples</p>
+
+<p>Natural way to solve - After several tries it seems the normal way of combinatorics is not possible.</p>
+<ol>
+  <li>Take 1 bucket &gt; 1 way : N</li>
+  <li>Take 2 buckets &gt; N + 1 ways : 0-(N), 1-(N-1), … (N)-0</li>
+  <li>Take 3 buckets &gt;</li>
+</ol>
+
+<p>Better is the way of stars and bars. Imagine x below is a star</p>
+
+<script type="math/tex; mode=display">xxxx|xxx|xx||xx</script>
+
+<p>Each bars above separates the balls into buckets. So for 5 buckets we need 4 bars. If we want the bucket to be empty then keep it either at the end of adjacent to another bar. Total placeholders including both stars and bars = N+K. Now this question has been turned into finding the total number of ways in which we can put these bars. Remember that the bars are identical themselves (this does not mean that the buckets are identical).</p>
+
+<p>Hence total number of ways = <script type="math/tex">^{\small{N+K}}C_{\small{K-1}}</script></p>
 
 
       </section>
