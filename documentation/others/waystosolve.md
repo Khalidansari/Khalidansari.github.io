@@ -7,6 +7,10 @@ layout: default
 
 Just check all combinations
 
+## Recursion
+
+Looks simple but main trick is simplifying the base case and recursive call so that there are not a lot of base case and not a lot of if and else conditions. If not done properly then the code will be hard to understand and debug (know why it works or it does not work). Step back and use copy and pen to find the most simple base case and as less number of base cases as possible. Try to see what all things should go inside the recursive method and what should stay outside.
+
 ## Backtracking
 
 Same as Brute force but it stops in the middle of the path as soon as it seems like it won't work. It also stops any future steps from goign through that sub path. Might look like dynamic programming but it is not. This technique works for problems whose solution can only be checked at the end e.g. sudoku. And generally they involve finding all possible solutions. This is much better than the naive approach of trying all possible combinations. Backtracking removes the solution (prune the branch) as soon as it sees that it won't lead to a solution so that you don't have to go that path in future.
@@ -75,6 +79,9 @@ K(<w1, w2, w3, w4>, W) = Max[ K(<w1, w2, w3>, W), K(<w1, w2, w3>, W - w4) ]
 
 ## Genetic Algorithm
 
+## Binary Search ($$\log n$$ complexity)
+
+Eliminating half of the input at each step to finally reach the target.
 
 ## Graphs
 
@@ -116,12 +123,14 @@ Let me start with an example. Suppose you are using a broom to clean the floor o
 If a function $$f(n)$$ can be sandwiched between $$c1(g(n))$$ and $$c2(g(n))$$ for all values greater than a specific value of $$n$$.
 
 ## $$O$$ (Big O) - asymptotic upper bound
+x² ∈ O(x² + x)
 
 ## $$\Omega$$ (Big Omega) - asymptotic lower bound
 
-## $$o$$ (Small o) - asymptotic upper bound (not tight)
+## $$o$$ (little o) - asymptotic upper bound (not tight)
+x² ∈ o(x³)
 
-## $$\omega$$ (Small omega) - asymptotic lower bound (not tight)
+## $$\omega$$ (little omega) - asymptotic lower bound (not tight)
 
 ## Theorem
 $$f(n) = \Theta(g(n))$$ if and only if
