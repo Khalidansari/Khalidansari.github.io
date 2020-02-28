@@ -1,15 +1,23 @@
 ---
 layout: default
 ---
-# Ways to Solve an Algorithmic Problems
+# Ways to Solve Algorithmic Problems
 
 ## Brute Force
 
 Just check all combinations
 
+## Recursion
+
+Looks simple but main trick is simplifying the base case and recursive call so that there are not a lot of base case and not a lot of if and else conditions. If not done properly then the code will be hard to understand and debug (know why it works or it does not work). Step back and use copy and pen to find the most simple base case and as less number of base cases as possible. Try to see what all things should go inside the recursive method and what should stay outside.
+
+## Recursive vs Iterative
+
+Performing loop using recursion vs performing loop using while.
+
 ## Backtracking
 
-Same as Brute force but it stops in the middle of the path as soon as it seems like it won't work. It also stops any future steps from goign through that sub path. Might look like dynamic programming but it is not. This technique works for problems whose solution can only be checked at the end e.g. sudoku. And generally they involve finding all possible solutions. This is much better than the naive approach of trying all possible combinations. Backtracking removes the solution (prune the branch) as soon as it sees that it won't lead to a solution so that you don't have to go that path in future.
+Same as Brute force but it stops in the middle of the path as soon as it seems like it won't work. It also stops any future steps from going through that sub path. Might look like dynamic programming but it is not. This technique works for problems whose solution can only be checked at the end e.g. sudoku. And generally they involve finding all possible solutions. This is much better than the naive approach of trying all possible combinations. Backtracking removes the solution (prune the branch) as soon as it sees that it won't lead to a solution so that you don't have to go that path in future.
 
 ## Greedy Algorithm
 
@@ -20,6 +28,9 @@ e.g.
 1. Fractional Knapsack - take the ratio of value/weight and start taking the one with max ratio until the Knapsack is either full or that item is consumed. Then start with the one with next max ratio and so on.
 
 2. Dijkstra's algorithms - It has a dynamic programming component to it but it idea it is greedy because each local solution (vertex) is solved first and then only after it is solved the next node is solved for.
+
+## Incremental
+E.g. Insertion sort - Take one element and put it in the correct place in the already sorted sub array. This technique is in contrast to divide concur.
 
 ## Divide and Concur
 
@@ -72,6 +83,9 @@ K(<w1, w2, w3, w4>, W) = Max[ K(<w1, w2, w3>, W), K(<w1, w2, w3>, W - w4) ]
 
 ## Genetic Algorithm
 
+## Binary Search ($$\log n$$ complexity)
+
+Eliminating half of the input at each step to finally reach the target.
 
 ## Graphs
 
@@ -97,3 +111,42 @@ $$xxxx|xxx|xx||xx$$
 Each bars above separates the balls into buckets. So for 5 buckets we need 4 bars. If we want the bucket to be empty then keep it either at the end of adjacent to another bar. Total placeholders including both stars and bars = N+K. Now this question has been turned into finding the total number of ways in which we can put these bars. Remember that the bars are identical themselves (this does not mean that the buckets are identical).
 
 Hence total number of ways = $$^{\small{N+K}}C_{\small{K-1}}$$
+
+## Proving the correctness of Algorithm
+
+Let me start with an example. Suppose you are using a broom to clean the floor of a room. You can clean it going row by row (north to south) starting at the east and ending at the west. You may also start from the center and keep going outwards in a spiral (slowing overlapping your sweeps so that the circle becomes a square. This is not important here but just to be clear). There are many other ways too. These ways will be preferred compared to just going in patches or randomly because it is hard to track what is left and where are the overlaps. It is easy to see that going row by row will eventually clean the whole floor. Why? Because we can see that at any point in time, there is a section of the room which is clean and we are not leaving anything in that section when cleaning. Each row covers more swept floor without leaving anything in that row. This is called as "loop invariant". Using this concept it is easier to proof that a algorithm with end correctly. The pattern is more like mathematical induction which we learned in high school. Let me formalize here:
+
+1. Initialization - Loop invariant is present at the start.
+
+2. Maintenance - Loop invariant is maintained at the end of each iteration.
+
+3. Termination - Whole input is traversed.
+
+## $$\Theta$$ (Big Theta) - asymptotic upper & lower bound
+
+If a function $$f(n)$$ can be sandwiched between $$c1(g(n))$$ and $$c2(g(n))$$ for all values greater than a specific value of $$n$$.
+
+## $$O$$ (Big O) - asymptotic upper bound
+x² ∈ O(x² + x)
+
+## $$\Omega$$ (Big Omega) - asymptotic lower bound
+
+## $$o$$ (little o) - asymptotic upper bound (not tight)
+x² ∈ o(x³)
+
+## $$\omega$$ (little omega) - asymptotic lower bound (not tight)
+
+## Theorem
+$$f(n) = \Theta(g(n))$$ if and only if
+$$f(n) = O(g(n))$$ and $$f(n) = \Omega(g(n))$$
+
+This theorem is not useful when going from theta to omega and O. It is useful trying to find theta based on omega and O.
+
+## Fibonacci Number
+if $$\phi$$ and $$\hat\phi$$ are roots of $$x^2 = x + 1$$ then
+
+F_i = $$\frac{\phi^i + \hat\phi^i} {\sqrt{5}}$$
+
+## Inclusion-Exclusion Principle
+
+$$|A\cup B\cup C|=|A|+|B|+|C|-|A\cap B|-|A\cap C|-|B\cap C|+|A\cap B\cap C|$$

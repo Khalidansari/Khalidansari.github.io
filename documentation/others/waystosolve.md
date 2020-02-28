@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-# Ways to Solve an Algorithmic Problems
+# Ways to Solve Algorithmic Problems
 
 ## Brute Force
 
@@ -11,9 +11,13 @@ Just check all combinations
 
 Looks simple but main trick is simplifying the base case and recursive call so that there are not a lot of base case and not a lot of if and else conditions. If not done properly then the code will be hard to understand and debug (know why it works or it does not work). Step back and use copy and pen to find the most simple base case and as less number of base cases as possible. Try to see what all things should go inside the recursive method and what should stay outside.
 
+## Recursive vs Iterative
+
+Performing loop using recursion vs performing loop using while.
+
 ## Backtracking
 
-Same as Brute force but it stops in the middle of the path as soon as it seems like it won't work. It also stops any future steps from goign through that sub path. Might look like dynamic programming but it is not. This technique works for problems whose solution can only be checked at the end e.g. sudoku. And generally they involve finding all possible solutions. This is much better than the naive approach of trying all possible combinations. Backtracking removes the solution (prune the branch) as soon as it sees that it won't lead to a solution so that you don't have to go that path in future.
+Same as Brute force but it stops in the middle of the path as soon as it seems like it won't work. It also stops any future steps from going through that sub path. Might look like dynamic programming but it is not. This technique works for problems whose solution can only be checked at the end e.g. sudoku. And generally they involve finding all possible solutions. This is much better than the naive approach of trying all possible combinations. Backtracking removes the solution (prune the branch) as soon as it sees that it won't lead to a solution so that you don't have to go that path in future.
 
 ## Greedy Algorithm
 
