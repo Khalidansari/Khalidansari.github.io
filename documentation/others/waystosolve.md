@@ -150,3 +150,9 @@ F_i = $$\frac{\phi^i + \hat\phi^i} {\sqrt{5}}$$
 ## Inclusion-Exclusion Principle
 
 $$|A\cup B\cup C|=|A|+|B|+|C|-|A\cap B|-|A\cap C|-|B\cap C|+|A\cap B\cap C|$$
+
+## Solving maximum bipartite matching by converting to network flow -
+
+https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/matching.pdf
+
+## Multi array - How to iterate
