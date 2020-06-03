@@ -407,3 +407,23 @@ Similar to generalization where we take a complex idea and capture essential det
 E.g. converting Konigsberg Bridge problem to a graph or converting the social network to a graph. Taking out irrelevant details and reducing it to only the details which we need.
 
 Power of abstraction - Imagine if there were different laws of motion for different objects in different gravitational fields and air friction. So if you change any factor like size, shape or weight of a object or gravitational field or friction, the laws change. Such laws have nearly zero power and use compared to those laws which are more generic. Instead now imagine just 3 laws to define all - law of motion + laws of friction + laws of gravity. Now using these 3 laws you don't need to know a system in advance in order to predict its behavior. You just say, bring it on as you hold these generic laws. That is the magic which people at the time when Newton proposed universal theory of gravity might have felt. The law which governs objects like Moon and sun also govern the falling apple. Such abstraction has two power - Being more generic, it is more useful and also it explains something basic about how a system works. It tells something about the intrinsic nature of such systems. The same applies to computer science concepts.
+
+## SQL Injection
+
+1. Look for places where the data might not be sanitized. You just need to find one such place.
+
+2. Try to input value in form to get the database name. For that there are two important things - number of columns must match if trying UNON (you can add select 1,2, <whatyouwant> from ...) and then try moving the <whatyouwant> based on output. If the output was 2 then put it at the second place for example.
+
+3. Then try to find table name
+
+4. Then find the column names
+
+5. To get more column values if the output is only one column - Use concat function.
+
+## Imperative vs Declarative
+
+Imperative = how
+Declarative = what
+
+----
+cmd + shift + home = opens home folder in mac

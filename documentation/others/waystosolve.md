@@ -156,3 +156,19 @@ $$|A\cup B\cup C|=|A|+|B|+|C|-|A\cap B|-|A\cap C|-|B\cap C|+|A\cap B\cap C|$$
 https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/matching.pdf
 
 ## Multi array - How to iterate
+
+
+## Convert bipartite to max flow
+
+- ford fulkerson > residual graph > negative weights
+
+
+## P vs NP Complete
+
+Class P Problems - Something which can be solved in polynomial time. Order of the solution is polynomial. Not an issue and considered easier.
+
+Class NP Problems - It stands for non deterministic and not non polynomial. Finding solution may or may not take polynomial time (like n!) however checking the solution for correctness takes polynomial time.
+
+Class NP Complete - A set of NP problems which can be converted into each other in polynomial time.
+
+Class NP Hard - Solving is atleast as hard as NP Complete
