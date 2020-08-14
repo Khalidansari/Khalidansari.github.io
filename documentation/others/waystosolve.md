@@ -162,6 +162,29 @@ https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/matching.pdf
 
 - ford fulkerson > residual graph > negative weights
 
+## Max Flow
+
+Simple greedy algorithm of passing what max is possible through each possible path does not give optimal solution.
+
+Augmenting Path - Path from source to sink using edges whose capacity is not completely used yet.
+
+find the bottle neck
+
+Keep going until no such path is found
+
+Residual Graph - Main idea - We are given flow/capacity of each edge and its direction. Imagine that there is something on the opposite direction too like 0/(-capacity). It is like assuming that the backward capacity is zero and no flow is used there. This updated graph with additional backward graph is called residual graph. This is mainly to undo the bad choices later.
+
+Ford Fulkerson - Use DFS to find augumenting paths but this can show slowness as findiing the path is random.
+
+Edmund-Karp - Works better because it uses BFS - Need to read more on why
+
+Capacity Scaling - Use the longest paths fist so that the remaining edges to be considered is less
+
+You can send whatever flow you want in either direction subject to condition that flow in forward edge will not be negative and the capacity in the forward edge will not be negative.
+
+## Min cut
+
+Is theoretically same as max flow - it is the minimum amount of flow which if removed from the graph will disconnect source and sink
 
 ## P vs NP Complete
 

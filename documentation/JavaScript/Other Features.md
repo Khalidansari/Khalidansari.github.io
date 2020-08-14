@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-# Other main features of JS
+## Other main features of JS
 
 Source: https://www.w3schools.com/js/js_es6.asp
 
@@ -13,3 +13,21 @@ Though you cannot add new properties to an object without adding that property t
 
 Not Allowed - Person.nationality = "English";
 Allowed - Person.prototype.nationality = "English";
+
+## Fetch API
+
+better way developed by Google as an alternative to XMLHTTPRequest.
+
+## Promises
+
+Better way to manage callbacks.
+
+## React
+
+Install nodejs and npm and then run the following:
+
+npx create-react-app my-app
+cd my-app
+npm start
+
+The above installs webpack, babel, etc.

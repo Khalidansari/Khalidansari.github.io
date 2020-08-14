@@ -16,7 +16,7 @@ grep 'TEXT_TO_BE_SEARCHED' -OPTIONS DIRECTORY_TO_BE_SEARCHED_IN
 ```
 
 <br/>
-    
+
 ## du/df
 
 > to check total used space
@@ -110,12 +110,12 @@ date +%Y%m%d -s "20120418"
 
 ## loop
 
-> you can either loop in through a result set of another command e.g. $ls or through a fixed set of numbers e.g. `seq 1 10`. 
+> you can either loop in through a result set of another command e.g. $ls or through a fixed set of numbers e.g. `seq 1 10`.
 
 ```sh
-for i in $(ls); do 
-    echo "Final Line: " $i "================================================"; 
-    grep $i -ir . ; 
+for i in $(ls); do
+    echo "Final Line: " $i "================================================";
+    grep $i -ir . ;
 done
 ```
 
@@ -167,3 +167,17 @@ The above still does not consider the comments inside the quotes e.g. the below 
 . - one
 
 "SOMETHING" = everything except "something"
+
+## Mac commands
+
+See all processes
+
+```sh
+ps
+```
+
+Kill a process
+
+```sh
+kill -quit pid
+```
