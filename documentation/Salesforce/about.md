@@ -18,3 +18,11 @@ pull report on the records you inserted based on history table.
 ## force:refreshView - The Magic
 
 There is no way for standard and custom components to talk to each other. There is one caveat to that and that is refreshView. This is a app level event fired when the view of a component is refreshed. This applies to both custom and standard views. This event can be caught in a custom component too. If there are some values which are changed in standard component then we can in a way tag its refresh to a custom component's refresh and vice versa.
+
+## Guidelines for coding
+
+1. Use standard names in code even if the label is renamed e.g. use getMyAccounts() instead of getMyFirms() even if Account is renamed to Firm.
+
+2. Use "To" in maps - e.g. oppIdToOwnerId
+
+3. Balance between keeping functions independent and executing the same logic from different functions.

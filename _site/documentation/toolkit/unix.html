@@ -254,9 +254,9 @@ date</span> +%Y%m%d <span class="nt">-s</span> <span class="s2">"20120418"</span
   <p>you can either loop in through a result set of another command e.g. $ls or through a fixed set of numbers e.g. <code class="highlighter-rouge">seq 1 10</code>.</p>
 </blockquote>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>i <span class="k">in</span> <span class="si">$(</span><span class="nb">ls</span><span class="si">)</span><span class="p">;</span> <span class="k">do 
-    </span><span class="nb">echo</span> <span class="s2">"Final Line: "</span> <span class="nv">$i</span> <span class="s2">"================================================"</span><span class="p">;</span> 
-    <span class="nb">grep</span> <span class="nv">$i</span> <span class="nt">-ir</span> <span class="nb">.</span> <span class="p">;</span> 
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>i <span class="k">in</span> <span class="si">$(</span><span class="nb">ls</span><span class="si">)</span><span class="p">;</span> <span class="k">do
+    </span><span class="nb">echo</span> <span class="s2">"Final Line: "</span> <span class="nv">$i</span> <span class="s2">"================================================"</span><span class="p">;</span>
+    <span class="nb">grep</span> <span class="nv">$i</span> <span class="nt">-ir</span> <span class="nb">.</span> <span class="p">;</span>
 <span class="k">done</span>
 </code></pre></div></div>
 
@@ -316,6 +316,18 @@ Non-Greedy: <span class="o">(</span>/<span class="se">\*</span><span class="o">(
 </ul>
 
 <p>“SOMETHING” = everything except “something”</p>
+
+<h2 id="mac-commands">Mac commands</h2>
+
+<p>See all processes</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ps
+</code></pre></div></div>
+
+<p>Kill a process</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">kill</span> <span class="nt">-quit</span> pid
+</code></pre></div></div>
 
 
       </section>

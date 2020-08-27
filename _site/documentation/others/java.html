@@ -130,6 +130,16 @@
 
       <h1 id="java">Java</h1>
 
+<p>Is a class based - meaning it enables inheritence through classes instead of objects alone</p>
+
+<p>Java is compiled from source &gt; bytecode and then the bytecode is interpreted (though some portions are native compiled by JIT)</p>
+
+<p>Compiler already does most of the work so JVM has to do the least. Byte code is mostly like machine code except that there are some mapping from bytecode opcode to machine opcode based on which platform it is on. So JVM is in the layer just to provide cross compatibility.</p>
+
+<h2 id="pass-by-valuereference">Pass by Value/Reference</h2>
+
+<p>Java passes everything by value - including references. What this means is that if you pass an object, you can modify properties of that object, and they will persist after you return, but you can’t replace the object in its entirety with a completely new object, because you can’t actually modify the reference - only what the reference points to. This is different in C/C++</p>
+
 <h2 id="if-you-want-to-run-eclipse-using-different-java-version">If you want to run eclipse using different java version:</h2>
 <p>Add below line to eclipse.ini</p>
 
@@ -172,7 +182,7 @@ Static blocks are executed using a single thread.</p>
 
 <p>Memory generation - Used by JVM’s garbage collector called generational garbage collector</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a) Young generation - 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a) Young generation -
         1) Eden space - First time the objects go to this.
         2) Survivor space - When GC runs, all the above objects if still alive then they are moved to Survivor space.
 </code></pre></div></div>

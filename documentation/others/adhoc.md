@@ -9,6 +9,71 @@ CD to the directory with the JD jar and then run the following command:
 
 > java --add-opens java.base/jdk.internal.loader=ALL-UNNAMED --add-opens jdk.zipfs/jdk.nio.zipfs=ALL-UNNAMED -jar jd-gui-1.4.0.jar
 
+## Declarative and Imperative
+
+Declarative = focus on what needs to be achieved
+Imperative = focus on how to achieve it. It comes from grammar where it means a command or a request to do something.
+
+Imperative uses steps to change the state.
+
+Procedural = is a layer on top of Imperative which localizes and modularizes steps so that it can be reused. In one way it is a step which connects Imperative and Declarative as the programmer need not look at the steps inside a function to see how a certain thing is done but can understand just by looking at the name/arguments of a function.
+
+Turing machines / processors / native code all run in imperative way. Even real life tasks like recipes which makes imperative very natural to humans.
+
+## Timeline of languages
+
+Fortan (57) - people were reluctant that it won't have the performance of hand coded Assembly language but once they saw program lengths getting shorter by a factor of 20, they adopted it.
+
+LISP (1958) - First language with full lambda features
+
+COBOL (1960) - Industry, scientists and government (specially dod) joined to create a specification for a new language which can work on all computers (portable)
+
+BASIC (1964) - Dartmouth college created a easier language so that their student can learn programming. It became popular for various reasons. Microsoft created a microcomputer version of BASIC and included that in their PCs; Students already knew the syntax and there was a familiarity; it was high level enough to be used by hobyists, it was small enough to be added to personal computers.
+
+PASCAL/C
+
+C++ (1983)
+
+python (1990)
+
+PHP (1994)
+
+Java (1996)
+
+## Structured Programming
+
+1. Blocks - First came in ALGOL in 1950s. Various languages implement in various ways (indentation, curly braces, special words like if else if). This helps in keeping one set of code together so that the outer program can treat it like a single statement. Also, it helps in establishing the lexical scope of variables.
+
+2. Subroutines
+
+3. Control flow - IF/Else, For, While
+
+Structured program theorem, also called the Böhm–Jacopini theorem -  Any computable function can be computed by running subroutines in combination of following. Sort of a proof that we don't need goto.
+
+1. Run in series
+2. Run based on condition
+3. Run in loop till a condition meets
+
+The above makes sure the program runs linearly and each block has one exit point. However, even modern languages bypass this by using the Following
+```java
+continue;
+break;
+and early return statements
+throwing error in try catch can also derail the linear flow - Can make it hard to analyze all possible flows of the program based on inputs. It is argued by Jim Bonang that Ariane 5 disaster was caused by this design.
+```
+error handling - They create hidden control-flow paths that are difficult for programmers to reason about.
+
+Also, in addition to early exit there is another case of arbitrary entry. In single thread it is okay because the program will continue from where it left off but in case of multiple threads the state might have changed by time it comes back. And thus introduce a different form of complexity.
+
+## Modular Programming
+
+Creating independent modules which can operate a particular feature independently. Interaction only through well defined interfaces with each other. If modules are nodes then it should ideally form a Directed Acyclic Graph. If there is a cycle then it might be an indication that all modules in the cycle should form a single module.
+
+In OOPs the interfaces helps keep the modules separate and only connect to each other through interfaces
+
+## Assembly Language
+
+Is any low-level programming language in which there is a very strong correspondence between the instructions in the language and the architecture's machine code instructions.
 
 ## Enable unidentified apps to run, enable Anywhere option in MAC:
 
@@ -427,3 +492,7 @@ Declarative = what
 
 ----
 cmd + shift + home = opens home folder in mac
+
+## Naming convention of classes/methods/variables
+
+Both too long and too short are confusing. The name is a valuable real state and should be treated properly.

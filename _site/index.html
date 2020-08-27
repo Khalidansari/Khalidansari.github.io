@@ -128,15 +128,23 @@
       </header>
       <section>
 
-      <h1 id="ways-to-solve-an-algorithmic-problems">Ways to Solve an Algorithmic Problems</h1>
+      <h1 id="ways-to-solve-algorithmic-problems">Ways to Solve Algorithmic Problems</h1>
 
 <h2 id="brute-force">Brute Force</h2>
 
 <p>Just check all combinations</p>
 
+<h2 id="recursion">Recursion</h2>
+
+<p>Looks simple but main trick is simplifying the base case and recursive call so that there are not a lot of base case and not a lot of if and else conditions. If not done properly then the code will be hard to understand and debug (know why it works or it does not work). Step back and use copy and pen to find the most simple base case and as less number of base cases as possible. Try to see what all things should go inside the recursive method and what should stay outside.</p>
+
+<h2 id="recursive-vs-iterative">Recursive vs Iterative</h2>
+
+<p>Performing loop using recursion vs performing loop using while.</p>
+
 <h2 id="backtracking">Backtracking</h2>
 
-<p>Same as Brute force but it stops in the middle of the path as soon as it seems like it won’t work. It also stops any future steps from goign through that sub path. Might look like dynamic programming but it is not. This technique works for problems whose solution can only be checked at the end e.g. sudoku. And generally they involve finding all possible solutions. This is much better than the naive approach of trying all possible combinations. Backtracking removes the solution (prune the branch) as soon as it sees that it won’t lead to a solution so that you don’t have to go that path in future.</p>
+<p>Same as Brute force but it stops in the middle of the path as soon as it seems like it won’t work. It also stops any future steps from going through that sub path. Might look like dynamic programming but it is not. This technique works for problems whose solution can only be checked at the end e.g. sudoku. And generally they involve finding all possible solutions. This is much better than the naive approach of trying all possible combinations. Backtracking removes the solution (prune the branch) as soon as it sees that it won’t lead to a solution so that you don’t have to go that path in future.</p>
 
 <h2 id="greedy-algorithm">Greedy Algorithm</h2>
 
@@ -152,6 +160,9 @@
     <p>Dijkstra’s algorithms - It has a dynamic programming component to it but it idea it is greedy because each local solution (vertex) is solved first and then only after it is solved the next node is solved for.</p>
   </li>
 </ol>
+
+<h2 id="incremental">Incremental</h2>
+<p>E.g. Insertion sort - Take one element and put it in the correct place in the already sorted sub array. This technique is in contrast to divide concur.</p>
 
 <h2 id="divide-and-concur">Divide and Concur</h2>
 
@@ -211,6 +222,10 @@ v1, v2, v3, v4</p>
 
 <h2 id="genetic-algorithm">Genetic Algorithm</h2>
 
+<h2 id="binary-search-log-n-complexity">Binary Search (<script type="math/tex">\log n</script> complexity)</h2>
+
+<p>Eliminating half of the input at each step to finally reach the target.</p>
+
 <h2 id="graphs">Graphs</h2>
 
 <p>Represented as G(V,E) =&gt; V is vertex names and E is pair wise Vs representing edges.</p>
@@ -236,6 +251,52 @@ How to partition N identical items in K-tuples</p>
 <p>Each bars above separates the balls into buckets. So for 5 buckets we need 4 bars. If we want the bucket to be empty then keep it either at the end of adjacent to another bar. Total placeholders including both stars and bars = N+K. Now this question has been turned into finding the total number of ways in which we can put these bars. Remember that the bars are identical themselves (this does not mean that the buckets are identical).</p>
 
 <p>Hence total number of ways = <script type="math/tex">^{\small{N+K}}C_{\small{K-1}}</script></p>
+
+<h2 id="proving-the-correctness-of-algorithm">Proving the correctness of Algorithm</h2>
+
+<p>Let me start with an example. Suppose you are using a broom to clean the floor of a room. You can clean it going row by row (north to south) starting at the east and ending at the west. You may also start from the center and keep going outwards in a spiral (slowing overlapping your sweeps so that the circle becomes a square. This is not important here but just to be clear). There are many other ways too. These ways will be preferred compared to just going in patches or randomly because it is hard to track what is left and where are the overlaps. It is easy to see that going row by row will eventually clean the whole floor. Why? Because we can see that at any point in time, there is a section of the room which is clean and we are not leaving anything in that section when cleaning. Each row covers more swept floor without leaving anything in that row. This is called as “loop invariant”. Using this concept it is easier to proof that a algorithm with end correctly. The pattern is more like mathematical induction which we learned in high school. Let me formalize here:</p>
+
+<ol>
+  <li>
+    <p>Initialization - Loop invariant is present at the start.</p>
+  </li>
+  <li>
+    <p>Maintenance - Loop invariant is maintained at the end of each iteration.</p>
+  </li>
+  <li>
+    <p>Termination - Whole input is traversed.</p>
+  </li>
+</ol>
+
+<h2 id="theta-big-theta---asymptotic-upper--lower-bound"><script type="math/tex">\Theta</script> (Big Theta) - asymptotic upper &amp; lower bound</h2>
+
+<p>If a function <script type="math/tex">f(n)</script> can be sandwiched between <script type="math/tex">c1(g(n))</script> and <script type="math/tex">c2(g(n))</script> for all values greater than a specific value of <script type="math/tex">n</script>.</p>
+
+<h2 id="o-big-o---asymptotic-upper-bound"><script type="math/tex">O</script> (Big O) - asymptotic upper bound</h2>
+<p>x² ∈ O(x² + x)</p>
+
+<h2 id="omega-big-omega---asymptotic-lower-bound"><script type="math/tex">\Omega</script> (Big Omega) - asymptotic lower bound</h2>
+
+<h2 id="o-little-o---asymptotic-upper-bound-not-tight"><script type="math/tex">o</script> (little o) - asymptotic upper bound (not tight)</h2>
+<p>x² ∈ o(x³)</p>
+
+<h2 id="omega-little-omega---asymptotic-lower-bound-not-tight"><script type="math/tex">\omega</script> (little omega) - asymptotic lower bound (not tight)</h2>
+
+<h2 id="theorem">Theorem</h2>
+<p><script type="math/tex">f(n) = \Theta(g(n))</script> if and only if
+<script type="math/tex">f(n) = O(g(n))</script> and <script type="math/tex">f(n) = \Omega(g(n))</script></p>
+
+<p>This theorem is not useful when going from theta to omega and O. It is useful trying to find theta based on omega and O.</p>
+
+<h2 id="fibonacci-number">Fibonacci Number</h2>
+<p>if <script type="math/tex">\phi</script> and <script type="math/tex">\hat\phi</script> are roots of <script type="math/tex">x^2 = x + 1</script> then</p>
+
+<p>F_i = <script type="math/tex">\frac{\phi^i + \hat\phi^i} {\sqrt{5}}</script></p>
+
+<h2 id="inclusion-exclusion-principle">Inclusion-Exclusion Principle</h2>
+
+<script type="math/tex; mode=display">|A\cup B\cup C|=|A|+|B|+|C|-|A\cap B|-|A\cap C|-|B\cap C|+|A\cap B\cap C|</script>
+
 
 
       </section>

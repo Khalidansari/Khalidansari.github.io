@@ -1,6 +1,6 @@
 ---
 layout: default
-title: About
+title: LWC
 ---
 
 # Lightning Web Components
@@ -30,4 +30,4 @@ What is meant by reactive field? It means that if the value of that field change
 
 4. Learn which all tags are available to make better use core features. For example <template if:true={somecondition}>
 
-5. Passing data from parent to child is similar to reactjs (using props). Also, passing data from child to parent is kind of similar to reactjs where you pass the handler of the parent to child when embedding the child component in parent. One crucial thing to look out for is that if the event name in child is mytempchildevent then parent should try to use onmytempchildevent. 
+5. Passing data from parent to child is similar to reactjs (using props). Also, passing data from child to parent is kind of similar to reactjs where you pass the handler of the parent to child when embedding the child component in parent. One crucial thing to look out for is that if the event name in child is mytempchildevent then parent should try to use onmytempchildevent.

@@ -3,10 +3,22 @@ layout: default
 ---
 # Other Concepts
 
+## Lambda Calculus
+First established by Alonzo Church to prove Church-Turing Thesis. Have features likes Anonymous function and currying
+
 ## Anonymous Functions (function literal)
 
 It is a unnamed function
 
+## Currying
+
+Instead of giving more than one arguments at the same time, let it have one argument and return a function which can accept another argument
+
+Following
+{\displaystyle (x,y)\mapsto x^{2}+y^{2}}
+
+Changed to
+{\displaystyle x\mapsto (y\mapsto x^{2}+y^{2})}
 
 ## Closure
 
@@ -20,14 +32,13 @@ function Person(fName) {
   };
 }
 
-
 ## First Class Functions
 
 A programming language is said to have them if they are treated as first class citizens, which means that functions can be return value of functions or parameters to functions. A function name does not have any special meaning.
 
 ## Functional Language
 
-## Lambda Calculus
+Ones which support lambda calculus
 
 ## Referentially transparent - Given the same input you get the same output.
 

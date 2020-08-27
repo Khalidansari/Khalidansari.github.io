@@ -148,11 +148,55 @@
 
 <h2 id="random-forest">Random Forest</h2>
 
-<h2 id="decision-tree">Decision Tree</h2>
-
 <h2 id="linear-regression">Linear Regression</h2>
 
 <h2 id="others">Others</h2>
+
+<h2 id="bayesian-network">Bayesian Network</h2>
+
+<p>Probability of a feature based on other features</p>
+
+<ol>
+  <li>If the probabilities are independent then it forms Naive Bayes classifier</li>
+</ol>
+
+<h2 id="decision-tree">Decision Tree</h2>
+
+<p>Just like the name, you are following the path of a tree and each node is a condition deciding the path.</p>
+
+<h2 id="logistic-regression">Logistic regression</h2>
+
+<p>When the data points are put on the graph and the data can be separated by a line. A new point can be seen on which region it falls on.</p>
+
+<p>uses a log-loss function - large value to incorrectly classified points and a low one to correctly classified values.</p>
+
+<p>Neural network is same as Logistic regression but when the regions cannot be separated by a single line but is more complex. May be two lines.</p>
+
+<h2 id="support-vector-machine">Support vector machine</h2>
+
+<p>Same as Logistic regression but where you maximize the distance using linear optimization</p>
+
+<p>Good Link - https://www.youtube.com/watch?v=IpGxLWOIZy4</p>
+
+<h2 id="k-means-clustering">K Means Clustering</h2>
+
+<ol>
+  <li>There are multiple group of clusters and we want to find center of each of those clusters.</li>
+  <li>Algorithm can’t eye ball and find approx center.</li>
+  <li>So put random points anywhere - one for each cluster</li>
+  <li>For each point check to which random point it is located to. To which ever it is closest, assign that point that random point.</li>
+  <li>Then move that random point to the center of all points which are assigned that random point.</li>
+  <li>Keep doing this and finally you will find center points of all clusters and in the process also find the clusters.</li>
+</ol>
+
+<h2 id="hierarchical-clustering">Hierarchical Clustering</h2>
+
+<ol>
+  <li>Take the two closet points and make them a group</li>
+  <li>Keep doing this until the new group’s members are already part of some other group</li>
+  <li>If so then merge the two groups.</li>
+  <li>Stop when the distance between two groups is more than the predefined distance which should not be allowed</li>
+</ol>
 
 
       </section>

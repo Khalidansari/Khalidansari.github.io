@@ -138,6 +138,79 @@
   <p>java –add-opens java.base/jdk.internal.loader=ALL-UNNAMED –add-opens jdk.zipfs/jdk.nio.zipfs=ALL-UNNAMED -jar jd-gui-1.4.0.jar</p>
 </blockquote>
 
+<h2 id="declarative-and-imperative">Declarative and Imperative</h2>
+
+<p>Declarative = focus on what needs to be achieved
+Imperative = focus on how to achieve it. It comes from grammar where it means a command or a request to do something.</p>
+
+<p>Imperative uses steps to change the state.</p>
+
+<p>Procedural = is a layer on top of Imperative which localizes and modularizes steps so that it can be reused. In one way it is a step which connects Imperative and Declarative as the programmer need not look at the steps inside a function to see how a certain thing is done but can understand just by looking at the name/arguments of a function.</p>
+
+<p>Turing machines / processors / native code all run in imperative way. Even real life tasks like recipes which makes imperative very natural to humans.</p>
+
+<h2 id="timeline-of-languages">Timeline of languages</h2>
+
+<p>Fortan (57) - people were reluctant that it won’t have the performance of hand coded Assembly language but once they saw program lengths getting shorter by a factor of 20, they adopted it.</p>
+
+<p>LISP (1958) - First language with full lambda features</p>
+
+<p>COBOL (1960) - Industry, scientists and government (specially dod) joined to create a specification for a new language which can work on all computers (portable)</p>
+
+<p>BASIC (1964) - Dartmouth college created a easier language so that their student can learn programming. It became popular for various reasons. Microsoft created a microcomputer version of BASIC and included that in their PCs; Students already knew the syntax and there was a familiarity; it was high level enough to be used by hobyists, it was small enough to be added to personal computers.</p>
+
+<p>PASCAL/C</p>
+
+<p>C++ (1983)</p>
+
+<p>python (1990)</p>
+
+<p>PHP (1994)</p>
+
+<p>Java (1996)</p>
+
+<h2 id="structured-programming">Structured Programming</h2>
+
+<ol>
+  <li>
+    <p>Blocks - First came in ALGOL in 1950s. Various languages implement in various ways (indentation, curly braces, special words like if else if). This helps in keeping one set of code together so that the outer program can treat it like a single statement. Also, it helps in establishing the lexical scope of variables.</p>
+  </li>
+  <li>
+    <p>Subroutines</p>
+  </li>
+  <li>
+    <p>Control flow - IF/Else, For, While</p>
+  </li>
+</ol>
+
+<p>Structured program theorem, also called the Böhm–Jacopini theorem -  Any computable function can be computed by running subroutines in combination of following. Sort of a proof that we don’t need goto.</p>
+
+<ol>
+  <li>Run in series</li>
+  <li>Run based on condition</li>
+  <li>Run in loop till a condition meets</li>
+</ol>
+
+<p>The above makes sure the program runs linearly and each block has one exit point. However, even modern languages bypass this by using the Following</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">continue</span><span class="o">;</span>
+<span class="k">break</span><span class="o">;</span>
+<span class="n">and</span> <span class="n">early</span> <span class="k">return</span> <span class="n">statements</span>
+<span class="n">throwing</span> <span class="n">error</span> <span class="n">in</span> <span class="k">try</span> <span class="k">catch</span> <span class="n">can</span> <span class="n">also</span> <span class="n">derail</span> <span class="n">the</span> <span class="n">linear</span> <span class="n">flow</span> <span class="o">-</span> <span class="nc">Can</span> <span class="n">make</span> <span class="n">it</span> <span class="n">hard</span> <span class="n">to</span> <span class="n">analyze</span> <span class="n">all</span> <span class="n">possible</span> <span class="n">flows</span> <span class="n">of</span> <span class="n">the</span> <span class="n">program</span> <span class="n">based</span> <span class="n">on</span> <span class="n">inputs</span><span class="o">.</span> <span class="nc">It</span> <span class="n">is</span> <span class="n">argued</span> <span class="n">by</span> <span class="nc">Jim</span> <span class="nc">Bonang</span> <span class="n">that</span> <span class="nc">Ariane</span> <span class="mi">5</span> <span class="n">disaster</span> <span class="n">was</span> <span class="n">caused</span> <span class="n">by</span> <span class="k">this</span> <span class="n">design</span><span class="o">.</span>
+</code></pre></div></div>
+<p>error handling - They create hidden control-flow paths that are difficult for programmers to reason about.</p>
+
+<p>Also, in addition to early exit there is another case of arbitrary entry. In single thread it is okay because the program will continue from where it left off but in case of multiple threads the state might have changed by time it comes back. And thus introduce a different form of complexity.</p>
+
+<h2 id="modular-programming">Modular Programming</h2>
+
+<p>Creating independent modules which can operate a particular feature independently. Interaction only through well defined interfaces with each other. If modules are nodes then it should ideally form a Directed Acyclic Graph. If there is a cycle then it might be an indication that all modules in the cycle should form a single module.</p>
+
+<p>In OOPs the interfaces helps keep the modules separate and only connect to each other through interfaces</p>
+
+<h2 id="assembly-language">Assembly Language</h2>
+
+<p>Is any low-level programming language in which there is a very strong correspondence between the instructions in the language and the architecture’s machine code instructions.</p>
+
 <h2 id="enable-unidentified-apps-to-run-enable-anywhere-option-in-mac">Enable unidentified apps to run, enable Anywhere option in MAC:</h2>
 
 <blockquote>
@@ -547,6 +620,38 @@ g = globally and not just the first occurrence</p>
 <p>E.g. converting Konigsberg Bridge problem to a graph or converting the social network to a graph. Taking out irrelevant details and reducing it to only the details which we need.</p>
 
 <p>Power of abstraction - Imagine if there were different laws of motion for different objects in different gravitational fields and air friction. So if you change any factor like size, shape or weight of a object or gravitational field or friction, the laws change. Such laws have nearly zero power and use compared to those laws which are more generic. Instead now imagine just 3 laws to define all - law of motion + laws of friction + laws of gravity. Now using these 3 laws you don’t need to know a system in advance in order to predict its behavior. You just say, bring it on as you hold these generic laws. That is the magic which people at the time when Newton proposed universal theory of gravity might have felt. The law which governs objects like Moon and sun also govern the falling apple. Such abstraction has two power - Being more generic, it is more useful and also it explains something basic about how a system works. It tells something about the intrinsic nature of such systems. The same applies to computer science concepts.</p>
+
+<h2 id="sql-injection">SQL Injection</h2>
+
+<ol>
+  <li>
+    <p>Look for places where the data might not be sanitized. You just need to find one such place.</p>
+  </li>
+  <li>
+    <p>Try to input value in form to get the database name. For that there are two important things - number of columns must match if trying UNON (you can add select 1,2, <whatyouwant> from ...) and then try moving the <whatyouwant> based on output. If the output was 2 then put it at the second place for example.</whatyouwant></whatyouwant></p>
+  </li>
+  <li>
+    <p>Then try to find table name</p>
+  </li>
+  <li>
+    <p>Then find the column names</p>
+  </li>
+  <li>
+    <p>To get more column values if the output is only one column - Use concat function.</p>
+  </li>
+</ol>
+
+<h2 id="imperative-vs-declarative">Imperative vs Declarative</h2>
+
+<p>Imperative = how
+Declarative = what</p>
+
+<hr />
+<p>cmd + shift + home = opens home folder in mac</p>
+
+<h2 id="naming-convention-of-classesmethodsvariables">Naming convention of classes/methods/variables</h2>
+
+<p>Both too long and too short are confusing. The name is a valuable real state and should be treated properly.</p>
 
 
       </section>

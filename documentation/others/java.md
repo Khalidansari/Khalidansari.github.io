@@ -3,9 +3,21 @@ layout: default
 ---
 # Java
 
+Is a class based - meaning it enables inheritence through classes instead of objects alone
+
+Java is compiled from source > bytecode and then the bytecode is interpreted (though some portions are native compiled by JIT)
+
+Compiler already does most of the work so JVM has to do the least. Byte code is mostly like machine code except that there are some mapping from bytecode opcode to machine opcode based on which platform it is on. So JVM is in the layer just to provide cross compatibility.
+
+## Pass by Value/Reference
+
+Java passes everything by value - including references. What this means is that if you pass an object, you can modify properties of that object, and they will persist after you return, but you can't replace the object in its entirety with a completely new object, because you can't actually modify the reference - only what the reference points to. This is different in C/C++
+
+
+
 If you want to run eclipse using different java version:
 ------------------------------------------------------------------
-Add below line to eclipse.ini 
+Add below line to eclipse.ini
 
 -vm
 C:\Program Files (x86)\Java\jre6\bin\javaw.exe
@@ -29,7 +41,7 @@ Final variables are thread safe because they can't be changed once initialized.
 Static blocks are executed using a single thread.
 
 Nimbus is a cross platform look and feel in java which uses Java 2D to draw elements instead of bitmap.
- 
+
 While creating jar: The manifest file must have a single blank line at the end or under some circumstances it will not be correctly processed
 
 
@@ -47,7 +59,7 @@ Java Stack / Frame - Keeps seperate memory for each thread. Each thread will hav
 
 Memory generation - Used by JVM's garbage collector called generational garbage collector
 
-    a) Young generation - 
+    a) Young generation -
             1) Eden space - First time the objects go to this.
             2) Survivor space - When GC runs, all the above objects if still alive then they are moved to Survivor space.
 
