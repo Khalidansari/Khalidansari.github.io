@@ -141,7 +141,72 @@
   <li>Transcendental (Which are not algebraic)</li>
 </ol>
 
-<p>Important Theorem for Cryptography:</p>
+<h2 id="history-of-logic">History of logic</h2>
+
+<p>Started with Arestotlian logic - Close to propositional logic
+George Bool then refined it and was poslished and made famous by Bertrand Russell</p>
+
+<h2 id="propositional-logic">Propositional Logic</h2>
+
+<p>Basic unit is declarative statement (and not individual pieces) which cannot be true or false (truth value)
+E.g.
+John = subject =&gt; cannot be true or false
+wearing a coat = predicate =&gt; cannot be true or false</p>
+
+<p>So the above by themselves are not statement but when they are joined they become a statement
+John is wearing a coat</p>
+
+<p>Define statement &gt; Statement can be true or false
+Cannot deal with questions or imperatives as they can’t be true or false</p>
+
+<p>Propositions = are denoted with upper case letters</p>
+
+<p>connectives = negation, or, and and if then.</p>
+
+<h2 id="predicate-logic">Predicate logic</h2>
+
+<p>Somethings cannot be learnt just by using Propositional logics. E.g.</p>
+
+<p>P = All men are mortal
+Q = Socrates is a man
+R = Socrates is mortal</p>
+
+<p>Using propositional logic we can not get R from P &amp; Q. So we use predicate logic. Predicate is a property of an object.</p>
+
+<p>Components of predicate logic:</p>
+
+<ol>
+  <li>Predicates</li>
+  <li>Terms - Constants and variables</li>
+  <li>Connectives - same as from propositional logic</li>
+  <li>Quantifiers: Universal - \(\forall\), Existential - \(\exists\)</li>
+</ol>
+
+<p>e.g. how to write - All men like cake and pie</p>
+
+<ul>
+  <li>Mx = x is a man</li>
+  <li>Lxy = x likes y</li>
+  <li>c = cake</li>
+  <li>p = pie</li>
+</ul>
+
+<p>(\(\forall\) x) (Mx -&gt; (Lxc ^ Lxp))</p>
+
+<p>e.g. how to write - Some men like cake and pie</p>
+
+<ul>
+  <li>Mx = x is a man</li>
+  <li>Lxy = x likes y</li>
+  <li>c = cake</li>
+  <li>p = pie</li>
+</ul>
+
+<p>(\(\exists\) x) (Mx ^ (Lxc ^ Lxp))</p>
+
+<p>Use -&gt; for Universal Quantifiers and ^ for Existential</p>
+
+<h2 id="important-theorem-for-cryptography">Important Theorem for Cryptography:</h2>
 
 <ol>
   <li>Chinese Remainder Theorem</li>

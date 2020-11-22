@@ -3,7 +3,10 @@ layout: default
 ---
 # Mathematics
 
-Types of numbers:
+## Group Theory -
+Commutative / Abelian group
+
+## Types of numbers:
 
 1. Real
 2. Complex
@@ -12,7 +15,93 @@ Types of numbers:
 5. Algebraic (root of a polynomial)
 6. Transcendental (Which are not algebraic)
 
-Important Theorem for Cryptography:
+## Countable Infinity
+Mainly should be able to go one by one through the set so that there is an order in which you are not skipping anything or counting something twice. Mainly that you are able to associate an integer to each member of the set.
+
+## fundamental theorem of algebra
+Any polynomial with single variable and complex coefficient will have at least one complex root. 
+
+## Chaos Theory
+3 body motion - Henri Poincare - initial conditions made lot of changes in the system.
+
+## History of logic
+
+Started with Arestotlian logic - Close to propositional logic
+George Bool then refined it and was poslished and made famous by Bertrand Russell
+
+
+## Propositional Logic
+
+Deals with relationship between propositions as a whole
+
+relationships (Connectives)- conjunction (AND), disjunction (OR), conditional (If Then), negation (Not)
+
+\\(\tilde\\) - negation
+. - conjunction
+\\(\tilde\\) - disjunction
+\\(\nsubseteq\\) - if then, only if
+\\(\equiv\\) - equivalence
+
+
+Basic unit is declarative statement (and not individual pieces) which cannot be true or false (truth value)
+E.g.
+John = subject => cannot be true or false
+wearing a coat = predicate => cannot be true or false
+
+So the above by themselves are not statement but when they are joined they become a statement
+John is wearing a coat
+
+Define statement > Statement can be true or false
+Cannot deal with questions or imperatives as they can't be true or false
+
+Propositions = are denoted with upper case letters
+
+connectives = negation, or, and and if then.
+
+## Predicate logic
+
+Somethings cannot be learnt just by using Propositional logics. E.g.
+
+P = All men are mortal
+Q = Socrates is a man
+R = Socrates is mortal
+
+Using propositional logic we can not get R from P & Q. So we use predicate logic. Predicate is a property of an object.
+
+Components of predicate logic:
+
+1. Predicates
+2. Terms - Constants and variables
+3. Connectives - same as from propositional logic
+4. Quantifiers: Universal - \\(\forall\\), Existential - \\(\exists\\)
+
+e.g. how to write - All men like cake and pie
+
+- Mx = x is a man
+- Lxy = x likes y
+- c = cake
+- p = pie
+
+(\\(\forall\\) x) (Mx -> (Lxc ^ Lxp))
+
+e.g. how to write - Some men like cake and pie
+
+- Mx = x is a man
+- Lxy = x likes y
+- c = cake
+- p = pie
+
+(\\(\exists\\) x) (Mx ^ (Lxc ^ Lxp))
+
+Use -> for Universal Quantifiers and ^ for Existential
+
+## Branches of Mathematics
+
+1. Computational Geometry - When any problem including algorithmic problems can be expressed in as a geometrical problem.
+
+2.
+
+## Important Theorem for Cryptography:
 
 1. Chinese Remainder Theorem
 2. Fermat's Little Theorem

@@ -22,7 +22,9 @@ Turing machines / processors / native code all run in imperative way. Even real 
 
 ## Timeline of languages
 
-Fortan (57) - people were reluctant that it won't have the performance of hand coded Assembly language but once they saw program lengths getting shorter by a factor of 20, they adopted it.
+ALGOL - (1958) - First to use for, while, etc.
+
+Fortan (57) - people were reluctant that it won't have the performance of hand coded Assembly language but once they saw program lengths getting shorter by a factor of 20, they adopted it. Has loops but not for.
 
 LISP (1958) - First language with full lambda features
 
@@ -39,6 +41,16 @@ python (1990)
 PHP (1994)
 
 Java (1996)
+
+1G - first generation languages - Machine code
+2G - Assembly
+3G - High level language
+
+## Interpreted vs Compiled languages
+
+Compiled languages are more strict (e.g. static typing) during compilation because there is no catch during the runtime. However Interpreted languages are dynamic because they can catch and stop incorrect execution during runtime. Security wise this is good because running compiled code which is not yet vetted is dangerous.
+
+Hence Interpreted languages are good for prototype while compiled are good for running and distributing code programs.
 
 ## Structured Programming
 

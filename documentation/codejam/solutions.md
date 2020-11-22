@@ -9,7 +9,7 @@ OAuth2 is an authorization protocol that doesn’t define the specifics of how t
 
 * Authorization Code Grant
 * Implicit Grant
-* Resource Owner Password Credential Grant 
+* Resource Owner Password Credential Grant
 * Client Credential Grant
 
 The OIDC spec adds to this list by providing a set of authentication flows including:
