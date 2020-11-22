@@ -67,7 +67,7 @@ toc:
     subfolderitems:
       - page: Machine Learning
         url: /documentation/ai/machinelearning.html
-      - page: Machine Learning
+      - page: Python
         url: /documentation/ai/python.html
   - title: Half Baked Philosophy
     subfolderitems:
