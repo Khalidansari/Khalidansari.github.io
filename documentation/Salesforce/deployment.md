@@ -7,9 +7,7 @@ No matter which OS you are using, these commands will come handy to any develope
 
 > Using ant to retrieve results from a previously executed task. Replace REQUESTED_ID with actual id e.g. 0Af800000006OKL
 
-```sh
-ant rp -Dsf.asyncRequestId=REQUESTED_ID
-```
+**ant rp -Dsf.asyncRequestId=REQUESTED_ID**
 
 # New way - Using SFDX
 
@@ -17,10 +15,8 @@ There were maintainability issues in the "old way" as there were certain metadat
 
  > Convert granular codebase to old format and put it in output folder
 
- sfdx force:source:convert -r ./force-app/main/default/ -d ../output
+ **sfdx force:source:convert -r ./force-app/main/default/ -d ../output**
 
  > Deploy the old format to env1 environment
 
- sfdx force:mdapi:deploy -d mdapioutput/ -u env1 -w 100
-
- 
+ **sfdx force:mdapi:deploy -d mdapioutput/ -u env1 -w 100**
