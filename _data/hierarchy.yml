@@ -2,11 +2,11 @@ toc:
   - title: Algorithms
     subfolderitems:
       - page: Ways to Solve a Programming Problem
-        url: /documentation/algorithms and data structures/waystosolve.html
+        url: /documentation/algorithms_datastructures/waystosolve.html
       - page: Sorting
-        url: /documentation/maths/sorting.html
+        url: /documentation/algorithms_datastructures/sorting.html
       - page: Graph Theory
-        url: /documentation/codejam/graphs.html
+        url: /documentation/algorithms_datastructures/graphs.html
       - page: Maths
         url: /documentation/maths/maths.html
   - title: Google Code Jam
@@ -18,11 +18,17 @@ toc:
   - title: Salesforce
     subfolderitems:
       - page: What is Salesforces?
-        url: /documentation/Salesforce/about.html
+        url: /documentation/salesforce/about.html
       - page: Einstein
-        url: /documentation/Salesforce/einstein.html
+        url: /documentation/salesforce/einstein.html
       - page: Shield
-        url: /documentation/Salesforce/shield.html
+        url: /documentation/salesforce/shield.html
+      - page: Deployment
+        url: /documentation/salesforce/deployment.html
+      - page: lwc
+        url: /documentation/salesforce/lwc.html
+      - page: licensing model
+        url: /documentation/salesforce/licenses.html
   - title: Other Topics from Computer Sciences
     subfolderitems:
       - page: Cryptography
@@ -30,11 +36,7 @@ toc:
       - page: Web Services
         url: /documentation/others/webservices.html
       - page: Basic Unix Commands
-        url: /documentation/toolkit/unix.html
-      - page: Javascript Event Loop
-        url: /documentation/JavaScript/eventloop.html
-      - page: Machine Learning
-        url: /documentation/ai/machinelearning.html
+        url: /documentation/others/unix.html
       - page: SSO
         url: /documentation/others/sso.html
       - page: Spring
@@ -43,7 +45,31 @@ toc:
         url: /documentation/others/machinelanguage.html
       - page: Java
         url: /documentation/others/java.html
-  - title: Philosophy
+      - page: Adhoc
+        url: /documentation/others/adhoc.html
+      - page: Web Components
+        url: /documentation/others/webcomponents.html
+      - page: User Interface
+        url: /documentation/others/ui.html
+      - page: Important Milestones in Technology
+        url: /documentation/others/technology_timeline.html
+  - title: JavaScript
+    subfolderitems:
+      - page: ES6
+        url: /documentation/javascript/es6.html
+      - page: Event Loop
+        url: /documentation/javascript/eventloop.html
+      - page: Other Concepts
+        url: /documentation/javascript/otherconcepts.html
+      - page: ReactJS
+        url: /documentation/javascript/reactjs.html
+  - title: AI
+    subfolderitems:
+      - page: Machine Learning
+        url: /documentation/ai/machinelearning.html
+      - page: Machine Learning
+        url: /documentation/ai/python.html
+  - title: Half Baked Philosophy
     subfolderitems:
       - page: What is Knowledge?
         url: /documentation/others/knowledge.html
