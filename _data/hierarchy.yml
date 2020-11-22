@@ -18,17 +18,17 @@ toc:
   - title: Salesforce
     subfolderitems:
       - page: What is Salesforces?
-        url: /documentation/salesforce/about.html
+        url: /documentation/Salesforce/about.html
       - page: Einstein
-        url: /documentation/salesforce/einstein.html
+        url: /documentation/Salesforce/einstein.html
       - page: Shield
-        url: /documentation/salesforce/shield.html
+        url: /documentation/Salesforce/shield.html
       - page: Deployment
-        url: /documentation/salesforce/deployment.html
+        url: /documentation/Salesforce/deployment.html
       - page: lwc
-        url: /documentation/salesforce/lwc.html
+        url: /documentation/Salesforce/lwc.html
       - page: licensing model
-        url: /documentation/salesforce/licenses.html
+        url: /documentation/Salesforce/licenses.html
   - title: Other Topics from Computer Sciences
     subfolderitems:
       - page: Cryptography
@@ -56,13 +56,13 @@ toc:
   - title: JavaScript
     subfolderitems:
       - page: ES6
-        url: /documentation/javascript/es6.html
+        url: /documentation/JavaScript/es6.html
       - page: Event Loop
-        url: /documentation/javascript/eventloop.html
+        url: /documentation/JavaScript/eventloop.html
       - page: Other Concepts
-        url: /documentation/javascript/otherconcepts.html
+        url: /documentation/JavaScript/otherconcepts.html
       - page: ReactJS
-        url: /documentation/javascript/reactjs.html
+        url: /documentation/JavaScript/reactjs.html
   - title: AI
     subfolderitems:
       - page: Machine Learning
