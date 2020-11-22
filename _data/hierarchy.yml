@@ -2,7 +2,7 @@ toc:
   - title: Algorithms
     subfolderitems:
       - page: Ways to Solve a Programming Problem
-        url: /documentation/others/waystosolve.html
+        url: /documentation/algorithms and data structures/waystosolve.html
       - page: Sorting
         url: /documentation/maths/sorting.html
       - page: Graph Theory
@@ -17,7 +17,7 @@ toc:
         url: /documentation/codejam/quickNotes.html
   - title: Salesforce
     subfolderitems:
-      - page: Hello World in Salesforces
+      - page: What is Salesforces?
         url: /documentation/Salesforce/about.html
       - page: Einstein
         url: /documentation/Salesforce/einstein.html
