@@ -273,7 +273,8 @@ h1 {
   font-size: 40px;
   padding-bottom: 10px;
   /*color:#037c92;*/
-  font-family: "open sans"; }
+  font-family: system-ui;
+}
 
 /*
 h1 {
@@ -380,14 +381,14 @@ img {
   font-weight: 800; }
 
 header {
-  font-family: "open sans";
+  font-family: system-ui;
   width: 325px;
   float: left;
   position: fixed;
   -webkit-font-smoothing: subpixel-antialiased;
   margin-left: -60px;
   margin-top: -58px;
-  background-color: #111111;
+  background-color: rgb(247, 246, 243);
   height: 100%;
   overflow-y: auto;
   /*border-right: 1px solid #e2e2e2;*/ }
@@ -440,7 +441,9 @@ section {
   width: calc(100% - 500px);
   float: right;
   padding-bottom: 50px;
-  padding-right: 140px; }
+  padding-right: 140px;
+  font-family: system-ui;
+}
 
 small {
   font-size: 11px; }
