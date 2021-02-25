@@ -3,6 +3,24 @@ layout: default
 ---
 # Mathematics
 
+## Sum of natural numbers
+sum n = n * n-1/2
+sum n cube = square of (sum of n)
+sum n square = n * n+1 * 2n+1 / 6
+
+## XOR is its own inverse
+
+E.g. multiply is inverse of diivide and vice versa:
+
+c = a*b
+to find a given c and b => a = c/b
+
+SImilarily XOR is its own inverse
+
+c = a ^ b
+
+b = c ^ a
+
 ## Group Theory -
 Commutative / Abelian group
 
@@ -19,7 +37,7 @@ Commutative / Abelian group
 Mainly should be able to go one by one through the set so that there is an order in which you are not skipping anything or counting something twice. Mainly that you are able to associate an integer to each member of the set.
 
 ## fundamental theorem of algebra
-Any polynomial with single variable and complex coefficient will have at least one complex root. 
+Any polynomial with single variable and complex coefficient will have at least one complex root.
 
 ## Chaos Theory
 3 body motion - Henri Poincare - initial conditions made lot of changes in the system.

@@ -195,3 +195,152 @@ Class NP Problems - It stands for non deterministic and not non polynomial. Find
 Class NP Complete - A set of NP problems which can be converted into each other in polynomial time.
 
 Class NP Hard - Solving is atleast as hard as NP Complete
+
+## Rejection sampling
+
+Mapping 49 numbers which can appear in equal probability on 10 numbers. If it was 50 then you could map 1,11,21,31 and 41 to 1 and etc. But with 49 how can you manage? You can map 1-40 of 49 to 10 and if any number which is not in range like 42 comes then try again unless the number comes in the range of 1-40.
+
+e.g. https://leetcode.com/problems/implement-rand10-using-rand7/solution/
+
+## Hamming distance
+
+Applicable only for strings of same length. Only substitution allowed. Number of digits which are different between two strings:
+
+e.g.
+
+habpy
+sappi
+
+hamming distance of 3
+
+## Levenshtein distance
+
+Substitution, Insertion and deletion allowed. Minimum number of single-character edits (insertions, deletions or substitutions) required to change one word into the other.
+
+kitten & sitting = 3
+kitten > sitten (substitution of "s" for "k")
+sitten > sittin (substitution of "i" for "e")
+sittin > sitting (insertion of "g" at the end)
+
+Algorithm:
+
+E.g. BARK and CARRY
+
+Get min of following 3 (Take one string as base string and then start from the back. And then keep going recursive)
+
+1. Insertion - BARKY & CARRY
+2. Deletion - BAR & CARRY
+3. Substitution - BARY & CARRY
+
+## Longest common subsequence
+
+Only insertion and deletion allowed
+
+n^2 are normal algorithm - either start from front or back.
+
+FRONT
+
+729734
+   i
+
+the cursor i keep moving from 0 to len-1 and checks against all the indexes before it. In the example above i = 4. So it will check as follows:
+1. if 7 > 7 then f(4) = 1 + f(1) else f(4) = f(1)
+2. if 7 > 2 then f(4) = 1 + f(2) else f(4) = f(2)
+.
+.
+.
+take max of above numbers and that is f(4)s
+
+BETTER Algo - nlogn - use patience sort as explained below:
+
+https://www.youtube.com/watch?v=22s1xxRvy28
+
+## Longest common substring
+
+longest Substring common to all given subsequences.
+
+## tree traversal using dfs
+Recursive solution to following is quite straghtforward
+
+## preorder
+node > left > right
+
+while stack:
+    curr = stack.pop()
+    output.append(curr.val) #visit node
+
+    if curr.right:
+        stack.append(curr.right)
+    if curr.left:
+        stack.append(curr.left)
+
+## inorder
+left > node > right
+
+while stack:
+    if curr.left:
+        curr = curr.left
+        stack.append(curr)
+    else:
+        curr = stack.pop()
+        output.append(curr.val) #visit node
+        if curr.right:
+            curr = curr.right
+            stack.append(curr)
+
+One problem with the above is that we are not maintaining the visited nodes so as we are resolving and moving up, the logic will again try to take us to the bottom of the tree. This issue can be resolved using a visited map like below:
+
+while stack:
+    if curr.left and curr not in visited:
+           curr = curr.left
+           stack.append(curr)
+       else:
+           curr = stack.pop()
+
+           output.append(curr.val)
+           visited[curr] = True
+           if element_found:
+               return curr
+           if curr == p:
+               element_found = True
+
+           if curr.right:
+               curr = curr.right
+               stack.append(curr)
+
+## postorder
+right > left > node
+
+Similar to above. Just swap left and right
+
+## Union - find algorithm
+
+Works in graphs to group nodes into subsets. Works as follows:
+
+1. Put each element into a separate group to start with.
+2. Loop on edges
+   3. e.g. union(A,B) => find A's parent (which is established in step 1 above) and make that B's parent.
+
+Path compression - all subset members point to the same parent.
+
+## MIPS or FLOPS/MFLOPS/GFLOPS
+
+MIPS - millions of instructions per sec
+
+MFLOPS - Millions of floating point calculations per sec
+
+Today's computers are around 50-100 GFLOPS
+
+## Amortized Analysis
+
+Average of complexity - Needed because some operations are kicked in only at specific time/case. E.g. Arrays, they have an extra operation when it doubles it size.
+
+## Boyer-Moore Voting Algorithm
+
+Helps in finding the majority element in a array in shortest time using O(1) space.
+
+1. Keep going one element by one element
+
+2. Cancel out the majoritty with all minorty elements and as soon as it becomes zero, start again.
+
+https://www.youtube.com/watch?v=AoX3BPWNnoE - start from 3:30
