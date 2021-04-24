@@ -13,7 +13,5 @@
   - [Themes](themes.md)
 
 - **Links**
-- [![Code](assets/img/github.svg)Demo Sandbox](https://codesandbox.io/s/xv36w4695o)
-- [![Github](https://github.com/rdimascio/icons/blob/master/icons/github.svg)Github](https://github.com/jhildenbiddle/docsify-themeable)
-- [![NPM](./assets/img/github.svg)NPM](https://www.npmjs.com/package/docsify-themeable)
-- [![Twitter](assets/img/twitter.svg)@jhildenbiddle](http://twitter.com/jhildenbiddle)
+- [![Github](./assets/img/github.svg) Github](https://github.com/Khalidansari)
+- [![LinkedIn](./assets/img/linkedin.svg) LinkedIn](https://www.linkedin.com/in/khalid-ansari-dev/)

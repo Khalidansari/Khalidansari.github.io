@@ -348,6 +348,10 @@ main.hidden {
 	height: 2px
 }
 
+.sidebar ul img {
+	height: 15px;
+}
+
 body.sticky .sidebar,
 body.sticky .sidebar-toggle {
 	position: fixed
