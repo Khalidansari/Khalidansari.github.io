@@ -508,3 +508,67 @@ cmd + shift + home = opens home folder in mac
 ## Naming convention of classes/methods/variables
 
 Both too long and too short are confusing. The name is a valuable real state and should be treated properly.
+
+## AWS DynamoDB
+
+It is a B Tree - Most of the processing (sorting, aggregate filter) is done on application layer rather than DB side. It returns either a single record or contiguous range of data.
+
+Issues with it:
+
+1. Query processing - To get sum of all orders for a customer you need to get all orders and then do the sum in code which might be slow.
+2. Cost - Consider the on-demand vs provisioned capacity (which requres reqs are evenly distributed and deciding upfront on the number of requests. If req increases then they will be throttled over the limit)
+
+Note - on-demand is not exactly on-demand. Behind the scenes AWS adjusts limits based on usage and is a opaque process. For peace of mind for big fluctuations, it might be better to go for provisioned.
+
+## AWS S3
+
+Mainly a Hashtable. It is the cheapest storage option available in cloud. Key + Max 5TB blob data as value. Cannot change value. will have to insert a new record and delete the old one. One option for fast changing value is to buffer it in application layer or store it in queue until ready for final save.
+
+Bucket names are globally unique so a good practice might be to start the name with your aws acc id. But still need to check if you own it before pushing or pulling data from there using below code.
+
+s3 = Aws::S3::Resource.new(region: 'us-west-2')
+bucket_exists = s3.bucket('my-bucket').exists?
+
+## AWS lambda
+
+Best use case is to use it like a plugin of available services and not as a extension of an application. e.g. generting PDFs from text or docs.
+
+issues - cold start and code limit 250MB. It is stateless so if you want to maintain state while processing then need to use s3 or DynamoDB which can be expensive reads/writes.
+
+## AWS ELB
+
+1. Classic - remains only as a legacy option for EC2s running outside VPC
+2. ALB (application load balancers)- Act as Reverse proxy for your servers and can do a lot more like run lambdas, check sessions, etc.
+3. NLB (network load balancers) - not proxy but a more of sophisticated network router. More like client directly talking to server.
+
+NLB are faster than ALB as they miss the proxy feature. NLB scale faster than ALB.
+
+ALB are like single tenant and hence scales up or down based on your load and how it scales is opaque to us. Raising a support ticket to raise the capacity is one option if we know we need more.
+
+NLB are like multi-tenant and hence it scales in aggregate so it never fails.
+
+ALB can support multiple domains while NLB can't .
+
+## Route 53 - DNS Service
+
+Nothing special here. Just one limitation that alias is only possible for AWS urls.
+
+## Cloud Formation
+
+Infra as a code. Not everthing should be scripted as it can cause issues. So few things can be manual while things which rarely change should be scripted. Main pupose of this combination is to correctly able to bring down and then up your stack.
+
+## AWS SQS
+
+A normal queue. The best thing is no management is required as there is no kind of limit on this.
+
+Issues - as SQS is multiple queues behind the scene, when you push it goes to a random queue and when you pull it comes from another random queue. So there can be duplicates and no strict ordering. So the application should be able to handle this.
+
+If we need strict ordering and no duplicates then there is a option to select FIFO in SQS but then a limit is imposed on number of requested per sec to 300.
+
+Only one consumer possible and as soon as it is read, it is deleted.
+
+## AWS Kinesis
+
+Similar to SQS but it is a linked list instead of queue.
+
+Multiple consumers possible each maintaining their own cursor. The record is not deleted.

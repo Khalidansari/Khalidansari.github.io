@@ -21,7 +21,7 @@ title: Python
 e.g. print(-13//5) = -3
 print(int(-13/5)) = -2
 
-8. Max can take extra argument as key using which the elements are compared. This extra argument should be a funciton.
+8. Max can take extra argument as key using which the elements are compared. This extra argument should be a function.
 e.g. max(map.keys(), map.get)
 
 9. VSCode tip - comment selected lines > cmd + k + c and uncomment using cmd + k + u
@@ -37,6 +37,10 @@ b. sorted can take other arguments like "reverse" and "key"
 
 sorted(mylist, reverse=True)
 sorted(mylist, key=len)
+
+sort works only for lists while sorted can take in any iterable.
+
+Generally we want to sort on a property of a
 
 13. all or any
 
@@ -59,6 +63,10 @@ shows all attributes of an object
 input = [a,b,c]
 output = [(0,a),(1,b),(2,c)]
 
+It can also be given a optional param called "start" to specifcy from where to start the index.
+
+enumerate(input, start = 1)
+
 17. eval() - anything as a string inside it is executed as a code. Awesome but dangerous.
 
 18. filter - takes two arguments - first is a function which returns boolean and the second one is a list.
@@ -68,6 +76,105 @@ def is_even(num):
         return True
     return False
 f_even = filter(is_even, [1,2,3,4,5,6,7,8])
+
+19. zip - zips two lists into a tuple
+
+20. map - e.g. convert a list of marks to grades
+
+marks = [34,78,90,23]
+
+grades = list(toGrade, marks)
+
+def toGrade(x):
+  if x>= 90:
+    return 'A'
+  etc.
+
+21. itertools - infinite cycles etc.
+
+takewhile/   returnwhile /
+
+22. variable params - in case a method can take as many params as the user wants to input
+
+def myfunc(param1, param2, * args):
+
+any non variable param if is there should be the first and the variable param should be the last.
+
+23. keyword only argument for function.
+
+def func(arg1, arg2, byPassValidation=false)
+
+func(1,2) => bypass is false
+funct(1,2,true) => bypass is true
+
+if you want to force that the user specifies param using keyword then do this:
+
+def func(arg1, arg2, * , byPassValidation=false)
+funct(1,2,true) => throws error
+funct(1,2,byPassValidation=true) => works fine
+
+24. string.ascii_lowercase -> gives lowercase alphabets
+
+25. deque - pronounced deck.
+
+efficient way to operate from both ends of the queue using the following:
+
+popleft() and pop()
+appendleft() and append()
+
+26. Enums
+
+from enum import Enum
+
+class Color(enum):
+  RED = 1
+  BLUE = 2
+
+print(Color.RED.name, Color.RED.value)
+
+
+27. Priority Queue
+
+heapify(iterable)
+heapq.heappush("Dasds",2)
+heappop(heap) 
+
+28. Decorators
+
+import time
+def measuretime(func):
+    def wrapper():
+        starttime = time.perf_counter()
+        func()
+        endtime = time.perf_counter()
+        print(f"Time needed: {endtime - starttime} seconds")
+    return wrapper
+@measuretime
+def wastetime():
+    sum([i**2 for i in range(1000000)])
+wastetime()
+
+29. formatted printing
+
+word_string = f'{x} plus {y} equals: {x+y}'
+instead of
+word_string = x + ' plus ' + y + 'equals: ' + (x+y)
+
+## named tuple
+
+collections.namedtuple("Point", "x y")
+
+## replace method in namedtuple
+
+p1 = Point(10,20)
+p2 = p1.\_replace(x=100) => creates the point 100,20
+
+## defaultdict
+
+from collections import defaultdict
+
+myMap = defaultdict(lambda: 100) => takes a function. In this case initial value will be set as 100 if key is not found.
+
 
 ## Quick summary of basic python data science/ML libraries:
 
