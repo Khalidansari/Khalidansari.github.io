@@ -1,6 +1,3 @@
----
-layout: default
----
 # MEAN - MongoDB, Express, Angular, NodeJS (Replace Angular with ReactJS for MERN)
 
 ## How this all is tied together?

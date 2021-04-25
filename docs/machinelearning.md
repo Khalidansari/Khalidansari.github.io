@@ -1,8 +1,3 @@
----
-layout: default
-title: Machine Learning
----
-
 # Machine Learning
 
 Various methods:

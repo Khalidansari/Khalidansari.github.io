@@ -1,6 +1,3 @@
----
-layout: default
----
 # Ways to Solve Algorithmic Problems
 
 ## Brute Force
@@ -290,6 +287,7 @@ while stack:
 
 One problem with the above is that we are not maintaining the visited nodes so as we are resolving and moving up, the logic will again try to take us to the bottom of the tree. This issue can be resolved using a visited map like below:
 
+```python
 while stack:
     if curr.left and curr not in visited:
            curr = curr.left
@@ -307,6 +305,7 @@ while stack:
            if curr.right:
                curr = curr.right
                stack.append(curr)
+```
 
 ## postorder
 right > left > node

@@ -1,6 +1,3 @@
----
-layout: default
----
 # Graph Theory
 
 ## Graph vs Tree vs Binary Tree

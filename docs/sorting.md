@@ -1,6 +1,3 @@
----
-layout: default
----
 # Sorting
 
 Sorting has been of interest since the old times but one of the first algorithms were developed in 1950s. Sorting a list of elements involes reordering the elements in a particular order e.g. non-decreasing or non-increasing. We have to use words like 'non-decreasing' or 'non-increasing' instead of simply saying 'increasing' or 'decreasing' because it is better to assume that the input can have multiple elements with same value e.g. 10 13 11 20 12 13 14 13.

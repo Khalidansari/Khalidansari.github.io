@@ -1,16 +1,26 @@
 <!-- docs/_sidebar.md -->
 
-- Getting started
+- Core Concepts
 
-  * [Python](ai/python.md)
-  * [Guide](test.md)
-  [Custom navbar](custom-navbar.md)
-  [Cover page](cover.md)
+  - [Algorithms](waystosolve.md)
+  - [Graphs](graphs.md)
+  - [Sorting](sorting.md)
 
-- Customization
+- Modern Technology - MERN Stack
 
-  - [Configuration](configuration.md)
-  - [Themes](themes.md)
+  - [Javscript](javascript.md)
+  - [ReactJS](reactjs.md)
+  - [MERN](mean_mern.md)
+
+- Python Stack
+
+  - [Python](python.md)
+
+- Others
+
+  - [Machine Learning](machinelearning.md)
+  - [Mathematics](maths.md)
+  - [Functional Programming](functional.md)
 
 - **Links**
 - [![Github](./assets/img/github.svg) Github](https://github.com/Khalidansari)
