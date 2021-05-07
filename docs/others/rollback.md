@@ -1,6 +1,3 @@
----
-layout: default
----
 # Rollback
 
 ## Two phase rollback for distributed systems
