@@ -21,6 +21,7 @@
   - [Machine Learning](machinelearning.md)
   - [Mathematics](maths.md)
   - [Functional Programming](functional.md)
+  - [Ensuring rollback safety during deployments](others/rollback.md)
 
 - **Links**
 - [![Github](./assets/img/github.svg) Github](https://github.com/Khalidansari)
