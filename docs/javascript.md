@@ -84,15 +84,15 @@ e.g.
 {
   "employees":[
                 {
-                  "firstName":"John", 
+                  "firstName":"John",
                   "lastName":"Doe"
                 },
                 {
-                  "firstName":"Anna", 
+                  "firstName":"Anna",
                   "lastName":"Smith"
                 },
                 {
-                  "firstName":"Peter", 
+                  "firstName":"Peter",
                   "lastName":"Jones"
                 }
               ]
@@ -121,3 +121,8 @@ Better way to manage callbacks.
 oclif - library to build cli apps using nodejs
 
 webpack - bundles all dependencies into a single pack
+
+1. How to declare a variable global? By not using var.
+
+i = 10;
+(instead of var i = 10;)

@@ -1,5 +1,22 @@
 # Python
 
+“The best things in life are on the other side of fear.”
+
+
+## Web Sockets / Long Poll
+
+1. Old way - Keep polling every min or so from server to see if there is an update
+2. Long poll - Keeps connection open but not that fast. Works for things like notifications.
+3. Web sockets - Best for apps like chat. Can remain live for the duration of the session. Limitation is that each server can have only 65k ports (2^16) so need lot of server for millions of users. This is because it is build on top of tcp/ip.
+
+More details
+System Design Mock Interview: Design Facebook Messenger
+https://www.youtube.com/watch?v=uzeJb7ZjoQ4
+
+## Servers can talk to eachother through message queue / pub sub model
+
+## Cassandra / HBase - inlbuild sharding ability 
+
 ## Core commands in Python
 
 ```html
@@ -11,6 +28,37 @@
      /* ... */
    </style>
    ```
+
+1. import bisect for binary search Operations
+
+bisect_left
+print (bisect_left([0, 33, 42, 45, 67], 44))
+
+returns 2
+
+insort_left does the same as follow:
+
+i = bisect_left
+insort_left(arr, x) ==> arr.insert(bisect_left(arr, x), x))
+
+2. Heapq
+
+3. Binary tree as array (stored in bfs fashion). Get children and parent:
+
+* if index(parent) = N, index(left child) = 2*N+1
+* if index(parent) = N, index(right child) = 2*N+2
+* if index(child) = N, index(parent) = (N-1)/2 (integer division with truncation)
+
+0. python test unit - unittest
+
+a. Name test class anything - better to put Test at the begining or end or may be in a seperate folder.
+b. test methods need to start with test_
+c. common task should be encapsulated in setUp and tearDown methods. setUp method is run before each test method and tearDown is run after each.
+d. if you want to run a method just a single time before any test class start then use setUpClass and tearDownClass methods.
+e. import unittest
+f. class TestSomething(unittest.TestCase)
+g. Mocking - from unittest.mock import patch
+
 
 1. help(componentName) - shows doc string of componentName. Due to its common use, there is a shortcut componentName?
 
@@ -47,7 +95,13 @@ sorted(mylist, key=len)
 
 sort works only for lists while sorted can take in any iterable.
 
-Generally we want to sort on a property of a
+Generally we want to sort on a property the item.
+
+a. Sort of 1st component of the tuple
+lambda x: x[0]
+
+b. sort on 1st component of tuple and if they are same then on second
+lambda x: (x[0], x[1])
 
 13. all or any
 
@@ -144,7 +198,7 @@ print(Color.RED.name, Color.RED.value)
 
 heapify(iterable)
 heapq.heappush("Dasds",2)
-heappop(heap) 
+heappop(heap)
 
 28. Decorators
 

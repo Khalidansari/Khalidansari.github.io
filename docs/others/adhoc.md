@@ -572,3 +572,42 @@ Only one consumer possible and as soon as it is read, it is deleted.
 Similar to SQS but it is a linked list instead of queue.
 
 Multiple consumers possible each maintaining their own cursor. The record is not deleted.
+
+## Regex
+
+python
+
+raw = r'
+range = [0-9]
+or = [0-9]|[a-b]
+frequency = [0-9]{1,4} //example shows a digit 0-9 can appear 1 to 4 times
+start = ^
+end = $
+
+
+e.g.
+chunk_IPv4 = r'([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])'
+patten_IPv4 = re.compile(r'^(' + chunk_IPv4 + r'\.){3}' + chunk_IPv4 + r'$')
+
+
+check above pattern against a input:
+patten_IPv4.match(IP) //return true or false
+
+## What is a internet gateway?
+It is what connects the LAN to internet. At home it will be the bell/rogers routers.
+
+## how to get ip address of your gateway?
+netstat -nr | grep default
+
+## Understanding piping in commands
+
+A | B - this means that the output of A will be given as input to B
+
+e.g. "echo 'mdasdsa'" will output mdasdsa and then pass this output to grep which will try to find dsa inside that text.
+echo 'mdasdsa' | grep dsa
+
+## What is a subnet mask
+
+It looks like a regular 32 bit ip address but it is a string of 1s followed by string of 0s. Each node/computer will have a ip address and a subnet mask. It helps in putting computers under a subnetwork. This further helps in knowing if the traffic has to leave the gateway or not or stay within one subnet.
+
+The router picks two computers who wants to talk to each other and then compare their ip address bits under the 1s of the subnet. If they are same then they are on same network.

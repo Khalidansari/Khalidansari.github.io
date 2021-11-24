@@ -22,7 +22,7 @@
   - [Mathematics](maths.md)
   - [Functional Programming](functional.md)
   - [Ensuring rollback safety during deployments](others/rollback.md)
-  - [Django](others/django.md)
+  - [Django](django.md)
 
 - **Links**
 - [![Github](./assets/img/github.svg) Github](https://github.com/Khalidansari)

@@ -9,6 +9,35 @@ Java is compiled from source > bytecode and then the bytecode is interpreted (th
 
 Compiler already does most of the work so JVM has to do the least. Byte code is mostly like machine code except that there are some mapping from bytecode opcode to machine opcode based on which platform it is on. So JVM is in the layer just to provide cross compatibility.
 
+## special way to write int and double
+
+Java allows us to write as follows to make them more readable
+
+``` java
+int var1 = 1_234_456.123_65;
+```
+
+## Assignments return the assigned value
+int a = 10
+sysout(b = 20) => will print 20.
+
+## Ternary Operator
+
+int b = isPrime? 1:2;
+
+
+
+## Float and Double
+As per IEEE754:
+Float - Single precision numbers have 32 bits (1 sign, 8 exponent and 23 mantissa bits)
+Double - Double precision numbers have 64 bits (1 sign, 11 exponent and 52 mantissa bits).
+
+Double is better to use as it is more precise and even it sometimes can be faster than float (due to special part in chip to deal with double + JVM's special treatment). Java also treats it as default instead of float. In float you have to add "f" to the end while in double you don' thave to.
+
+```Java
+float var1 = 2.0f;
+double var2 = 2.0;
+```
 ## Pass by Value/Reference
 
 Java passes everything by value - including references. What this means is that if you pass an object, you can modify properties of that object, and they will persist after you return, but you can't replace the object in its entirety with a completely new object, because you can't actually modify the reference - only what the reference points to. This is different in C/C++
@@ -48,7 +77,7 @@ While creating jar: The manifest file must have a single blank line at the end o
 Create jar: Structure - com/ui/
                                     Manifest/Manifest.mf - com.ui.MainScreen.
 
- jar cfe tcpmon.jar com.codegoogle.tcpmon.MainWindow com/codegoogle/tcpmon/*.class
+ "jar cfe tcpmon.jar com.codegoogle.tcpmon.MainWindow com/codegoogle/tcpmon/*.class
 
 For the full hierarchy - use *
 ------------------------------------
@@ -146,3 +175,58 @@ Char stream - and is helpful in formatting the output.
 RandomAccessFile
 ------------------------
 Use the seek() method in this class to randomly find any data in the file. Its efficient in such cases.
+
+List copy
+--------
+
+existing list of records = oldList
+ArrayList<object type> newList = new ArrayList<object type>(oldList);
+
+this is a shallow copy as the new list references the same objects from old List.
+
+There is another method Collections.copy but it requires the new list to already have the same capacity as the old list. Doing the following only garanteees that it can hold these many elements but it does not have the capacity until the actual records are added. Hence this copy method is not easy to use.
+
+ArrayList<ob> newList = new ArrayList<ob>(oldList.size());
+Collections.copy(newList, oldList)
+
+sort list
+---------
+
+Collections.sort(list);
+Collections.reverse(list);
+
+max / min
+---------
+object type max = Collections.max(list);
+objeect type min = Collections.min(list);
+
+shuffle
+-------
+Collections.shuffle(list);
+
+comparable and comparator
+-------------------------
+Method 1
+
+implements comparable<obj type>
+
+@override
+public int compareTo(obj){
+  this.obj vs obj
+  return + or - or 0
+}
+
+
+Method 2
+
+static final comparator<obj>  customComp = new comparator<obj>() {
+  @override
+  public int compare(obj1, obj2){
+    compare obj1 and obj2 and return 0, + or -  
+  }
+}
+
+Collections.sort(list, customComp);
+
+Map.put return the previously addeed value. Can be used to check if already exists.
+-------------------
