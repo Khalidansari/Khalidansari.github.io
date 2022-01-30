@@ -60,3 +60,4 @@ Good Link - https://www.youtube.com/watch?v=IpGxLWOIZy4
 2. Keep doing this until the new group's members are already part of some other group
 3. If so then merge the two groups.
 4. Stop when the distance between two groups is more than the predefined distance which should not be allowed
+5. Testing
