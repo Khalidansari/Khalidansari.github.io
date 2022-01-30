@@ -6,6 +6,10 @@
   - [Graphs](graphs.md)
   - [Sorting](sorting.md)
 
+- Ruby on Rails
+
+  - [Ruby](ruby.md)
+
 - Modern Technology - MERN Stack
 
   - [Javscript](javascript.md)
