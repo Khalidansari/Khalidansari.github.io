@@ -6,13 +6,9 @@
   - [Graphs](graphs.md)
   - [Sorting](sorting.md)
 
-- Ruby Concepts
-
-  - [Ruby](ruby.md)
-
 - Ruby on Rails
 
-  - [Ruby](ruby.md)
+  - [Ruby for Java developers](ruby.md)
 
 - Modern Technology - MERN Stack
 
